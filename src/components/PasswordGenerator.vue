@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-  <h1 class="text-center">Password generador</h1>
+  <h1 class="text-center mb-4">Password generador</h1>
   <v-row justify="center">
 
   <v-card elevation="24" color="indigo">

@@ -136,7 +136,7 @@ const calcValues = ref([
     <p class="d-flex align-end mr-5 justify-end text-no-wrap">Resultado: </p>
     <v-text-field variant="plain" single-line density="compact" class="d-flex align-end mb-1 mr-10 justify-end text-no-wrap" > {{ resultado }} </v-text-field>
         <v-text-field     variant="plain" density="compact" class="mx-auto mr-4 ml-4" > {{ acumulador + actual }} </v-text-field>
-        <v-text-field @keypress="onKeyDownHandler($event)" prepend-icon="mdi mdi-counter" placeholder="Escribe manualmente" v-model="textInput"  variant="outlined" density="compact" class="mx-auto mr-4 ml-4" >  </v-text-field>
+        <v-text-field @keypress="onKeyDownHandler($event)"   v-model="textInput"  variant="outlined" density="compact" class="mx-auto mr-4 ml-4" >  </v-text-field>
     <v-card-text>
 
 

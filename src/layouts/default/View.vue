@@ -19,7 +19,7 @@
       <v-btn color="black">
         <v-icon>mdi-briefcase-arrow-left-right-outline</v-icon>
 
-        Proyects
+        Projects
       </v-btn>
       </RouterLink>
       <RouterLink style="text-decoration: none; color: inherit; margin: -.4rem" to="/about">
