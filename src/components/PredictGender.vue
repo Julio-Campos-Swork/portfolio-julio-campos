@@ -6,7 +6,8 @@
     <v-card-text class="text-center">
       <v-label class="mb-4 text-indigo">Ingresa un nombre sin espacios</v-label>
       <v-text-field v-model="name"  clearable variant="solo"></v-text-field>
-      <v-btn color="green" rounded="lg" class="text-center" @click="predictGender()">Comprobar</v-btn>
+      <v-btn color="green" rounded="lg" class="text-center mb-2" @click="predictGender()">Comprobar</v-btn><br>
+      <v-btn color="red" rounded="lg" class="text-center" @click="reset()">Reset</v-btn>
       <h4 v-if="result" class="text-center text-ingido mt-4 mb-4">El nombre <h3>{{ name }}</h3> es nombre de <h3>{{ result }}</h3></h4>
       <h5 class="text-center">{{ error }}</h5>
     </v-card-text>
@@ -31,6 +32,12 @@ const predictGender = async () => {
     if(data.data.gender == "female") result.value = "mujer";
     if(data.data.gender == "male") result.value = "hombre";
   }
+}
+
+const reset = () => {
+  name.value = "";
+  result.value = "";
+
 }
 </script>
 

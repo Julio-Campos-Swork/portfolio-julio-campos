@@ -21,7 +21,7 @@
           <v-text-field v-model="alarm.time" variant="solo"></v-text-field>
           </v-col>
           <v-col cols="2">
-          <v-switch v-model="alarm.status" color="indigo"></v-switch>
+          <v-switch v-model="alarm.status"  color="indigo"></v-switch>
           </v-col>
           <v-col cols="2">
           <v-icon color="red" @click="deleteAlarm(alarm.id)">mdi-delete</v-icon>
@@ -51,21 +51,19 @@ const appendZero = (value) => (value < 10 ? "0" + value : value);
 
 //Search for value in object
 const searchObject = (parameter, value) => {
-  let alarmObject,
-    objIndex,
-    exists = false;
+  let objIndex, exists = false;
   alarmsArray.value.forEach((alarm, index) => {
     if (alarm[parameter] == value) {
       exists = true;
-      alarmObject = alarm;
       objIndex = index;
       return false;
     }
   });
-  return [exists, alarmObject, objIndex];
+  return [exists,  objIndex];
 };
 
 const displayTimer = () => {
+  if(alarmsArray.value == [])alarmSound.stop()
   let date = new Date();
   let [hours, minutes, seconds] = [
     appendZero(date.getHours()),
@@ -75,8 +73,8 @@ const displayTimer = () => {
   timerRef.value = `${hours}:${minutes}:${seconds}`;
   //Alarm
   alarmsArray.value.forEach((alarm) => {
-    if (alarm.isActive) {
-      if (`${alarm.alarmHour}:${alarm.alarmMinute}` === `${hours}:${minutes}`) {
+    if (alarm.status) {
+      if (alarm.time === `${hours}:${minutes}`) {
         alarmSound.play();
         alarmSound.loop = true;
       }
@@ -84,17 +82,6 @@ const displayTimer = () => {
   });
 }
 setInterval(displayTimer)
-const inputCheck = (inputValue) => {
-  inputValue = parseInt(inputValue);
-  if (inputValue < 10) {
-    inputValue = appendZero(inputValue);
-  }
-  return inputValue;
-};
-const inputV = () => {
-  hourInput.value = inputCheck(hourInput.value);
-  minuteInput.value = inputCheck(minuteInput.value);
-}
 
 const createAlarm = () => {
   alarmIndex.value += 1;
@@ -108,9 +95,23 @@ const createAlarm = () => {
 
   hourInput.value = 0;
   minuteInput.value = 0;
-  console.log(alarmsArray.value)
   }
   displayTimer()
+
+  const deleteAlarm = (id) => {
+    let [exists,  index] = searchObject("id", id);
+    if(exists){
+      alarmsArray.value.splice(index, 1);
+    }
+  }
+//   const stopAlarm = (id) => {
+//     let [exists, obj, index] = searchObject("id", id);
+//   if (exists) {
+//     alarmsArray.value[index].status = false;
+//     alarmSound.pause();
+//   }
+// };
+
 </script>
 
 <style>

@@ -67,7 +67,6 @@
   <li>New Year Countdown</li>
   <li>Age Calculator</li>
   <li>Quiz App</li>
-  <li>Stopwatch App</li>
   <li>Weather App</li>
   <li>Link Shorter</li>
   <li>Todo-list</li>
