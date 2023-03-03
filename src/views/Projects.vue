@@ -29,6 +29,11 @@
         <PredictGenderVue />
       </v-card>
     </v-col>
+    <v-col xs="12" md="4" lg="4" xl="4">
+      <v-card variant="outlined" class="mx-auto">
+        <Alarm />
+      </v-card>
+    </v-col>
   </v-row>
 <v-row>
   <v-col cols="6">
@@ -43,6 +48,16 @@
   <Calculator />
 </v-card>
   </v-col>
+  <v-col cols="6">
+      <v-card variant="outlined" class="mx-auto">
+        <Currency />
+      </v-card>
+    </v-col>
+    <v-col cols="6">
+      <v-card variant="outlined" class="mx-auto">
+        <ArrayInteractionVue />
+      </v-card>
+    </v-col>
 </v-row>
 
 
@@ -69,6 +84,9 @@ import PasswordGenerator from '@/components/PasswordGenerator.vue'
 import QRComponent from '@/components/QRComponent.vue';
 import NewYearCount from "@/components/NewYearCount.vue";
 import PredictGenderVue from "@/components/PredictGender.vue";
+import Currency from "@/components/Currency.vue";
+import ArrayInteractionVue from "@/components/ArrayInteraction.vue";
+import Alarm from "@/components/Alarm.vue";
 </script>
 
 <style scoped></style>
