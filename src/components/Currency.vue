@@ -28,7 +28,7 @@
           <v-btn block class="mt-6" color="green" rounded="lg" @click="convertCurrency()">Convertir</v-btn>
           <v-btn block class="mt-2" color="red" rounded="lg" @click="reset()">Reset</v-btn>
           <v-row justify="center" class="mt-6 mb-6">
-            <v-text-field v-if="result" class="text-center text-black"><p class="text-center text-black">La cantidad {{fromCurrency}}{{amount}} es igual a {{toCurrency}}{{result}}</p></v-text-field>
+            <p v-if="result" class="text-center text-black text-h6">La cantidad {{fromCurrency}}{{amount}} es igual a {{toCurrency}}{{result}}</p>
           </v-row>
         </v-card-text>
       </v-card>
