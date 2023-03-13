@@ -8,6 +8,7 @@ module.exports = {
     'eslint:recommended',
   ],
   rules:
-    {'vue/multi-word-component-names': 0}
+    {'vue/multi-word-component-names': 0,
+    'vue/no-use-v-if-with-v-for': 'off'}
 
 }

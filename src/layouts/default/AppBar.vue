@@ -15,7 +15,7 @@
 
     <!-- extension -->
     <template v-slot:extension >
-      <v-row justify="space-evenly" class="mt-4">
+      <v-row justify="space-evenly" class="mt-4 bg-black">
         <RouterLink to="/">
           <v-btn color="white">
             <v-icon>mdi-home-account</v-icon>

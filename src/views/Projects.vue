@@ -86,6 +86,11 @@
         <MovieSearchVue />
       </v-card>
     </v-col>
+    <v-col xs="12" md="6" lg="4" xl="4">
+      <v-card variant="outlined" class="mx-auto">
+        <TodoListVue />
+      </v-card>
+    </v-col>
   </v-row>
 
   <h4 class="text-center text-red">Ideas en proceso</h4>
@@ -116,6 +121,7 @@ import RandomUserVue from "@/components/RandomUser.vue";
 import StopwatchVue from "@/components/Stopwatch.vue";
 import AgeCalculatorVue from "@/components/AgeCalculator.vue";
 import MovieSearchVue from "@/components/MovieSearch.vue";
+import TodoListVue from "@/components/TodoList.vue";
 </script>
 
 <style scoped></style>
