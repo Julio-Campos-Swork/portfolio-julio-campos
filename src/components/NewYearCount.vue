@@ -2,36 +2,31 @@
   <v-container class="contenedor">
     <h1 class="text-center titulo">Time Until New Year</h1>
     <v-row class="text-center">
-        <!-- <v-col cols="12" md="3">
-          <v-text-field
-            v-model="monthV"
-          ></v-text-field>
-        </v-col> -->
         <v-col cols="12" md="3">
           <v-text-field class="textZone" readonly
             v-model="dayV"
           ></v-text-field>
-          <v-label class="text-white" >Days</v-label>
+          <p class="text-white" >Day(s)</p>
         </v-col>
       <v-col cols="12" md="3">
           <v-text-field class="textZone" readonly
             v-model="hourV"
           ></v-text-field>
-          <v-label class="text-white">Hours</v-label>
+          <p class="text-white">Hour(s)</p>
 
         </v-col>
         <v-col cols="12" md="3">
           <v-text-field class="textZone" readonly
             v-model="minutesV"
           ></v-text-field>
-          <v-label class="text-white">Minutes</v-label>
+          <p class="text-white">Minute(s)</p>
 
         </v-col>
         <v-col cols="12" md="3">
           <v-text-field class="textZone" readonly
             v-model="secondsV"
           ></v-text-field>
-          <v-label class="text-white">Seconds</v-label>
+          <p class="text-white">Second(s)</p>
 
         </v-col>
     </v-row>
@@ -42,7 +37,6 @@
 <script setup>
 import {ref} from 'vue'
 
-// const monthV = ref(0);
 const dayV = ref(0);
 const hourV = ref(0);
 const minutesV = ref(0);
@@ -93,6 +87,7 @@ color: white;
 .contenedor{
   background-image: url('https://es.chemicalsafetyfacts.org/wp-content/uploads/2018/06/fireworks-1024x683.jpg') ;
   background-size: cover;
+  width: 400px;
 }
 .etiquetas{
   color: white;

@@ -15,7 +15,7 @@
     ></v-text-field>
   </v-app-bar>
 
-  <v-navigation-drawer v-model="drawer" app absolute color="black">
+  <v-navigation-drawer v-model="drawer" app temporary absolute color="black">
     <v-list>
       <v-list-item @click="getMovies('upcoming')">Upcoming</v-list-item>
       <v-list-item @click="getMovies('latest')">Latest</v-list-item>

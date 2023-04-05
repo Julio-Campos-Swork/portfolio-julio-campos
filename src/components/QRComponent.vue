@@ -1,29 +1,30 @@
 <template>
-  <v-container>
 
-  <v-card>
-    <v-card-title class="text-center">QR generator</v-card-title>
+  <v-card elevation="24" rounded="xl" min-width="250" max-width="600">
     <v-card-text class="text-center">
-      <v-label class="text-center">Ingresa la URL</v-label>
-      <v-text-field v-model="QRURL"></v-text-field>
+      <v-label class="text-center">Enter string</v-label>
+      <v-text-field v-model="QRURL" label="Type data to encrypt"></v-text-field>
       <v-btn color="green" @click="generateQR()">Generar QR</v-btn>
-      <v-img v-model="imgQR" :src="imgQR"></v-img>
-
+      <v-img class="mt-8 mb-4" v-model="imgQR" :src="imgQR"></v-img>
+      <v-row justify="center" class="mt-4 mb-4" v-if="imgQR">
+        <v-btn class="mr-2 ml-2" @click="dowloadImage()" rounded="xl" color="primary">Descargar</v-btn>
+        <v-btn class="mr-2 ml-2" @click="reset()" rounded="xl" color="red">Reset</v-btn>
+      </v-row>
     </v-card-text>
   </v-card>
-  </v-container>
 </template>
 
 <script setup>
-import QRious from 'qrious'
+import QRious from 'qrious';
+import { saveAs } from 'file-saver';
 import { ref } from 'vue';
-
-const imgQR = ref(null)
-const QRTitle = ref("");
+const QRData = ref("")
+const imgQR = ref(null);
 const QRURL = ref("");
+
+/*************************************************************** */
 const generateQR = () => {
   const qr = new QRious({
-          element: QRTitle.value,
           value: QRURL.value,
           background: 'white',
           backgroundAlpha: 0.8,
@@ -33,7 +34,48 @@ const generateQR = () => {
           padding: 25,
           size: 500,
         });
-        // console.log(qr)
-        imgQR.value = qr.image
+        QRData.value = qr;
+        imgQR.value = qr.image;
+
+};
+
+const dowloadImage = async () => {
+  const imagenData = QRData.value.toDataURL("image/png", 1.0)
+          const image = new Image();
+          image.src = imagenData;
+          const imageData = imagenData.split(",")[1];
+          const mimeType = "image/png";
+          const fileName = "QRCode.png";
+          const fileData = b64toBlob(imageData, mimeType);
+          saveAs(fileData, fileName)
+}
+
+/**
+ * The function converts a base64 encoded string to a Blob object.
+ * @param b64Data - A base64 encoded string representing the data to be converted to a Blob object.
+ * @param mimeType - The MIME type of the data being converted from base64 to a Blob object. Examples
+ * of MIME types include "image/png", "application/pdf", "text/plain", etc.
+ * @returns The function `b64toBlob` returns a Blob object.
+ */
+const b64toBlob = (b64Data, mimeType) => {
+const byteCharacters = atob(b64Data);
+  const byteArrays = [];
+  for (let offset = 0; offset < byteCharacters.length; offset += 1024) {
+    const slice = byteCharacters.slice(offset, offset + 1024);
+    const byteNumbers = new Array(slice.length);
+    for (let i = 0; i < slice.length; i++) {
+      byteNumbers[i] = slice.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+    byteArrays.push(byteArray);
+  }
+  const blob = new Blob(byteArrays, { type: mimeType });
+  return blob;
+}
+
+const reset = () => {
+  QRData.value = "";
+  imgQR.value = "";
+  QRURL.value = "";
 }
 </script>

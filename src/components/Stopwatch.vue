@@ -1,6 +1,5 @@
 <template>
-  <v-card elevation="24">
-    <v-card-title class="text-h4 text-center text-indigo">Stopwatch</v-card-title>
+  <v-card elevation="24" rounded="xl" class="mb-4 mt-4" min-width="250">
     <v-card-text>
       <v-row justify="center" class="mt-6 mb-4">
         <v-label class="text-indigo bg-transparent text-h4"

@@ -1,8 +1,7 @@
 <template>
-  <v-card>
-    <v-card-title></v-card-title>
+  <v-card  elevation="24" min-width="300" min-height="300" class="mb-8 mt-8" rounded="xl">
     <v-card-text class="text-center">
-      <v-row justify="center">
+      <v-row justify="center" class="mt-4 mb-4">
         <h4 class="text-center">{{ timerRef }}</h4>
       </v-row>
       <v-row justify="space-evenly">
@@ -21,10 +20,10 @@
           <v-text-field v-model="alarm.time" variant="solo"></v-text-field>
           </v-col>
           <v-col cols="2">
-          <v-switch v-model="alarm.status"  color="indigo"></v-switch>
+          <v-switch v-model="alarm.status" @click="stopAlarm(alarm.id)"  color="indigo"></v-switch>
           </v-col>
           <v-col cols="2">
-          <v-icon color="red" @click="deleteAlarm(alarm.id)">mdi-delete</v-icon>
+          <v-icon color="red" class="mt-4" @click="deleteAlarm(alarm.id)">mdi-delete</v-icon>
           </v-col>
 
 
@@ -104,13 +103,13 @@ const createAlarm = () => {
       alarmsArray.value.splice(index, 1);
     }
   }
-//   const stopAlarm = (id) => {
-//     let [exists, obj, index] = searchObject("id", id);
-//   if (exists) {
-//     alarmsArray.value[index].status = false;
-//     alarmSound.pause();
-//   }
-// };
+  const stopAlarm = (id) => {
+    let [exists,  index] = searchObject("id", id);
+  if (exists) {
+    alarmsArray.value[index].status = false;
+    alarmSound.pause();
+  }
+};
 
 </script>
 

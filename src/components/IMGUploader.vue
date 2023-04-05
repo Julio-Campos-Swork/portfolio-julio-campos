@@ -2,41 +2,14 @@
 <!-- eslint-disable no-unused-vars -->
 <template>
   <v-container>
-      <h1 class="text-center text-indigo mb-3">IMG Manager</h1>
 
-    <v-row class="mb-5">
-      <v-col>
-        <v-card title="Lista de Imagenes">
-          <v-card-text class="text-start" >
-            <v-list  >
-              <v-list-item border="sm" style="font-size: small" variant="text"
-                v-for="nombres in imageList"
-                :key="nombres"
-                :title="nombres"
-                @click="getImg(nombres)"
-                 prepend-icon="mdi mdi-image-edit-outline"
-              ></v-list-item>
-            </v-list>
-          </v-card-text>
-        </v-card>
-      </v-col>
-
-      <v-col>
-        <v-card elevation="0">
-          <v-card-text class="text-center">
-            <h5>{{ tempName }}</h5>
-            <v-img :src="downloadImg" @click="dialogIMG = !dialogIMG"></v-img>
-            <v-btn v-if="downloadImg" rounded class="mt-4" color="red" size="small" @click="deleteFile(tempName)">Borrar Imagen</v-btn>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-      <h2 class="text-center text-indigo mb-3">Upload imagenes</h2>
-    <v-row>
+        <v-card elevation="24" rounded="xl" >
+          <v-card-text class="text-start">
+            <v-row  justify="center" class="mt-6 mb-6 ml-6 mr-6" >
       <v-file-input
         v-model="fileUp"
         accept="image/png, image/jpeg, image/bmp"
-        label="Select image from pc"
+        label="Select image from device"
         variant="solo"
         prepend-icon="mdi-camera"
         :rules="rules"
@@ -44,25 +17,57 @@
         @click:append="uploadImage()"
       ></v-file-input>
     </v-row>
+      <v-row justify="start" class="mt-6 mb-6">
+        <v-card-text>
+            <h3 class="text-center">Image List</h3>
+            <v-list >
+              <v-list-item
+                border="sm"
+                style="font-size: small"
+                variant="plain"
+                v-for="nombres in imageList"
+                :key="nombres"
+                :title="nombres"
+                @click="getImg(nombres)"
+              ></v-list-item>
+            </v-list>
+        </v-card-text>
+        <v-card-text>
+
+            <h3 class="text-center mb-2">{{ tempName }}</h3>
+            <v-img :src="downloadImg" @click="dialogIMG = !dialogIMG"></v-img>
+          </v-card-text>
+
+      </v-row>
+      <v-btn
+              v-if="downloadImg"
+              rounded
+              class="mt-4"
+              color="red"
+              size="small"
+              @click="deleteFile(tempName)"
+              >Delete image</v-btn
+            >
+
+          </v-card-text>
+        </v-card>
+  </v-container>
+
     <v-dialog v-model="dialogIMG" max-height="600" max-width="800">
       <v-card>
-
-
-      <v-img :src="downloadImg" @click="dialogIMG = !dialogIMG"></v-img>
-
+        <v-img :src="downloadImg" @click="dialogIMG = !dialogIMG"></v-img>
       </v-card>
-
     </v-dialog>
-  </v-container>
+
 </template>
 
 <script setup>
 import { reactive, ref } from "vue";
 import { supabase } from "@/helpers/supabaseConfig";
 
-const dialogIMG = ref(false)
+const dialogIMG = ref(false);
 const downloadImg = ref(null);
-const tempName = ref('')
+const tempName = ref("");
 const imageList = reactive([]);
 const fileUp = ref(null);
 const rules = [
@@ -71,22 +76,18 @@ const rules = [
       !value ||
       !value.length ||
       value[0].size < 2000000 ||
-      "Avatar size should be less than 2 MB!"
+      "Image size should be less than 2 MB!"
     );
   },
 ];
 
 const uploadImage = async () => {
-  // fileUp.value = evt.target.files
   console.log(fileUp.value);
   try {
     if (!fileUp.value || fileUp.value.length === 0) {
       throw new Error("You must select an image to upload.");
     }
     const file = fileUp.value[0];
-    // const fileName = file.name.split('.').shift()
-    // const fileExt = file.name.split('.').pop()
-    // const filePath = `${fileName}.${fileExt}`
     let { error: uploadError } = await supabase.storage
       .from("avatars")
       .upload(file.name, file);
@@ -101,6 +102,7 @@ const getImg = async (name) => {
   // Use the JS library to download a file.
   tempName.value = name;
   const { data, error } = await supabase.storage.from("avatars").download(name);
+  if (error) console.log(error);
   // console.log(data, error)
   downloadImg.value = URL.createObjectURL(data);
 };
@@ -112,25 +114,22 @@ const getNames = async () => {
     sortBy: { column: "name", order: "asc" },
   });
   if (!error) {
-    imageList.splice(0)
+    imageList.splice(0);
     data.forEach((el) => {
       imageList.push(el.name);
     });
-    await getImg(imageList[0])
+    await getImg(imageList[0]);
   }
 };
 const deleteFile = async (nombre) => {
-console.log("nombre",nombre)
-  const { data, error } = await supabase
-  .storage
-  .from('avatars')
-  .remove([nombre])
+  console.log("nombre", nombre);
+  const { data, error } = await supabase.storage.from("avatars").remove([nombre]);
   // console.log(data, error)
-  if(data){
+  if (error) console.log(error);
+  if (data) {
     downloadImg.value = null;
   }
-await getNames();
-
-}
+  await getNames();
+};
 getNames();
 </script>

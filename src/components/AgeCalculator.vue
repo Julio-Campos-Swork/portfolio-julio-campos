@@ -1,11 +1,11 @@
 <template>
-  <v-card elevation="24">
-    <v-card-title class="text-purple text-center text-h4 mb-6 mt-2"
-      >Age Calculator</v-card-title
-    >
-    <v-row justify="space-around" class="mr-2 ml-2">
+  <v-card elevation="24" class="mb-8 mt-4" rounded="xl">
+    <v-card-text>
 
-      <v-date-picker v-model="date" color="blue" is-dark>
+    <v-row justify="space-around" class="mr-2 mt-6 ml-2">
+      <v-label class="text-black text-h6 mr-4">Choose your Age: </v-label>
+
+      <v-date-picker v-model="date" color="blue" is-dark :max-date="new Date()" >
         <template v-slot="{ inputValue, inputEvents }">
           <v-icon class="mdi mdi-calendar-month" v-on="inputEvents"></v-icon>
           <input
@@ -15,23 +15,19 @@
           />
         </template>
       </v-date-picker>
-      <v-label class="text-black text-h6">Choose your Age</v-label>
     </v-row>
     <br>
-    <v-row justify="center" class="mt-4">
+    <v-row justify="center" class="mt-8">
 
       <v-btn color="indigo" rounded="lg" @click="calculate()">Caculate</v-btn>
     </v-row>
-    <br />
-    <br />
-    <h3 class="text-center mb-4">Your Age is:</h3>
-    <v-row justify="space-around">
-      <v-label class="text-black text-h5">Year</v-label>
-      <v-label class="text-black text-h5">Month</v-label>
-      <v-label class="text-black text-h5">Days</v-label>
+
+    <h3 class="text-center mb-8 mt-8">Your Age is:</h3>
+    <v-row justify="space-around" class="mt-4 mb-10">
+      <v-label class="text-black text-h5">Year(s)</v-label>
+      <v-label class="text-black text-h5">Month(s)</v-label>
+      <v-label class="text-black text-h5">Day(s)</v-label>
     </v-row>
-    <br />
-    <br />
     <v-row justify="space-around" class="mt-4 mb-4">
       <v-btn class="rounded-xl text-white bg-black">{{ birthYear }}</v-btn>
       <v-btn class="rounded-xl text-white bg-black">{{ birthMonth }}</v-btn>
@@ -40,6 +36,7 @@
     <v-row justify="center">
       <v-btn class="mt-10 mb-4" color="red" rounded="xl" @click="init()">Reset</v-btn>
     </v-row>
+</v-card-text>
   </v-card>
   <v-snackbar v-model="snakeDisplay" location="top" timeout="3000"
     >Aun no has nacido!</v-snackbar

@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid >
 
-      <v-card hover elevation="24"   >
+
+      <v-card elevation="24" min-width="300" class="mt-8 mb-8" rounded="xl" >
         <v-card-title class="text-center text-black">Currency Converter</v-card-title>
         <div class="text-center">
 
@@ -9,11 +9,11 @@
         </div>
         <v-card-text class="text-center">
 
-            <v-label style="font-size: 20px; color: black;" class="mb-4">Cantidad</v-label>
+            <v-label style="font-size: 20px; color: black;" class="mb-4">Amount</v-label>
           <v-row justify="space-evenly">
-              <div style="width: 300px">
+              <div style="width: 80px">
 
-            <v-text-field density="compact" variant="underlined" class="text-black" v-model="amount" ></v-text-field>
+            <v-text-field density="compact" variant="underlined" class="text-black text-center" v-model="amount" ></v-text-field>
               </div>
           </v-row>
 
@@ -25,15 +25,19 @@
             <v-select v-model="toCurrency" variant="solo" :items="currencies"></v-select>
           </div>
           </v-row>
-          <v-btn block class="mt-6" color="green" rounded="lg" @click="convertCurrency()">Convertir</v-btn>
-          <v-btn block class="mt-2" color="red" rounded="lg" @click="reset()">Reset</v-btn>
-          <v-row justify="center" class="mt-6 mb-6">
-            <p v-if="result" class="text-center text-black text-h6">La cantidad {{fromCurrency}}{{amount}} es igual a {{toCurrency}}{{result}}</p>
+          <v-row justify="space-evenly" class="mt-4 mb-4">
+
+          <v-btn color="green" rounded="lg" @click="convertCurrency()">Convert</v-btn>
+          <v-btn color="red" rounded="lg" @click="reset()">Reset</v-btn>
+        </v-row>
+
+          <v-row justify="center" class="mt-6 mb-4">
+            <p v-if="result" class="text-center text-black text-h6">{{amount}} {{fromCurrency}} <span class="text-indigo">equals</span> {{result}} {{toCurrency}}</p>
           </v-row>
         </v-card-text>
       </v-card>
 
-  </v-container>
+
 </template>
 
 <script setup>

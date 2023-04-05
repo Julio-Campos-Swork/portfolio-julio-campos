@@ -1,106 +1,43 @@
 <template>
+  <v-app-bar-nav-icon class="btnNav" app @click="drawer = !drawer"></v-app-bar-nav-icon>
+  <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-list>
+      <v-list-item
+        v-for="components in componentList"
+        :key="components.id"
+        :prepend-icon="components.icon"
+        @click="showProject(components.name)"
+        >{{ components.name }}</v-list-item
+      >
+    </v-list>
+  </v-navigation-drawer>
 
-  <v-row no-gutters class="mt-4">
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <Metronomo />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <PasswordGenerator />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <QRComponent />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <NewYearCount />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <PredictGenderVue />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <Alarm />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <IMGUploader />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <Calculator />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <Currency />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <ArrayInteractionVue />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <WeatherVue />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <SpeedTest />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <TicTacToe />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <RandomUserVue />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <StopwatchVue />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <AgeCalculatorVue />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <MovieSearchVue />
-      </v-card>
-    </v-col>
-    <v-col xs="12" md="6" lg="4" xl="4">
-      <v-card variant="outlined" class="mx-auto">
-        <TodoListVue />
-      </v-card>
-    </v-col>
+  <v-container fluid>
+
+
+    <h1 class="text-center text-primary">{{ titlevalue }}</h1>
+  <v-row justify="center" class="mt-4">
+
+    <AgeCalculatorVue v-if="componentList[0].isActive" />
+    <Alarm v-if="componentList[1].isActive" />
+    <Calculator v-if="componentList[2].isActive" />
+    <Currency v-if="componentList[3].isActive" />
+    <IMGUploader v-if="componentList[4].isActive" />
+    <Metronomo v-if="componentList[5].isActive" />
+    <MovieSearchVue v-if="componentList[6].isActive" />
+    <NewYearCount v-if="componentList[7].isActive" />
+    <PasswordGenerator v-if="componentList[8].isActive" />
+    <PredictGenderVue v-if="componentList[9].isActive" />
+    <QRComponent v-if="componentList[10].isActive" />
+    <RandomUserVue v-if="componentList[11].isActive" />
+    <StopwatchVue v-if="componentList[12].isActive" />
+    <StringInteractionVue v-if="componentList[13].isActive" />
+    <TicTacToe v-if="componentList[14].isActive" />
+    <TodoListVue v-if="componentList[15].isActive" />
+    <WeatherVue v-if="componentList[16].isActive" />
+
   </v-row>
-
-  <h4 class="text-center text-red">Ideas en proceso</h4>
-
-  <ol class="text-center">
-    <li>Quiz App</li>
-    <li>Link Shorter</li>
-    <li>Todo-list</li>
-    <li>Clones of NetFlix etc</li>
-  </ol>
+  </v-container>
 </template>
 
 <script setup>
@@ -112,16 +49,55 @@ import QRComponent from "@/components/QRComponent.vue";
 import NewYearCount from "@/components/NewYearCount.vue";
 import PredictGenderVue from "@/components/PredictGender.vue";
 import Currency from "@/components/Currency.vue";
-import ArrayInteractionVue from "@/components/ArrayInteraction.vue";
+import StringInteractionVue from "@/components/StringInteraction.vue";
 import Alarm from "@/components/Alarm.vue";
 import WeatherVue from "@/components/Weather.vue";
-import SpeedTest from "@/components/SpeedTest.vue";
+// import SpeedTest from "@/components/SpeedTest.vue";
 import TicTacToe from "@/components/TicTacToe.vue";
 import RandomUserVue from "@/components/RandomUser.vue";
 import StopwatchVue from "@/components/Stopwatch.vue";
 import AgeCalculatorVue from "@/components/AgeCalculator.vue";
 import MovieSearchVue from "@/components/MovieSearch.vue";
 import TodoListVue from "@/components/TodoList.vue";
+import { ref } from "vue";
+const drawer = ref(false);
+const titlevalue = ref("Age Calculator");
+
+
+const componentList = ref([
+  { id: 1, name: "Age Calculator", icon: "mdi-cake-variant-outline", isActive: true },
+  { id: 2, name: "Alarm", icon: "mdi-alarm", isActive: false },
+  { id: 3, name: "Calculator", icon: "mdi-calculator", isActive: false },
+  { id: 4, name: "Currency", icon: "mdi-currency-usd", isActive: false },
+  { id: 5, name: "Image Uploader", icon: "mdi-image-album", isActive: false },
+  { id: 6, name: "Metronome", icon: "mdi-metronome", isActive: false },
+  { id: 7, name: "Movie Search", icon: "mdi-movie-search-outline", isActive: false },
+  { id: 8, name: "New Year Counter", icon: "mdi-counter", isActive: false },
+  { id: 9, name: "Password Generator", icon: "mdi-lock-plus-outline", isActive: false },
+  { id: 10, name: "Gender Predictor", icon: "mdi-gender-male", isActive: false },
+  { id: 11, name: "QR Generator", icon: "mdi-qrcode-plus", isActive: false },
+  { id: 12, name: "Random User Generator", icon: "mdi-account-plus-outline", isActive: false },
+  { id: 13, name: "Stopwatch", icon: "mdi-timer-plus-outline", isActive: false },
+  { id: 14, name: "String Functions", icon: "mdi-code-array", isActive: false },
+  { id: 15, name: "Tic Tac Toe", icon: "mdi-close-thick", isActive: false },
+  { id: 16, name: "Todo List", icon: "mdi-list-status", isActive: false },
+  { id: 17, name: "Wheater App", icon: "mdi-weather-cloudy", isActive: false },
+]);
+const showProject = (componente) => {
+  componentList.value.forEach((item) => {
+    if(item.name == componente){
+      item.isActive = true;
+      titlevalue.value = item.name;
+    }else{
+      item.isActive = false;
+    }
+  })
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+.btnNav {
+  color: blue;
+  margin: 10px 10px 0 10px;
+}
+</style>
