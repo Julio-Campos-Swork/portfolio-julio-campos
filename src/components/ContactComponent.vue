@@ -4,7 +4,7 @@
 
 <v-col cols="6">
   <form @submit.prevent="submit">
-  <h1 class="text-purple text-center mb-4">Contáctame</h1>
+  <h1 class="text-purple text-center mb-4 text-focus-in">Contáctame</h1>
     <v-text-field
       v-model="name.value.value"
       :counter="10"

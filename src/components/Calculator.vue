@@ -1,5 +1,6 @@
 <template>
-  <v-card max-width="400" elevation="24" class="mt-10 mb-10" color="pink-lighten-5" rounded="xl">
+    <v-card elevation="24" class="mb-8 mt-4" rounded="xl" theme="light">
+
     <p class="d-flex align-end mr-5 mt-10 justify-end text-no-wrap">Resultado:</p>
     <v-text-field
       variant="plain"

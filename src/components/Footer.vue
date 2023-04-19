@@ -1,6 +1,6 @@
 <template>
- <v-footer border
-    class="bg-indigo-lighten-1 text-center flex-column foter">
+ <v-footer id="footer" border
+    class="bg-indigo text-center flex-column foter">
     <div>
       <v-btn  class="mx-4" icon="mdi-facebook" variant="text"></v-btn>
       <v-btn  class="mx-4" icon="mdi-twitter" variant="text"></v-btn>

@@ -1,12 +1,26 @@
 <template>
   <v-main>
-    <router-view />
+    <Home />
+    <hr>
+    <Skills />
+    <hr>
+    <ProjectsVue />
+    <hr>
+
+    <About />
+    <hr>
+
+    <Contact />
+
   </v-main>
-<FooterVue  />
 </template>
 
 <script setup>
-import FooterVue from '@/components/Footer.vue';
+import About from '@/views/About.vue';
+import Contact from '@/views/Contact.vue';
+import Home from '@/views/Home.vue';
+import ProjectsVue from '@/views/Projects.vue';
+import Skills from '@/views/Skills.vue'
 </script>
 
 <style scoped>

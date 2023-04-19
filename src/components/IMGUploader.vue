@@ -3,7 +3,8 @@
 <template>
   <v-container>
 
-        <v-card elevation="24" rounded="xl" >
+    <v-card elevation="24" class="mb-8 mt-4" rounded="xl" theme="light">
+
           <v-card-text class="text-start">
             <v-row  justify="center" class="mt-6 mb-6 ml-6 mr-6" >
       <v-file-input

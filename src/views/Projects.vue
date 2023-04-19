@@ -1,4 +1,4 @@
-<template>
+<template id="proyectos">
   <v-app-bar-nav-icon class="btnNav" app @click="drawer = !drawer"></v-app-bar-nav-icon>
   <v-navigation-drawer v-model="drawer" absolute temporary>
     <v-list>
@@ -35,6 +35,7 @@
     <TicTacToe v-if="componentList[14].isActive" />
     <TodoListVue v-if="componentList[15].isActive" />
     <WeatherVue v-if="componentList[16].isActive" />
+    <Slider v-if="componentList[17].isActive" />
 
   </v-row>
   </v-container>
@@ -59,6 +60,7 @@ import StopwatchVue from "@/components/Stopwatch.vue";
 import AgeCalculatorVue from "@/components/AgeCalculator.vue";
 import MovieSearchVue from "@/components/MovieSearch.vue";
 import TodoListVue from "@/components/TodoList.vue";
+import Slider from "@/components/Slider.vue";
 import { ref } from "vue";
 const drawer = ref(false);
 const titlevalue = ref("Age Calculator");
@@ -82,6 +84,7 @@ const componentList = ref([
   { id: 15, name: "Tic Tac Toe", icon: "mdi-close-thick", isActive: false },
   { id: 16, name: "Todo List", icon: "mdi-list-status", isActive: false },
   { id: 17, name: "Wheater App", icon: "mdi-weather-cloudy", isActive: false },
+  { id: 17, name: "Slider Test", icon: "mdi-slide", isActive: false },
 ]);
 const showProject = (componente) => {
   componentList.value.forEach((item) => {

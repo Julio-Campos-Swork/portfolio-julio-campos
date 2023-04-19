@@ -1,5 +1,5 @@
 <template>
-  <h1>About page</h1>
+  <h1 class="text-focus-in">About page</h1>
   <v-container fluid>
     <v-card
     class="mx-auto"

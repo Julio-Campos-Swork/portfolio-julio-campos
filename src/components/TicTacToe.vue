@@ -97,13 +97,13 @@ import { reactive, watch, ref } from 'vue';
       tie = usedCells === 9 && !winner.value;
     };
 
-    watch(() => winner.value, () => {
-      if (winner.value) {
-        alert(`${winner.value} wins!`);
-      } else if (tie) {
-        alert(`It's a tie!`);
-      }
-    });
+    // watch(() => winner.value, () => {
+    //   if (winner.value) {
+    //     alert(`${winner.value} wins!`);
+    //   } else if (tie) {
+    //     alert(`It's a tie!`);
+    //   }
+    // });
 
 const reset = () => {
   board.forEach((row, i) => {

@@ -1,10 +1,10 @@
 <template>
-  <v-app-bar image="../../assets/logo.jpeg" extended absolute color="black">
-    <a href="/home">
-      <v-icon size="x-large" icon="mdi-home" class="ml-4" />
-    </a>
+  <v-app-bar absolute color="indigo">
+    <v-app-bar-nav-icon  app @click="drawer = !drawer"></v-app-bar-nav-icon>
+    <span class="menuBtn" @click="drawer = !drawer">Menu</span>
+    <v-spacer></v-spacer>
 
-    <div class="titulo">Portafolio</div>
+    <v-app-bar-title class="text-h5 text-center text-deep-purple">Portfolio - Julio Campos</v-app-bar-title>
     <v-spacer></v-spacer>
     <v-btn
       @click="toggleTheme"
@@ -12,45 +12,16 @@
       :prepend-icon="bText == 'Light' ? 'mdi-sun-angle' : 'mdi-sun-angle-outline'"
       >{{ bText }}</v-btn
     >
-
-    <!-- extension -->
-    <template v-slot:extension >
-      <v-row justify="space-evenly" class="mt-4 bg-black">
-        <RouterLink to="/">
-          <v-btn color="white">
-            <v-icon>mdi-home-account</v-icon>
-            Home
-          </v-btn>
-        </RouterLink>
-        <RouterLink to="/projects">
-          <v-btn color="white">
-            <v-icon>mdi-briefcase-arrow-left-right-outline</v-icon>
-            Projects
-          </v-btn>
-        </RouterLink>
-        <RouterLink to="/netflixclone">
-          <v-btn color="white">
-            <v-icon>mdi-netflix</v-icon>
-            Netflix
-          </v-btn>
-        </RouterLink>
-        <RouterLink to="/about">
-          <v-btn color="white" >
-            <v-icon>mdi-information-outline</v-icon>
-            About
-          </v-btn>
-        </RouterLink>
-        <RouterLink to="/contact">
-          <v-btn color="white">
-            <v-icon>mdi-account-box-outline</v-icon>
-            Contact
-          </v-btn>
-        </RouterLink>
-
-
-      </v-row>
-    </template>
   </v-app-bar>
+  <v-navigation-drawer v-model="drawer" absolute temporary class="bg-indigo">
+    <v-list>
+      <v-list-item prepend-icon="mdi-home"><a href="#">Inicio</a></v-list-item>
+      <v-list-item prepend-icon="mdi-network-pos"><a href="#skills">Skills</a></v-list-item>
+      <v-list-item prepend-icon="mdi-briefcase"><a href="/projects">Proyectos</a></v-list-item>
+      <v-list-item prepend-icon="mdi-information-outline"><a href="#">About Me</a></v-list-item>
+      <v-list-item prepend-icon="mdi-account-box-outline"><a href="#">Contacto</a></v-list-item>
+    </v-list>
+</v-navigation-drawer>
 </template>
 
 <script setup>
@@ -58,6 +29,8 @@ import { ref } from "vue";
 import { useTheme } from "vuetify";
 const bText = ref("Light");
 const theme = useTheme();
+const drawer = ref(false)
+const colorTheme = ref("cyan-lighten-5")
 const toggleTheme = () => {
   theme.global.name.value = theme.global.current.value.dark ? "light" : "dark";
   bText.value = bText.value === "Dark" ? "Light" : "Dark";
@@ -65,27 +38,16 @@ const toggleTheme = () => {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-.titulo {
-  position: absolute;
-  left: 50%;
-  top: 70%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  background-color: transparent;
-  font-family: "Pacifico", cursive;
-  font-size: 50px;
-  filter: drop-shadow(0 0 1px #000) drop-shadow(2px 1px 0 #000)
-    drop-shadow(-1px 1px 0 #000) drop-shadow(1px -1px 0 #000);
-}
-/* a{
-  text-decoration: none;
-  color: white;
-} */
 a:link,
 a:visited,
 a:active {
   text-decoration: none;
-  color: white;
+  color: rgb(15, 0, 0);
+}
+.menuBtn:hover{
+cursor: pointer;
+}
+.colorTheme{
+  background-color: chocolate;
 }
 </style>

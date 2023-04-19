@@ -1,5 +1,6 @@
 <template>
-  <v-card  elevation="24" min-width="300" min-height="300" class="mb-8 mt-8" rounded="xl">
+    <v-card elevation="24" class="mb-8 mt-4" rounded="xl" theme="light">
+
     <v-card-text class="text-center">
       <v-row justify="center" class="mt-4 mb-4">
         <h4 class="text-center">{{ timerRef }}</h4>

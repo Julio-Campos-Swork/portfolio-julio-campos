@@ -1,7 +1,8 @@
 <template>
 
 
-      <v-card elevation="24" min-width="300" class="mt-8 mb-8" rounded="xl" >
+<v-card elevation="24" class="mb-8 mt-4" rounded="xl" theme="light">
+
         <v-card-title class="text-center text-black">Currency Converter</v-card-title>
         <div class="text-center">
 
