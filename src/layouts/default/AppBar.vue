@@ -3,7 +3,13 @@
     <v-icon color="white" class="menuBtn ml-2" @click="drawer = !drawer">mdi-menu</v-icon>
     <v-spacer></v-spacer>
 
-    <v-app-bar-title class="text-center text-h4 text-white">Portfolio</v-app-bar-title>
+    <v-app-bar-title class="text-center text-h4 text-white d-none d-md-inline"
+      >Portfolio</v-app-bar-title
+    >
+    <v-app-bar-title
+      class="text-center text-caption text-white d-inline d-sm-inline d-md-none"
+      >Portfolio</v-app-bar-title
+    >
     <v-spacer></v-spacer>
     <v-btn
       @click="toggleTheme"
@@ -12,7 +18,7 @@
       >{{ bText }}</v-btn
     >
   </v-app-bar>
-  <v-icon v-if="!drawer" class="menu mt-2 ml-2" @click="drawer = !drawer"
+  <v-icon v-if="!drawer" class="menu mt-6 ml-6" @click="drawer = !drawer"
     >mdi-menu</v-icon
   >
 
