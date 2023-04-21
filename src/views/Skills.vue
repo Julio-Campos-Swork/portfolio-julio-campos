@@ -1,6 +1,6 @@
 <template>
-  <section id="skills">
-    <p class=" text-center mt-6 sectionTitles text-focus-in">Skills</p>
+  <v-container id="skills">
+    <p class="text-center text-h3 mt-6 text-focus-in">Skills</p>
     <v-row justify="center" class="mt-6 mb-10 ml-10 mr-10">
       <v-col cols="4" md="3" sm="3" lg="2" v-for="item in items" :key="item.name">
         <p class="text-center">{{ item.name }}</p>
@@ -23,7 +23,7 @@
         </div>
       </v-col>
     </v-row>
-  </section>
+  </v-container>
 </template>
 
 <script setup>

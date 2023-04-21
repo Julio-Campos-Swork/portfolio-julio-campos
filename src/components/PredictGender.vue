@@ -1,7 +1,6 @@
 <template>
-  <v-container>
-    <v-row justify="center">
-      <v-card elevation="24" rounded="xl" class="mt-4 mb-4">
+
+      <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
         <v-card-text class="text-center">
           <v-label class="mb-4 text-indigo">Type a name without spaces</v-label>
           <v-text-field v-model="name" clearable variant="solo"></v-text-field>
@@ -22,8 +21,6 @@
           <h3 class="text-center text-red mt-4 mb-2" v-if="error">{{ error }}</h3>
         </v-card-text>
       </v-card>
-    </v-row>
-  </v-container>
 </template>
 
 <script setup>

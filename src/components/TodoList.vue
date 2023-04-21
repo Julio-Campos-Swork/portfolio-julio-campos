@@ -1,16 +1,16 @@
 <template>
-  <v-card elevation="24" rounded="xl" class="mb-4 mt-4 mr-4 ml-4">
+      <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
     <v-card-text>
 
       <v-row justify="center">
         <p class="ml-8">
-          <v-btn variant="text" color="indigo" @click="showAll()">Pending Task</v-btn>
+          <v-btn size="small" variant="text" color="indigo" @click="showAll()">Pending Task</v-btn>
         </p>
         <p class="ml-8">
-          <v-btn variant="text" color="green" @click="showCompleted()">Completed</v-btn>
+          <v-btn size="small" variant="text" color="green" @click="showCompleted()">Completed</v-btn>
         </p>
         <p class="ml-8">
-          <v-btn variant="text" color="red" @click="showDeleted()">Deleted</v-btn>
+          <v-btn size="small" variant="text" color="red" @click="showDeleted()">Deleted</v-btn>
         </p>
       </v-row>
 

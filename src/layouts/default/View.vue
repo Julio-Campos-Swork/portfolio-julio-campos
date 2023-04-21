@@ -11,7 +11,6 @@
     <hr>
 
     <Contact />
-
   </v-main>
 </template>
 

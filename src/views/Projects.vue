@@ -1,21 +1,21 @@
-<template id="proyectos">
-  <v-app-bar-nav-icon class="btnNav" app @click="drawer = !drawer"></v-app-bar-nav-icon>
-  <v-navigation-drawer v-model="drawer" absolute temporary>
-    <v-list>
-      <v-list-item
-        v-for="components in componentList"
-        :key="components.id"
-        :prepend-icon="components.icon"
-        @click="showProject(components.name)"
-        >{{ components.name }}</v-list-item
-      >
-    </v-list>
-  </v-navigation-drawer>
+<template >
+  <v-container id="proyectos" class="mb-6 mt-6">
 
-  <v-container fluid>
+<p class="text-center text-h3 mb-4  text-focus-in">Proyectos</p>
 
+  </v-container>
+  <v-container  class="mb-6" >
+    <p class="text-center text-h5 mb-6 mt-6  text-focus-in">Proyectos Rapidos</p>
 
-    <h1 class="text-center text-primary">{{ titlevalue }}</h1>
+    <v-row >
+      <v-col class="text-center" cols="3" v-for="components in componentList" key="components.id">
+      <v-icon color="light-blue" @click="showProject(components.name)" :icon="components.icon"></v-icon>
+      <p @click="showProject(components.name)" class="textClick text-caption mt-2">{{components.name}}</p>
+
+      </v-col>
+    </v-row>
+
+    <p class="text-center text-primary mt-6 mb-4">{{ titlevalue }}</p>
   <v-row justify="center" class="mt-4">
 
     <AgeCalculatorVue v-if="componentList[0].isActive" />
@@ -39,6 +39,7 @@
 
   </v-row>
   </v-container>
+
 </template>
 
 <script setup>
@@ -64,7 +65,6 @@ import Slider from "@/components/Slider.vue";
 import { ref } from "vue";
 const drawer = ref(false);
 const titlevalue = ref("Age Calculator");
-
 
 const componentList = ref([
   { id: 1, name: "Age Calculator", icon: "mdi-cake-variant-outline", isActive: true },
@@ -99,8 +99,7 @@ const showProject = (componente) => {
 </script>
 
 <style scoped>
-.btnNav {
-  color: blue;
-  margin: 10px 10px 0 10px;
+.textClick {
+ cursor: pointer;
 }
 </style>

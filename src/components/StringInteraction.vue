@@ -1,6 +1,6 @@
 <template>
-  <v-card>
-    <v-card-title></v-card-title>
+      <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
+
     <v-card-text>
         <h3 class="mb-10 text-center">Enter a String</h3>
       <v-row justify="center">
@@ -13,16 +13,16 @@
           <v-text-field v-model="result" class="mb-4"></v-text-field>
       <v-row justify="center">
         <v-col cols="6">
-        <v-btn class="mb-2" block color="indigo" @click="reverseStr()" rounded="lg">Reverse String</v-btn>
+        <v-btn size="small" class="mb-2" block color="indigo" @click="reverseStr()" rounded="lg">Reverse String</v-btn>
         </v-col>
         <v-col cols="6">
-        <v-btn class="mb-2" block color="indigo" @click="isPalindrome()" rounded="lg">Is palindrome?</v-btn>
+        <v-btn size="small" class="mb-2" block color="indigo" @click="isPalindrome()" rounded="lg">Is palindrome?</v-btn>
         </v-col>
         <v-col cols="6">
-        <v-btn class="mb-2" block color="indigo" @click="charCount()" rounded="lg">Characters Count</v-btn>
+        <v-btn size="small" class="mb-2" block color="indigo" @click="charCount()" rounded="lg">Characters Count</v-btn>
         </v-col>
         <v-col cols="6">
-        <v-btn class="mb-2" block color="indigo" @click="wordCount()" rounded="lg">Word Counter</v-btn>
+        <v-btn size="small" class="mb-2" block color="indigo" @click="wordCount()" rounded="lg">Word Counter</v-btn>
         </v-col>
 
 

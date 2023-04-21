@@ -10,6 +10,7 @@ import 'vuetify/styles'
 import 'v-calendar/dist/style.css';
 // Composables
 import { createVuetify } from 'vuetify'
+import 'boxicons'
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
@@ -19,6 +20,7 @@ export default createVuetify({
         colors: {
           primary: '#1867C0',
           secondary: '#5CBBF6',
+          background: '#ECEFF1'
         },
       },
     },

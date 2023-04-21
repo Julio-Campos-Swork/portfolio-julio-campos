@@ -1,48 +1,83 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <section id="inicio" class="mb-8">
-    <v-row justify="space-between" class="text-center mt-6">
-      <v-col cols="6">
-        <v-container >
-          <p class="text-h4 displayName mb-2 text-focus-in">Julio Campos</p>
-          <p class="text-h6 typedChar text-center">Desarrollador Web</p>
-        </v-container>
-      </v-col>
-      <v-col cols="6">
-        <v-container >
-        <v-img width="250" class="profilePicture text-focus-in" src="../assets/batman_4x.jpg"></v-img>
-</v-container>
-      </v-col>
-      <v-col cols="12">
-        <v-btn rounded="lg" size="small" class="botonCV">Descargar CV</v-btn>
-      </v-col>
+  <v-container id="inicio" class="mb-8 contenedor">
+    <v-row justify="center" class="mt-6">
+      <v-img
+        width="250"
+        class="profilePicture text-focus-in"
+        src="../assets/batman_4x.jpg"
+      ></v-img>
     </v-row>
-  </section>
+
+    <p class="text-h4 mb-6 mt-8 text-center text-focus-in">Julio Campos</p>
+    <v-row justify="center" class="mt-2 mb-4">
+      <p class="text-h6 typedChar text-center">Desarrollador Web</p>
+    </v-row>
+    <v-row justify="center">
+      <v-btn rounded="lg" size="small" class="botonCV mb-4">Descargar CV</v-btn>
+    </v-row>
+    <v-row justify="center" class="mb-6 mt-4">
+      <a target="_blank" href="https://github.com/Julio-Campos-Swork">
+
+      <box-icon
+        class="boxCursor ml-2"
+        type="logo"
+        name="github"
+        size="md"
+        color="#4618EA"
+        animation="fade-left-hover"
+      ></box-icon>
+      </a>
+      <a target="_blank" href="https://github.com/Julio-Campos-Swork">
+
+      <box-icon
+        class="boxCursor ml-2"
+        type="logo"
+        name="linkedin-square"
+        color="#1e8ed8"
+        size="md"
+        animation="spin-hover"
+      ></box-icon>
+    </a>
+    <a target="_blank" href="https://twitter.com/JulioCamposWork">
+
+      <box-icon
+      class="boxCursor ml-2"
+
+        name="twitter"
+        type="logo"
+        animation="fade-right-hover"
+        size="md"
+
+        color="#0e80f2"
+      ></box-icon>
+    </a>
+
+    </v-row>
+  </v-container>
 </template>
 
 <script setup></script>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
 .displayName {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .typedChar {
-
   /* display: block; */
   font-family: monospace;
   white-space: nowrap;
-  border-right: 4px solid;
-  width: 15ch;
-  animation: typing 5s steps(15), blink 1s  infinite ;
+  border-right: 5px solid;
+  width: 16ch;
+  animation: typing 4s steps(16), blink 1s infinite;
   overflow: hidden;
-
 }
 @keyframes typing {
   from {
-      width: 0;
-    }
+    width: 0;
+  }
 }
 @keyframes blink {
   50% {
@@ -50,12 +85,17 @@
   }
 }
 
-.profilePicture{
-  border-radius: 30% 70% 70% 30% / 30% 50% 50% 70% ;
+.profilePicture {
+  border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%;
+  width: 200px;
+  height: 200px;
 }
-.botonCV{
-  background-color: #8EC5FC;
-background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+.botonCV {
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+}
 
+.boxCursor {
+  cursor: pointer;
 }
 </style>

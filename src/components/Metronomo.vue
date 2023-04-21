@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card elevation="24" class="mb-8 mt-4" rounded="xl" theme="light">
+    <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
       <v-toolbar flat dense>
         <v-toolbar-title class="text-center">
           <span class="text-subheading">METRONOME</span>

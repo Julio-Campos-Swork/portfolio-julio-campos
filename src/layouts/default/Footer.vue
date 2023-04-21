@@ -1,6 +1,6 @@
 <template>
  <v-footer id="footer" border
-    class="bg-indigo text-center flex-column foter">
+    class="contenedor text-center flex-column foter">
     <div>
       <v-btn  class="mx-4" icon="mdi-facebook" variant="text"></v-btn>
       <v-btn  class="mx-4" icon="mdi-twitter" variant="text"></v-btn>
@@ -56,5 +56,8 @@ getFecha();
 <style scoped>
 .foter{
   flex: 0;
+}
+.contenedor{
+  background-image: url('../../assets/banner2.png') !important;
 }
 </style>

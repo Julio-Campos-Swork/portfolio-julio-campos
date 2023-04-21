@@ -1,5 +1,5 @@
 <template>
-  <v-card elevation="24" color="indigo" min-width="400" max-width="700" class="mt-4 mb-4">
+  <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
     <v-card-text class="ml-4 mr-4 mt-4 mb-4">
       <v-row>
         <v-text-field

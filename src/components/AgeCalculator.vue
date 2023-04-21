@@ -1,5 +1,5 @@
 <template>
-  <v-card elevation="24" class="mb-8 mt-4" rounded="xl" theme="light">
+  <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
     <v-card-text>
 
     <v-row justify="space-around" class="mr-2 mt-6 ml-2">
