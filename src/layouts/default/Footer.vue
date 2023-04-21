@@ -1,39 +1,30 @@
 <template>
- <v-footer id="footer" border
-    class="contenedor text-center flex-column foter">
-    <div>
-      <v-btn  class="mx-4" icon="mdi-facebook" variant="text"></v-btn>
-      <v-btn  class="mx-4" icon="mdi-twitter" variant="text"></v-btn>
-      <v-btn  class="mx-4" icon="mdi-linkedin" variant="text"></v-btn>
-      <v-btn  class="mx-4" icon="mdi-github" variant="text"></v-btn>
-    </div>
-
-    <div class="pt-0">
-      Bienvenido a mi portafolio
-    </div>
+  <v-footer id="footer" border class="contenedor text-center flex-column foter">
+    <p class="pt-2 text-light-blue-accent-1">Gracias por visitar mi Portfolio</p>
+    <p class="pt-2 text-light-blue-accent-1">
+      Fue creado con Vue 3, maquetado con Vuetify 3 y CCS
+    </p>
 
     <v-divider></v-divider>
 
-    <div>
-      {{ date }} — <strong>Vuetify</strong>
-    </div>
+    <p class="pt-2 pb-2 text-light-blue-accent-1">{{ date }}</p>
   </v-footer>
 </template>
 
 <script setup>
-import {ref} from 'vue'
-  const date = ref("");
+import { ref } from "vue"
+const date = ref("")
 const getFecha = () => {
   // console.log(new Date())
   setInterval(function () {
     const addZero = (i) => {
       if (i < 10) {
-        i = "0" + i;
+        i = "0" + i
       }
-      return i;
-    };
+      return i
+    }
 
-    const currentDate = new Date();
+    const currentDate = new Date()
 
     date.value =
       addZero(currentDate.getHours()) +
@@ -44,20 +35,19 @@ const getFecha = () => {
       " - " +
       addZero(currentDate.getDate()) +
       "/" +
-      addZero(currentDate.getMonth()+1) +
+      addZero(currentDate.getMonth() + 1) +
       "/" +
-      addZero(currentDate.getFullYear());
-  }, 1000);
-};
-getFecha();
-
+      addZero(currentDate.getFullYear())
+  }, 1000)
+}
+getFecha()
 </script>
 
 <style scoped>
-.foter{
+.foter {
   flex: 0;
 }
-.contenedor{
-  background-image: url('../../assets/banner2.png') !important;
+.contenedor {
+  background-image: url("../../assets/banner2.png") !important;
 }
 </style>

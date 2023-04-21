@@ -1,5 +1,10 @@
 <template>
-    <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
+      <v-card
+    elevation="24"
+    class="mb-8 mt-4 bg-blue-grey-lighten-5"
+    rounded="xl"
+    theme="light"
+  >
 
     <p class="d-flex align-end mr-5 mt-10 justify-end text-no-wrap">Resultado:</p>
     <v-text-field

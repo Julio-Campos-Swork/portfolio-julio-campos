@@ -37,15 +37,15 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useTheme } from "vuetify";
-const bText = ref("Light");
-const theme = useTheme();
-const drawer = ref(false);
+import { ref } from "vue"
+import { useTheme } from "vuetify"
+const bText = ref("Light")
+const theme = useTheme()
+const drawer = ref(false)
 const toggleTheme = () => {
-  theme.global.name.value = theme.global.current.value.dark ? "light" : "dark";
-  bText.value = bText.value === "Dark" ? "Light" : "Dark";
-};
+  theme.global.name.value = theme.global.current.value.dark ? "light" : "dark"
+  bText.value = bText.value === "Dark" ? "Light" : "Dark"
+}
 </script>
 
 <style scoped>
@@ -55,7 +55,7 @@ a:link,
 a:visited,
 a:active {
   text-decoration: none;
-  color: #82B1FF;
+  color: #82b1ff;
 }
 .menuBtn:hover {
   cursor: pointer;

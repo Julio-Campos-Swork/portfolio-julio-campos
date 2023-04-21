@@ -1,5 +1,10 @@
 <template>
-      <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
+        <v-card
+    elevation="24"
+    class="mb-8 mt-4 bg-blue-grey-lighten-5"
+    rounded="xl"
+    theme="light"
+  >
 
     <v-card-text>
         <h3 class="mb-10 text-center">Enter a String</h3>

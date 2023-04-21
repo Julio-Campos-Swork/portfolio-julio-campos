@@ -1,5 +1,10 @@
 <template>
-  <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
+    <v-card
+    elevation="24"
+    class="mb-8 mt-4 bg-blue-grey-lighten-5"
+    rounded="xl"
+    theme="light"
+  >
     <v-card-text>
       <v-container class="contenedor">
         <h1 class="text-center text-indigo">Time Until New Year</h1>

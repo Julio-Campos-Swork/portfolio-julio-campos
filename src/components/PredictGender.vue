@@ -1,6 +1,11 @@
 <template>
 
-      <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
+        <v-card
+    elevation="24"
+    class="mb-8 mt-4 bg-blue-grey-lighten-5"
+    rounded="xl"
+    theme="light"
+  >
         <v-card-text class="text-center">
           <v-label class="mb-4 text-indigo">Type a name without spaces</v-label>
           <v-text-field v-model="name" clearable variant="solo"></v-text-field>

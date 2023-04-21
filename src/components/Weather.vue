@@ -1,5 +1,10 @@
 <template>
-  <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
+    <v-card
+    elevation="24"
+    class="mb-8 mt-4 bg-blue-grey-lighten-5"
+    rounded="xl"
+    theme="light"
+  >
     <v-card-text class="text-center">
       <h1 class="mt-3 mb-4">Enter real city</h1>
       <div class="search-box mr-4">

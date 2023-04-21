@@ -1,5 +1,10 @@
 <template>
-  <v-card elevation="24" class="mb-8 mt-4 bg-background" rounded="xl">
+    <v-card
+    elevation="24"
+    class="mb-8 mt-4 bg-blue-grey-lighten-5"
+    rounded="xl"
+    theme="light"
+  >
     <v-card-text class="text-center">
       <h4 class="text-red text-center">First Name: <span class="text-h5 text-indigo">{{ firstName }}</span> </h4>
       <h4 class="text-red text-center">Last Name: <span class="text-h5 text-indigo">{{ lastName }}</span></h4>
