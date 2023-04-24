@@ -75,7 +75,7 @@
       <Slider v-if="componentList[17].isActive" />
     </v-row>
     <p class="text-center text-caption">
-      Estos proyectos fueron creados con el proposito e practicar y re utilizar funciones,
+      Estos proyectos fueron creados con el proposito de practicar y reutilizar código,
       algunos son adaptaciones de otros lenguajes.
     </p>
   </v-container>

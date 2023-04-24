@@ -18,7 +18,7 @@
       >{{ bText }}</v-btn
     >
   </v-app-bar>
-  <v-icon v-if="!drawer" class="menu mt-6 ml-6" @click="drawer = !drawer"
+  <v-icon v-if="!drawer" class="menu mt-2 ml-2" @click="drawer = !drawer"
     >mdi-menu</v-icon
   >
 
@@ -69,6 +69,8 @@ a:active {
 .menu {
   position: fixed;
   z-index: 100;
+  border: 1px solid rgb(65, 138, 226);
+  border-radius: 25%;
 }
 
 nav {

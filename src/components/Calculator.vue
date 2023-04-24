@@ -1,11 +1,11 @@
 <template>
-      <v-card
+  <v-card
     elevation="24"
     class="mb-8 mt-4 bg-blue-grey-lighten-5"
     rounded="xl"
     theme="light"
+    max-width="350"
   >
-
     <p class="d-flex align-end mr-5 mt-10 justify-end text-no-wrap">Resultado:</p>
     <v-text-field
       variant="plain"
@@ -45,12 +45,12 @@
   </v-card>
 </template>
 <script setup>
-import { ref } from "vue";
-import { evaluate, round } from "mathjs";
+import { ref } from "vue"
+import { evaluate, round } from "mathjs"
 const calcValues = ref([
   { key: "ce", label: "CE", color: "indigo lighten-4" },
   { key: "c", label: "C", color: "indigo lighten-4" },
-  { key: "back", label: "BACK", icon: "mdi-backspace", color: "indigo lighten-4", },
+  { key: "back", label: "BACK", icon: "mdi-backspace", color: "indigo lighten-4" },
   { key: "/", label: "÷", color: "indigo lighten-4" },
   { key: 7, label: "7", color: "blue" },
   { key: 8, label: "8", color: "blue" },
@@ -68,77 +68,77 @@ const calcValues = ref([
   { key: 0, label: "0", color: "blue" },
   { key: ".", label: ".", color: "indigo lighten-4" },
   { key: "=", label: "=", color: "indigo lighten-4" },
-]);
+])
 
-const textInput = ref("");
-const arrayCalculos = ref([]);
-const operadorClick = ref(true);
-const actual = ref("");
-const resultado = ref("");
-const acumulador = ref("");
+const textInput = ref("")
+const arrayCalculos = ref([])
+const operadorClick = ref(true)
+const actual = ref("")
+const resultado = ref("")
+const acumulador = ref("")
 
 // const isNumber = (btn) => !isNaN(btn);
 
 const btnAccion = (valor) => {
   if (valor === "=" || valor == "Enter") {
-    btnResultado();
+    btnResultado()
   } else if (valor === "ce" || valor == "c") {
-    btnReiniciar();
-  } else if(valor == "back"){
+    btnReiniciar()
+  } else if (valor == "back") {
     actual.value = ""
   } else {
     if (!isNaN(valor)) {
       if (operadorClick.value) {
-        actual.value = "";
-        operadorClick.value = false;
+        actual.value = ""
+        operadorClick.value = false
       }
-      actual.value = `${actual.value}${valor}`;
+      actual.value = `${actual.value}${valor}`
     } else {
-      ejecutarOperacion(valor);
+      ejecutarOperacion(valor)
     }
   }
-};
+}
 
 const ejecutarOperacion = (valor) => {
   if (valor === "%") {
     if (actual.value !== "") {
-      actual.value = `${parseFloat(actual.value) / 100}`;
+      actual.value = `${parseFloat(actual.value) / 100}`
     }
-    return;
+    return
   }
 
   if (valor === ".") {
     // console.log(actual.value);
     if (actual.value.indexOf(".") === -1) {
       if (operadorClick.value) {
-        actual.value = "";
-        operadorClick.value = false;
+        actual.value = ""
+        operadorClick.value = false
       }
-      actual.value = `${actual.value}${valor}`;
+      actual.value = `${actual.value}${valor}`
     }
-    return;
+    return
   }
 
-  agregarOperador(valor);
-};
+  agregarOperador(valor)
+}
 
 const agregarOperador = (operador) => {
   // console.log(operador);
   if (!operadorClick.value) {
-    acumulador.value += `${actual.value} ${operador} `;
-    actual.value = "";
-    operadorClick.value = true;
-    textInput.value = "";
+    acumulador.value += `${actual.value} ${operador} `
+    actual.value = ""
+    operadorClick.value = true
+    textInput.value = ""
   }
-};
+}
 
 const btnReiniciar = () => {
-  actual.value = "";
-  resultado.value = "";
-  acumulador.value = "";
-  operadorClick.value = false;
-  textInput.value = "";
-};
+  actual.value = ""
+  resultado.value = ""
+  acumulador.value = ""
+  operadorClick.value = false
+  textInput.value = ""
+}
 
 // https://dev.to/spukas/everything-wrong-with-javascript-eval-35on
 // const parse = (str) => {
@@ -147,19 +147,19 @@ const btnReiniciar = () => {
 
 const btnResultado = () => {
   if (!operadorClick.value) {
-    resultado.value = evaluate(acumulador.value + actual.value);
-    resultado.value = round(resultado.value, 3);
-    arrayCalculos.value.push(`${acumulador.value} ${actual.value} = ${resultado.value}`);
+    resultado.value = evaluate(acumulador.value + actual.value)
+    resultado.value = round(resultado.value, 3)
+    arrayCalculos.value.push(`${acumulador.value} ${actual.value} = ${resultado.value}`)
   } else {
-    resultado.value = "Error!";
+    resultado.value = "Error!"
   }
-  textInput.value = "";
-};
+  textInput.value = ""
+}
 
 const onKeyDownHandler = (event) => {
-  let keyPress = event.key;
-  let strToInt = parseInt(keyPress, 10);
-  if (!isNaN(strToInt)) btnAccion(strToInt);
+  let keyPress = event.key
+  let strToInt = parseInt(keyPress, 10)
+  if (!isNaN(strToInt)) btnAccion(strToInt)
   if (
     keyPress == "/" ||
     keyPress == "*" ||
@@ -167,9 +167,8 @@ const onKeyDownHandler = (event) => {
     keyPress == "+" ||
     keyPress == "Enter"
   )
-    btnAccion(keyPress);
-};
+    btnAccion(keyPress)
+}
 </script>
-
 
 <style></style>

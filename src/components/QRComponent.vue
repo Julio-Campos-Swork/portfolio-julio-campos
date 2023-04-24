@@ -1,58 +1,70 @@
 <template>
-
   <v-card
     elevation="24"
     class="mb-8 mt-4 bg-blue-grey-lighten-5"
     rounded="xl"
     theme="light"
+    min-width="250"
   >
     <v-card-text class="text-center">
       <v-label class="text-center">Enter string</v-label>
-      <v-text-field v-model="QRURL" label="Type data to encrypt"></v-text-field>
-      <v-btn color="green" @click="generateQR()">Generar QR</v-btn>
-      <v-img class="mt-8 mb-4 " v-model="imgQR" :src="imgQR"></v-img>
+      <v-text-field
+        variant="underlined"
+        v-model="QRURL"
+        label="Enter data"
+      ></v-text-field>
+      <v-btn size="small" color="green" @click="generateQR()">Generate QR</v-btn>
+      <v-img class="mt-8 mb-4" v-model="imgQR" :src="imgQR"></v-img>
       <v-row justify="center" class="mt-4 mb-4" v-if="imgQR">
-        <v-btn class="mr-2 ml-2" @click="dowloadImage()" rounded="xl" color="primary">Descargar</v-btn>
-        <v-btn class="mr-2 ml-2" @click="reset()" rounded="xl" color="red">Reset</v-btn>
+        <v-btn
+          size="small"
+          class="mr-2 ml-2"
+          @click="dowloadImage()"
+          rounded="xl"
+          color="primary"
+          >Download</v-btn
+        >
+        <v-btn size="small" class="mr-2 ml-2" @click="reset()" rounded="xl" color="red"
+          >Reset</v-btn
+        >
       </v-row>
     </v-card-text>
   </v-card>
 </template>
 
 <script setup>
-import QRious from 'qrious';
-import { saveAs } from 'file-saver';
-import { ref } from 'vue';
+import QRious from "qrious"
+import { saveAs } from "file-saver"
+import { ref } from "vue"
 const QRData = ref("")
-const imgQR = ref(null);
-const QRURL = ref("");
+const imgQR = ref(null)
+const QRURL = ref("")
 
 /*************************************************************** */
 const generateQR = () => {
   const qr = new QRious({
-          value: QRURL.value,
-          background: 'white',
-          backgroundAlpha: 0.8,
-          foreground: 'black',
-          foregroundAlpha: 0.8,
-          level: 'H',
-          padding: 25,
-          size: 500,
-        });
-        QRData.value = qr;
-        imgQR.value = qr.image;
-
-};
+    value: QRURL.value,
+    background: "white",
+    backgroundAlpha: 0.8,
+    foreground: "black",
+    foregroundAlpha: 0.8,
+    level: "H",
+    padding: 25,
+    size: 500,
+  })
+  QRData.value = qr
+  imgQR.value = qr.image
+}
 
 const dowloadImage = async () => {
   const imagenData = QRData.value.toDataURL("image/png", 1.0)
-          const image = new Image();
-          image.src = imagenData;
-          const imageData = imagenData.split(",")[1];
-          const mimeType = "image/png";
-          const fileName = "QRCode.png";
-          const fileData = b64toBlob(imageData, mimeType);
-          saveAs(fileData, fileName)
+  const image = new Image()
+  image.src = imagenData
+  const imageData = imagenData.split(",")[1]
+  const mimeType = "image/png"
+  const fileName = "QRCode.png"
+  const fileData = b64toBlob(imageData, mimeType)
+  saveAs(fileData, fileName)
 }
 
 /**
@@ -63,30 +75,30 @@ const dowloadImage = async () => {
  * @returns The function `b64toBlob` returns a Blob object.
  */
 const b64toBlob = (b64Data, mimeType) => {
-const byteCharacters = atob(b64Data);
-  const byteArrays = [];
+  const byteCharacters = atob(b64Data)
+  const byteArrays = []
   for (let offset = 0; offset < byteCharacters.length; offset += 1024) {
-    const slice = byteCharacters.slice(offset, offset + 1024);
-    const byteNumbers = new Array(slice.length);
+    const slice = byteCharacters.slice(offset, offset + 1024)
+    const byteNumbers = new Array(slice.length)
     for (let i = 0; i < slice.length; i++) {
-      byteNumbers[i] = slice.charCodeAt(i);
+      byteNumbers[i] = slice.charCodeAt(i)
     }
-    const byteArray = new Uint8Array(byteNumbers);
-    byteArrays.push(byteArray);
+    const byteArray = new Uint8Array(byteNumbers)
+    byteArrays.push(byteArray)
   }
-  const blob = new Blob(byteArrays, { type: mimeType });
-  return blob;
+  const blob = new Blob(byteArrays, { type: mimeType })
+  return blob
 }
 
 const reset = () => {
-  QRData.value = "";
-  imgQR.value = "";
-  QRURL.value = "";
+  QRData.value = ""
+  imgQR.value = ""
+  QRURL.value = ""
 }
 </script>
 <style scoped>
 .flip-scale-up-hor {
-	-webkit-animation: flip-scale-up-hor 0.5s linear both;
+  -webkit-animation: flip-scale-up-hor 0.5s linear both;
   animation: flip-scale-up-hor 5s linear 10s infinite both;
 }
 /* ----------------------------------------------
@@ -101,33 +113,32 @@ const reset = () => {
  * animation flip-scale-up-hor
  * ----------------------------------------
  */
- @-webkit-keyframes flip-scale-up-hor {
+@-webkit-keyframes flip-scale-up-hor {
   0% {
     -webkit-transform: scale(1) rotateX(0);
-            transform: scale(1) rotateX(0);
+    transform: scale(1) rotateX(0);
   }
   50% {
     -webkit-transform: scale(2.5) rotateX(-90deg);
-            transform: scale(2.5) rotateX(-90deg);
+    transform: scale(2.5) rotateX(-90deg);
   }
   100% {
     -webkit-transform: scale(1) rotateX(-180deg);
-            transform: scale(1) rotateX(-180deg);
+    transform: scale(1) rotateX(-180deg);
   }
 }
 @keyframes flip-scale-up-hor {
   0% {
     -webkit-transform: scale(1) rotateX(0);
-            transform: scale(1) rotateX(0);
+    transform: scale(1) rotateX(0);
   }
   50% {
     -webkit-transform: scale(2.5) rotateX(-90deg);
-            transform: scale(2.5) rotateX(-90deg);
+    transform: scale(2.5) rotateX(-90deg);
   }
   100% {
     -webkit-transform: scale(1) rotateX(-180deg);
-            transform: scale(1) rotateX(-180deg);
+    transform: scale(1) rotateX(-180deg);
   }
 }
-
 </style>

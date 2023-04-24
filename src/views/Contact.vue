@@ -5,6 +5,8 @@
         <form @submit.prevent="submit">
           <h1 class="text-purple text-center mb-4 text-focus-in">Contáctame</h1>
           <v-text-field
+            variant="outlined"
+            class="textField"
             v-model="name.value.value"
             :counter="10"
             :error-messages="name.errorMessage.value"
@@ -12,6 +14,8 @@
           ></v-text-field>
 
           <v-text-field
+            variant="outlined"
+            class="textField"
             v-model="phone.value.value"
             :counter="10"
             :error-messages="phone.errorMessage.value"
@@ -19,20 +23,25 @@
           ></v-text-field>
 
           <v-text-field
+            variant="outlined"
+            class="textField"
             v-model="email.value.value"
             :error-messages="email.errorMessage.value"
             label="E-mail"
           ></v-text-field>
           <v-textarea
+            variant="outlined"
             v-model="mensaje.value.value"
             label="Escribe el mensaje"
           ></v-textarea>
 
           <v-select
+            variant="outlined"
+            class="textField"
             v-model="select.value.value"
             :items="items"
             :error-messages="select.errorMessage.value"
-            label="Selecciona lo que corresponda"
+            label="Selecciona una opción"
           ></v-select>
 
           <v-row justify="space-around" class="mt-4">
@@ -106,3 +115,10 @@ const submit = handleSubmit(async (values) => {
 
 const confirmMsj = ref(false)
 </script>
+
+<style scoped>
+.textField {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10px;
+}
+</style>
