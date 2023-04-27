@@ -10,8 +10,9 @@
 
           <p class="descripcion mt-4">
             Cuatro años de estudio en Ing. <strong>TIC's</strong>.<br />
-            Desarrollador web con experiencia en Sistemas punto de venta, aplicaciones de
-            control de inventarios y producción del lado del Frontend como del Backend
+            He desarrollado sistemas de punto de venta, aplicaciones de control de
+            inventarios y producción del lado del Frontend como del Backend, páginas web
+            interfaces de usuario.
           </p>
         </v-container>
       </v-col>
@@ -21,32 +22,38 @@
         </v-container>
       </v-col>
       <v-col cols="4">
-        <v-container class="text-center">
+        <v-container class="ml-4">
           <p class="text-center text-caption">Información general</p>
           <ul class="mt-4">
             <li class="descripcion mt-1">
               Área <span class="detalle">- Desarrollo web</span>
             </li>
             <li class="descripcion mt-1">
-              Experiencia <span class="detalle">- +Dos Años</span>
+              Experiencia <span class="detalle">- +1 Año</span>
             </li>
             <li class="descripcion mt-1">Edad <span class="detalle">- 34 Años</span></li>
             <li class="descripcion mt-1">
-              Ciudad <span class="detalle">- Apizaco, Tlax</span>
+              Ciudad <span class="detalle">- Apizaco, Tlax. México</span>
             </li>
             <li class="descripcion mt-1">
               Inglés <span class="detalle">- Intermedio</span>
+            </li>
+            <li class="descripcion mt-1">
+              Certificación <span class="detalle">- PSP (Personal Software Process)</span>
+            </li>
+            <li class="descripcion mt-1">
+              Metas <span class="detalle">- Convertirme en Senior</span>
             </li>
           </ul>
         </v-container>
       </v-col>
     </v-row>
-
-    <p></p>
-    <citeq class="text-left cita">
-      "En general, cuanto más esperes antes de corregir un error, más costoso (en tiempo y
-      dinero) será arreglarlo" 'Joel Spoisky'
-    </citeq>
+    <v-row justify="center">
+      <cite class="text-center cita">
+        "En general, cuanto más esperes antes de corregir un error, más costoso (en tiempo
+        y dinero) será arreglarlo" <br />'Joel Spoisky'
+      </cite>
+    </v-row>
   </v-container>
 </template>
 

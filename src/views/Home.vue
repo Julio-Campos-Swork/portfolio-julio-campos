@@ -18,41 +18,35 @@
     </v-row>
     <v-row justify="center" class="mb-6 mt-4">
       <a target="_blank" href="https://github.com/Julio-Campos-Swork">
-
-      <box-icon
-        class="boxCursor ml-2"
-        type="logo"
-        name="github"
-        size="md"
-        color="#4618EA"
-        animation="fade-left-hover"
-      ></box-icon>
+        <box-icon
+          class="boxCursor ml-2"
+          type="logo"
+          name="github"
+          size="md"
+          color="#4618EA"
+          animation="fade-left-hover"
+        ></box-icon>
       </a>
       <a target="_blank" href="https://github.com/Julio-Campos-Swork">
-
-      <box-icon
-        class="boxCursor ml-2"
-        type="logo"
-        name="linkedin-square"
-        color="#1e8ed8"
-        size="md"
-        animation="spin-hover"
-      ></box-icon>
-    </a>
-    <a target="_blank" href="https://twitter.com/JulioCamposWork">
-
-      <box-icon
-      class="boxCursor ml-2"
-
-        name="twitter"
-        type="logo"
-        animation="fade-right-hover"
-        size="md"
-
-        color="#0e80f2"
-      ></box-icon>
-    </a>
-
+        <box-icon
+          class="boxCursor ml-2"
+          type="logo"
+          name="linkedin-square"
+          color="#1e8ed8"
+          size="md"
+          animation="spin-hover"
+        ></box-icon>
+      </a>
+      <a target="_blank" href="https://twitter.com/JulioCamposWork">
+        <box-icon
+          class="boxCursor ml-2"
+          name="twitter"
+          type="logo"
+          animation="fade-right-hover"
+          size="md"
+          color="#0e80f2"
+        ></box-icon>
+      </a>
     </v-row>
   </v-container>
 </template>
@@ -91,10 +85,12 @@
   height: 200px;
 }
 .botonCV {
-  background-color: #8ec5fc;
-  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  background-color: #56a3f0;
+  background-image: linear-gradient(62deg, #61a6eb 0%, #be8aee 100%);
 }
-
+.botonCV:hover {
+  scale: 1.2;
+}
 .boxCursor {
   cursor: pointer;
 }

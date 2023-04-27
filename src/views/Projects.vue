@@ -3,21 +3,24 @@
     <p class="text-center text-h3 mb-4 text-focus-in">Proyectos</p>
     <v-row justify="center">
       <v-col
-        sm="3"
-        xs="3"
-        md="3"
-        lg="3"
-        xl="3"
+        sm="6"
+        xs="6"
+        md="4"
+        lg="4"
+        xl="4"
         v-for="proyectos in proyectosExternos"
         :key="proyectos.id"
       >
-        <v-card elevation="0" color="transparent">
+        <v-card color="transparent" height="320" max-width="250">
           <v-card-title class="text-center text-subtitle-2">{{
             proyectos.name
           }}</v-card-title>
           <v-card-text>
-            <p class="text-center descripcion mb-1">
+            <p v-if="!proyectos.extra" class="text-center descripcion mb-1">
               Click en la imagen para abrir el proyecto
+            </p>
+            <p class="text-center descripcion mb-1" v-if="proyectos.extra">
+              {{ proyectos.extra }}
             </p>
             <a :href="proyectos.url" target="_blank"
               ><v-img class="text-center imagen" :src="proyectos.img"></v-img
@@ -42,7 +45,7 @@
         key="components.id"
       >
         <v-icon
-          class="imagen"
+          class="iconos"
           color="light-blue"
           @click="showProject(components.name)"
           :icon="components.icon"
@@ -142,6 +145,13 @@ const showProject = (componente) => {
 const proyectosExternos = ref([
   {
     id: 1,
+    name: "Hotel del Ángel",
+    img: "../assets/hotel.png",
+    url: "http://www.hoteldelangel.com.mx/",
+    info: "Página creada con HTMl CSS y JavaScript para una empresa hotelera.",
+  },
+  {
+    id: 2,
     name: "Catálogo de películas",
     img: "../assets/netflix.png",
     url: "https://netflix-clone-vuetify.vercel.app/",
@@ -149,19 +159,37 @@ const proyectosExternos = ref([
       "Aplicación creada utilizando API de peliculas y API de Google para mostrar los trailers.",
   },
   {
-    id: 2,
+    id: 3,
     name: "Pokemon API",
     img: "../assets/PokeApi.png",
     url: "https://pokemon-api-by-julio-campos.netlify.app/",
     info: "Aplicación que consume la PokeAPI, guarda información en localstorage",
   },
   {
-    id: 3,
+    id: 4,
     name: "Rick and Morty API",
     img: "../assets/Rick.png",
     url: "https://rick-and-morty-api-by-julio-campos.netlify.app/",
     info:
       "Mi primer aplicación creada, muestra información de personajes, contiene paginación",
+  },
+  {
+    id: 5,
+    name: "Gestion de Producción",
+    img: "../assets/acrilicos.png",
+    url: "https://i.ibb.co/N9wxf55/Acrilicos.png",
+    info:
+      "Proyecto de gestion de producción, control de inventarios y reportes con API Rest no tengo los derechos para mostrarlo.",
+    extra: "Solo hay imagen, no hay proyecto desplegado",
+  },
+  {
+    id: 6,
+    name: "Lector y Generador de QR",
+    img: "../assets/barcodes.png",
+    url: "https://i.ibb.co/nn691vZ/barcodes.png",
+    info:
+      "Aplicación móvil de control de códigos QR, lector y generador, no tengo derechos sobre el código",
+    extra: "Solo hay imagen, no hay proyecto desplegado",
   },
 ])
 </script>
@@ -178,6 +206,14 @@ const proyectosExternos = ref([
   font-size: 10px;
 }
 .imagen:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.imagen {
+  min-width: 120px;
+  min-height: 120px;
+}
+.iconos:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }

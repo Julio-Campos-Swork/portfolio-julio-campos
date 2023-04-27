@@ -3,18 +3,13 @@
     <v-icon color="white" class="menuBtn ml-2" @click="drawer = !drawer">mdi-menu</v-icon>
     <v-spacer></v-spacer>
 
-    <v-app-bar-title class="text-center text-h4 text-white d-none d-md-inline"
-      >Portfolio</v-app-bar-title
-    >
-    <v-app-bar-title
-      class="text-center text-caption text-white d-inline d-sm-inline d-md-none"
-      >Portfolio</v-app-bar-title
-    >
+    <p class="titleFont d-none d-md-inline">Portfolio</p>
+    <p class="titleFont d-inline d-sm-inline d-md-none">Portfolio</p>
     <v-spacer></v-spacer>
     <v-btn
       @click="toggleTheme"
       size="x-small"
-      :prepend-icon="bText == 'Light' ? 'mdi-sun-angle' : 'mdi-sun-angle-outline'"
+      :prepend-icon="bText == 'Light' ? 'mdi-sun-angle-outline' : 'mdi-sun-angle'"
       >{{ bText }}</v-btn
     >
   </v-app-bar>
@@ -45,7 +40,7 @@
 <script setup>
 import { ref } from "vue"
 import { useTheme } from "vuetify"
-const bText = ref("Light")
+const bText = ref("Dark")
 const theme = useTheme()
 const drawer = ref(false)
 const toggleTheme = () => {
@@ -69,7 +64,6 @@ a:active {
 .menu {
   position: fixed;
   z-index: 100;
-  border: 1px solid rgb(65, 138, 226);
   border-radius: 25%;
 }
 
@@ -140,5 +134,18 @@ nav a:hover:before {
 
 .contenedor {
   background-image: url("../../assets/banner2.png") !important;
+}
+.titleFont {
+  font-family: "Pacifico", cursive;
+  font-size: 32px;
+  letter-spacing: 15px;
+  word-spacing: 0px;
+  color: #c1cce6;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  /* font-variant: small-caps; */
+  text-transform: none;
+  margin-left: 45px;
 }
 </style>

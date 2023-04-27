@@ -2,7 +2,7 @@
   <v-footer id="footer" border class="contenedor text-center flex-column foter">
     <p class="pt-2 text-light-blue-accent-1">Gracias por visitar mi Portfolio</p>
     <p class="pt-2 text-light-blue-accent-1">
-      Fue creado con Vue 3, maquetado con Vuetify 3 y CCS
+      Creado con Vue 3, maquetado con Vuetify 3 y CCS
     </p>
 
     <v-divider></v-divider>
