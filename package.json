@@ -1,6 +1,6 @@
 {
-  "name": "PortaFolio",
-  "version": "0.0.0",
+  "name": "portfolio-julio-campos",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "dev": "vite",
