@@ -1,7 +1,7 @@
 <template>
   <v-container id="contacto" class="mt-4 mb-8">
     <v-row justify="center">
-      <v-col cols="8">
+      <v-col cols="10" lg="8" xl="8" md="8">
         <form @submit.prevent="submit">
           <h1 class="text-purple text-center mb-4 text-focus-in">Contáctame</h1>
           <v-text-field

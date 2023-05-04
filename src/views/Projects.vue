@@ -11,7 +11,7 @@
         v-for="proyectos in proyectosExternos"
         :key="proyectos.id"
       >
-        <v-card color="transparent" height="320" max-width="250">
+        <v-card color="transparent" elevation="0">
           <v-card-title class="text-center text-subtitle-2">{{
             proyectos.name
           }}</v-card-title>
@@ -55,9 +55,12 @@
         </p>
       </v-col>
     </v-row>
-
-    <p class="text-center text-primary mt-6 mb-2">{{ titlevalue }}</p>
-    <v-row justify="center" class="mt-2">
+    <v-dialog v-model="dialogProjects" max-height="600" max-width="400">
+      <p class="text-center text-primary mt-6 mb-2">{{ titlevalue }}</p>
+      <v-row justify="end">
+        <v-icon @click="dialogProjects = !dialogProjects">mdi-close-box</v-icon>
+      </v-row>
+      <!-- <v-row justify="center" class="mt-2"> -->
       <AgeCalculatorVue v-if="componentList[0].isActive" />
       <Alarm v-if="componentList[1].isActive" />
       <Calculator v-if="componentList[2].isActive" />
@@ -76,8 +79,9 @@
       <TodoListVue v-if="componentList[15].isActive" />
       <WeatherVue v-if="componentList[16].isActive" />
       <Slider v-if="componentList[17].isActive" />
-    </v-row>
-    <p class="text-center text-caption">
+      <!-- </v-row> -->
+    </v-dialog>
+    <p class="text-center text-caption mt-6">
       Estos proyectos fueron creados con el proposito de practicar y reutilizar código,
       algunos son adaptaciones de otros lenguajes.
     </p>
@@ -105,7 +109,7 @@ import TodoListVue from "@/components/TodoList.vue"
 import Slider from "@/components/Slider.vue"
 import { ref } from "vue"
 const titlevalue = ref("Age Calculator")
-
+const dialogProjects = ref(false)
 const componentList = ref([
   { id: 1, name: "Age Calculator", icon: "mdi-cake-variant-outline", isActive: true },
   { id: 2, name: "Alarm", icon: "mdi-alarm", isActive: false },
@@ -136,6 +140,7 @@ const showProject = (componente) => {
     if (item.name == componente) {
       item.isActive = true
       titlevalue.value = item.name
+      dialogProjects.value = true
     } else {
       item.isActive = false
     }
@@ -176,7 +181,7 @@ const proyectosExternos = ref([
   {
     id: 5,
     name: "Gestion de Producción",
-    img: "../assets/acrilicos.png",
+    img: "https://i.ibb.co/N9wxf55/Acrilicos.png",
     url: "https://i.ibb.co/N9wxf55/Acrilicos.png",
     info:
       "Proyecto de gestion de producción, control de inventarios y reportes con API Rest no tengo los derechos para mostrarlo.",
@@ -185,7 +190,7 @@ const proyectosExternos = ref([
   {
     id: 6,
     name: "Lector y Generador de QR",
-    img: "../assets/barcodes.png",
+    img: "https://i.ibb.co/nn691vZ/barcodes.png",
     url: "https://i.ibb.co/nn691vZ/barcodes.png",
     info:
       "Aplicación móvil de control de códigos QR, lector y generador, no tengo derechos sobre el código",

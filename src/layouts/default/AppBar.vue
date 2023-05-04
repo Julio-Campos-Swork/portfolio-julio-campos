@@ -1,23 +1,32 @@
 <template>
-  <v-app-bar :theme="bText" absolute class="contenedor">
-    <v-icon color="white" class="menuBtn ml-2" @click="drawer = !drawer">mdi-menu</v-icon>
+  <v-app-bar
+    :theme="bText"
+    :absolute="isAbsolute"
+    :floating="isFloating"
+    class="contenedor"
+  >
+    <v-icon color="white" class="menuBtn ml-2" @click="toggleAppbar">mdi-menu</v-icon>
     <v-spacer></v-spacer>
 
     <p class="titleFont d-none d-md-inline">Portfolio</p>
     <p class="titleFont d-inline d-sm-inline d-md-none">Portfolio</p>
     <v-spacer></v-spacer>
+
     <v-btn
       @click="toggleTheme"
-      size="x-small"
-      :prepend-icon="bText == 'Light' ? 'mdi-sun-angle-outline' : 'mdi-sun-angle'"
-      >{{ bText }}</v-btn
-    >
+      :color="bText == 'Light' ? 'white' : 'black'"
+      size="small"
+      icon="mdi-theme-light-dark"
+    ></v-btn>
   </v-app-bar>
-  <v-icon v-if="!drawer" class="menu mt-2 ml-2" @click="drawer = !drawer"
-    >mdi-menu</v-icon
+  <v-icon v-if="!drawer" class="menu mt-2 ml-2" @click="toggleAppbar">mdi-menu</v-icon>
+  <v-navigation-drawer
+    @update:model-value="toggleAppbar"
+    border="0"
+    width="200"
+    v-model="drawer"
+    :theme="bText"
   >
-
-  <v-navigation-drawer border="0" width="200" v-model="drawer" :theme="bText">
     <p class="text-h5 text-center mt-2">Menu</p>
     <v-list>
       <v-list-item nav prepend-icon="mdi-home"><a href="#">Inicio</a></v-list-item>
@@ -25,7 +34,7 @@
         ><a href="#skills">Skills</a></v-list-item
       >
       <v-list-item nav prepend-icon="mdi-briefcase"
-        ><a href="/proyectos">Proyectos</a></v-list-item
+        ><a href="#proyectos">Proyectos</a></v-list-item
       >
       <v-list-item nav prepend-icon="mdi-information-outline"
         ><a href="#about">About Me</a></v-list-item
@@ -40,12 +49,19 @@
 <script setup>
 import { ref } from "vue"
 import { useTheme } from "vuetify"
-const bText = ref("Dark")
+const isAbsolute = ref(true)
+const isFloating = ref(false)
+const bText = ref("Light")
 const theme = useTheme()
 const drawer = ref(false)
 const toggleTheme = () => {
   theme.global.name.value = theme.global.current.value.dark ? "light" : "dark"
   bText.value = bText.value === "Dark" ? "Light" : "Dark"
+}
+const toggleAppbar = () => {
+  drawer.value = !drawer.value
+  isAbsolute.value = !isAbsolute.value
+  isFloating.value = !isFloating.value
 }
 </script>
 
@@ -137,7 +153,7 @@ nav a:hover:before {
 }
 .titleFont {
   font-family: "Pacifico", cursive;
-  font-size: 32px;
+  font-size: 25px;
   letter-spacing: 15px;
   word-spacing: 0px;
   color: #c1cce6;
@@ -147,5 +163,31 @@ nav a:hover:before {
   /* font-variant: small-caps; */
   text-transform: none;
   margin-left: 45px;
+}
+
+.headerHBO {
+  height: 309px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0) 5.79%,
+    rgba(0, 0, 0, 0.008) 11.42%,
+    rgba(0, 0, 0, 0.035) 17.04%,
+    rgba(0, 0, 0, 0.082) 22.67%,
+    rgba(0, 0, 0, 0.15) 28.3%,
+    rgba(0, 0, 0, 0.23) 33.93%,
+    rgba(0, 0, 0, 0.333) 39.56%,
+    rgba(0, 0, 0, 0.443) 45.18%,
+    rgba(0, 0, 0, 0.557) 50.81%,
+    rgba(0, 0, 0, 0.667) 56.44%,
+    rgba(0, 0, 0, 0.77) 62.07%,
+    rgba(0, 0, 0, 0.85) 67.7%,
+    rgba(0, 0, 0, 0.918) 73.33%,
+    rgba(0, 0, 0, 0.965) 78.95%,
+    rgba(0, 0, 0, 0.992) 84.58%,
+    rgb(0, 0, 0) 90.21%
+  );
 }
 </style>
