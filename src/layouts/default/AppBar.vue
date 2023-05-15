@@ -19,7 +19,7 @@
       icon="mdi-theme-light-dark"
     ></v-btn>
   </v-app-bar>
-  <v-icon v-if="!drawer" class="menu mt-2 ml-2" @click="toggleAppbar">mdi-menu</v-icon>
+  <v-icon v-if="!drawer" class="menu mt-5 ml-2" @click="toggleAppbar">mdi-menu</v-icon>
   <v-navigation-drawer
     @update:model-value="toggleAppbar"
     border="0"

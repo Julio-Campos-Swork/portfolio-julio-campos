@@ -5,7 +5,7 @@
       <v-img
         width="250"
         class="profilePicture text-focus-in"
-        src="../assets/batman_4x.jpg"
+        src="../assets/perfil.jpg"
       ></v-img>
     </v-row>
 
@@ -14,7 +14,9 @@
       <p class="text-h6 typedChar text-center">Desarrollador Web</p>
     </v-row>
     <v-row justify="center">
-      <v-btn rounded="lg" size="small" class="botonCV mb-4">Descargar CV</v-btn>
+      <v-btn @click="descargarCV()" rounded="lg" size="small" class="botonCV mb-4"
+        >Descargar CV</v-btn
+      >
     </v-row>
     <v-row justify="center" class="mb-6 mt-4">
       <a target="_blank" href="https://github.com/Julio-Campos-Swork">
@@ -27,7 +29,10 @@
           animation="fade-left-hover"
         ></box-icon>
       </a>
-      <a target="_blank" href="https://github.com/Julio-Campos-Swork">
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/julio-c%C3%A9sar-campos-ru%C3%ADz-70a389205/"
+      >
         <box-icon
           class="boxCursor ml-2"
           type="logo"
@@ -51,7 +56,15 @@
   </v-container>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue"
+import { saveAs } from "file-saver"
+import CVJulioPDF from "../assets/CV-Julio.pdf"
+const archivoPDF = ref(CVJulioPDF)
+const descargarCV = () => {
+  saveAs(archivoPDF.value, "CV-Julio-Campos.pdf")
+}
+</script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 

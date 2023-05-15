@@ -33,7 +33,11 @@
       </v-col>
       <v-col cols="6">
         <!-- <v-container class="text-center"> -->
-        <v-img src="../assets/batman_4x.jpg"></v-img>
+        <v-img
+          width="400"
+          class="profilePicture text-focus-in"
+          src="../assets/perfil.jpg"
+        ></v-img>
         <!-- </v-container> -->
       </v-col>
     </v-row>
@@ -71,5 +75,10 @@
 }
 ul {
   list-style: none;
+}
+.profilePicture {
+  border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%;
+  width: 200px;
+  height: 200px;
 }
 </style>

@@ -78,7 +78,7 @@
       <TicTacToe v-if="componentList[14].isActive" />
       <TodoListVue v-if="componentList[15].isActive" />
       <WeatherVue v-if="componentList[16].isActive" />
-      <Slider v-if="componentList[17].isActive" />
+      <!-- <Slider v-if="componentList[17].isActive" /> -->
       <!-- </v-row> -->
     </v-dialog>
     <p class="text-center text-caption mt-6">
@@ -133,7 +133,7 @@ const componentList = ref([
   { id: 15, name: "Tic Tac Toe", icon: "mdi-close-thick", isActive: false },
   { id: 16, name: "Todo List", icon: "mdi-list-status", isActive: false },
   { id: 17, name: "Wheater App", icon: "mdi-weather-cloudy", isActive: false },
-  { id: 17, name: "Slider Test", icon: "mdi-slide", isActive: false },
+  // { id: 17, name: "Slider Test", icon: "mdi-slide", isActive: false },
 ])
 const showProject = (componente) => {
   componentList.value.forEach((item) => {
