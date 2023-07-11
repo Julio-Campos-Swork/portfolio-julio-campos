@@ -9,12 +9,6 @@
 
 				<p class="text-center text-caption mt-2">Información general</p>
 				<ul class="mt-4">
-					<li class="descripcion mt-1">
-						Área <span class="detalle">- Desarrollo web</span>
-					</li>
-					<li class="descripcion mt-1">
-						Experiencia <span class="detalle">- +1 Año</span>
-					</li>
 					<li class="descripcion mt-1">Edad <span class="detalle">- 34 Años</span></li>
 					<li class="descripcion mt-1">
 						Ciudad <span class="detalle">- Apizaco, Tlax. México</span>
@@ -45,9 +39,11 @@
 			<p class="text-center text-caption">Acerca de mi</p>
 
 			<p class="descripcion mt-4 text-center ml-2 mr-2">
-				Cuatro años de estudio en Ing.TIC's. He desarrollado sistemas de punto de venta,
-				aplicaciones de control de inventarios y producción del lado del Frontend como del
-				Backend, páginas web interfaces de usuario.
+				Más de 4 años de experiencia en programación en general y más de 1 año
+				profesionalmente. Apasionado de las nuevas tecnologías en especial los ecosistemas
+				de JavaScript y CSS. <br />
+				Mi proposito es poner en práctica los conocomientos que he adquirido y al mismo
+				tiempo nutrir mis habilidades siempre con buenas prácticas
 			</p>
 		</v-row>
 		<v-row justify="center" class="mt-8">
