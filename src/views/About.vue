@@ -35,9 +35,8 @@
 				<!-- </v-container> -->
 			</v-col>
 		</v-row>
+		<p class="text-center text-caption mt-6">Acerca de mi</p>
 		<v-row justify="center" class="mt-6">
-			<p class="text-center text-caption">Acerca de mi</p>
-
 			<p class="descripcion mt-4 text-center ml-2 mr-2">
 				Más de 4 años de experiencia en programación en general y más de 1 año
 				profesionalmente. Apasionado de las nuevas tecnologías en especial los ecosistemas
@@ -59,21 +58,21 @@
 
 <style scoped>
 	.cita {
-		font-size: 10px;
+		font-size: 0.7em;
 	}
 	.descripcion {
-		font-size: 12px;
+		font-size: 0.8em;
 		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 			Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	}
 	.detalle {
-		font-size: 12px;
+		font-size: 1em;
 	}
 	ul {
 		list-style: none;
 	}
 	.profilePicture {
-		border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%;
+		border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
 		width: 200px;
 		height: 200px;
 	}

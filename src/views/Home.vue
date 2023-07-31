@@ -93,7 +93,7 @@
 	}
 
 	.profilePicture {
-		border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%;
+		/* border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%; */
 		width: 200px;
 		height: 200px;
 	}

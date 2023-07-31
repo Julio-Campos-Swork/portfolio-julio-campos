@@ -23,7 +23,7 @@
 							{{ proyectos.extra }}
 						</p>
 						<a :href="proyectos.url" target="_blank"
-							><v-img class="text-center imagen" :src="proyectos.img"></v-img
+							><v-img class="h-0 w-100 imagen" cover :src="proyectos.img"></v-img
 						></a>
 						<p class="text-center info mt-4 mb-4">{{ proyectos.info }}</p>
 					</v-card-text>
@@ -150,6 +150,14 @@
 	const proyectosExternos = ref([
 		{
 			id: 1,
+			name: 'WhatsApp Clone',
+			img: 'https://i.ibb.co/5225djK/whatsappcaptura.jpg',
+			url:
+				'https://drive.google.com/file/d/1uKl2h6TW3mxeDYpfjH79Fn5op7v35QKY/view?usp=sharing',
+			info: 'Clone de whatsapp creado con Nextjs y Nodejs',
+		},
+		{
+			id: 2,
 			name: 'Hotel del Ángel',
 			img: '../assets/hotel.png',
 			url: 'http://www.hoteldelangel.com.mx/',
@@ -157,7 +165,7 @@
 		},
 
 		{
-			id: 2,
+			id: 3,
 			name: 'Gestion de Producción',
 			img: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
 			url: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
@@ -166,7 +174,7 @@
 			extra: 'Solo hay imagen, no hay proyecto desplegado',
 		},
 		{
-			id: 3,
+			id: 4,
 			name: 'Lector y Generador de QR',
 			img: 'https://i.ibb.co/nn691vZ/barcodes.png',
 			url: 'https://i.ibb.co/nn691vZ/barcodes.png',
@@ -175,14 +183,14 @@
 			extra: 'Solo hay imagen, no hay proyecto desplegado',
 		},
 		{
-			id: 4,
+			id: 5,
 			name: 'Pokemon API',
 			img: '../assets/PokeApi.png',
 			url: 'https://pokemon-api-by-julio-campos.netlify.app/',
 			info: 'Aplicación que consume la PokeAPI, guarda información en localstorage',
 		},
 		{
-			id: 5,
+			id: 6,
 			name: 'Rick and Morty API',
 			img: '../assets/Rick.png',
 			url: 'https://rick-and-morty-api-by-julio-campos.netlify.app/',
@@ -190,7 +198,7 @@
 				'Mi primer aplicación creada, muestra información de personajes, contiene paginación',
 		},
 		{
-			id: 6,
+			id: 7,
 			name: 'WikiCat',
 			img: 'https://i.ibb.co/WVGYXMX/wikicat.png',
 			url: 'https://wikicat.vercel.app/',
@@ -199,7 +207,7 @@
 		},
 
 		{
-			id: 7,
+			id: 8,
 			name: 'MyUnsplash',
 			img: 'https://i.ibb.co/nLP4Vmt/unsplash.png',
 			url: 'https://my-unsplash-murex.vercel.app/',
@@ -207,7 +215,7 @@
 				'Aplicacion que utiliza una API propia creada con Laravel que esta almacenado en un host gratuito',
 		},
 		{
-			id: 8,
+			id: 9,
 			name: 'IMG Uploader + API',
 			img: 'https://i.ibb.co/Q92tDsC/uploader.png',
 			url: 'https://img-uploader-front.vercel.app/',
@@ -215,7 +223,7 @@
 				'Aplicacion que utiliza una API propia creada con Laravel, almacena las imagenes y te proporciona un link para compartirlas',
 		},
 		{
-			id: 9,
+			id: 10,
 			name: 'Catálogo de películas',
 			img: '../assets/netflix.png',
 			url: 'https://netflix-clone-vuetify.vercel.app/',
@@ -230,11 +238,11 @@
 		cursor: pointer;
 	}
 	.descripcion {
-		font-size: 8px;
+		font-size: 0.7rem;
 		color: cornflowerblue;
 	}
 	.info {
-		font-size: 10px;
+		font-size: 0.7rem;
 	}
 	.imagen:hover {
 		-webkit-transform: scale(1.2);
