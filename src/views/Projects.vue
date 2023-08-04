@@ -157,6 +157,14 @@
 			info: 'Clone de whatsapp creado con Nextjs y Nodejs',
 		},
 		{
+			id: 12,
+			name: 'Car Hub Aplication With Next js',
+			img: 'https://i.ibb.co/Rc0QpXT/carhub.png',
+			url: 'https://nextjs-carhub-aplication.vercel.app/',
+			info:
+				'Simple pero poderosa aplicación creada a partir de un tutorial para practicar con Nextjs 13',
+		},
+		{
 			id: 2,
 			name: 'Hotel del Ángel',
 			img: '../assets/hotel.png',
@@ -248,12 +256,29 @@
 		-webkit-transform: scale(1.2);
 		transform: scale(1.2);
 	}
-	.imagen {
-		min-width: 120px;
-		min-height: 120px;
-	}
 	.iconos:hover {
 		-webkit-transform: scale(1.2);
 		transform: scale(1.2);
+	}
+
+	@keyframes show {
+		from {
+			opacity: 0;
+			scale: 25%;
+		}
+		to {
+			opacity: 1;
+			scale: 100%;
+		}
+	}
+	.imagen {
+		min-width: 120px;
+		min-height: 180px;
+		view-timeline-name: --image;
+		view-timeline-axis: block;
+		animation-timeline: --image;
+		animation-name: show;
+		animation-range: entry 25% cover 30%;
+		animation-fill-mode: both;
 	}
 </style>
