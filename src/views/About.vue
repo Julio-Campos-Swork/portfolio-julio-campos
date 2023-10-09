@@ -1,48 +1,27 @@
 <template>
 	<v-container id="about" class="mt-6 mb-6">
-		<h1 class="text-focus-in text-center">About page</h1>
-		<p class="text-center text-h5 mt-4">Julio Campos</p>
-		<p class="text-center text-caption mt-2">Si se puede imaginar, se puede programar</p>
-		<v-row class="mt-4" justify="center">
-			<v-col cols="6" class="text-center">
-				<!-- <v-container class="text-center"> -->
-
-				<p class="text-center text-caption mt-2">Información general</p>
-				<ul class="mt-4">
-					<li class="descripcion mt-1">Edad <span class="detalle">- 34 Años</span></li>
-					<li class="descripcion mt-1">
-						Ciudad <span class="detalle">- Apizaco, Tlax. México</span>
-					</li>
-					<li class="descripcion mt-1">
-						Inglés <span class="detalle">- Intermedio</span>
-					</li>
-					<li class="descripcion mt-1">
-						Certificación <span class="detalle">- PSP (Personal Software Process)</span>
-					</li>
-					<!-- <li class="descripcion mt-1">
-            Metas <span class="detalle">- Convertirme en Senior</span>
-          </li> -->
-				</ul>
-				<!-- </v-container> -->
-			</v-col>
-			<v-col cols="6">
-				<!-- <v-container class="text-center"> -->
-				<v-img
-					width="400"
-					class="profilePicture text-focus-in"
-					src="../assets/perfil.jpg"
-				></v-img>
-				<!-- </v-container> -->
-			</v-col>
-		</v-row>
-		<p class="text-center text-caption mt-6">Acerca de mi</p>
-		<v-row justify="center" class="mt-6">
-			<p class="descripcion mt-4 text-center ml-2 mr-2">
+		<h1 class="text-focus-in text-center">Acerca de mi</h1>
+		<p class="text-center text-h5 mt-8">Julio Campos</p>
+		<v-row justify="center" class="mt-2">
+			<p class="descripcion mt-4 text-center w-50 ml-2 mr-2 d-none d-md-block">
 				Más de 4 años de experiencia en programación en general y más de 1 año
-				profesionalmente. Apasionado de las nuevas tecnologías en especial los ecosistemas
-				de JavaScript y CSS. <br />
-				Mi proposito es poner en práctica los conocomientos que he adquirido y al mismo
-				tiempo nutrir mis habilidades siempre con buenas prácticas
+				profesionalmente. Me gusta estar a la vanguardia de las tecnologías del desarrollo
+				web, disfruto creando soluciones a problemas que se me presentan, cada día
+				incremento mis conocimientos conforme a las necesidades de mis clientes. No me
+				considero el mejor en lo que hago, pero todo lo hago de la mejor manera posible,
+				siguiendo las buenas practicas. <br />
+				Actualmente estoy tomando un curso de "Diseño de Experiencia del Usuario (UX) de
+				Google"
+			</p>
+			<p class="descripcion mt-4 text-center ml-2 mr-2 d-md-none">
+				Más de 4 años de experiencia en programación en general y más de 1 año
+				profesionalmente. Me gusta estar a la vanguardia de las tecnologías del desarrollo
+				web, disfruto creando soluciones a problemas que se me presentan, cada día
+				incremento mis conocimientos conforme a las necesidades de mis clientes. No me
+				considero el mejor en lo que hago, pero todo lo hago de la mejor manera posible,
+				siguiendo las buenas practicas. <br />
+				Actualmente estoy tomando un curso de "Diseño de Experiencia del Usuario (UX) de
+				Google"
 			</p>
 		</v-row>
 		<v-row justify="center" class="mt-8">

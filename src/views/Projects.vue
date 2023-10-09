@@ -3,35 +3,28 @@
 		<p class="text-center text-h3 mb-4 text-focus-in">Proyectos</p>
 		<v-row justify="center">
 			<v-col
-				sm="6"
-				xs="6"
-				md="4"
+				cols="12"
+				md="6"
 				lg="4"
 				xl="4"
 				v-for="proyectos in proyectosExternos"
 				:key="proyectos.id"
 			>
 				<v-card color="transparent" elevation="0">
-					<v-card-title class="text-center text-subtitle-2">{{
+					<v-card-title class="text-center text-subtitle-1 pb-2">{{
 						proyectos.name
 					}}</v-card-title>
 					<v-card-text>
-						<p v-if="!proyectos.extra" class="text-center descripcion mb-1">
-							Click en la imagen para abrir el proyecto
-						</p>
-						<p class="text-center descripcion mb-1" v-if="proyectos.extra">
-							{{ proyectos.extra }}
-						</p>
 						<a :href="proyectos.url" target="_blank"
 							><v-img class="h-0 w-100 imagen" cover :src="proyectos.img"></v-img
 						></a>
-						<p class="text-center info mt-4 mb-4">{{ proyectos.info }}</p>
+						<p class="text-center info mt-4">{{ proyectos.info }}</p>
 					</v-card-text>
 				</v-card>
 			</v-col>
 		</v-row>
 	</v-container>
-	<v-container class="mb-6">
+	<v-container class="mb-2">
 		<p class="text-center text-h5 mb-6 mt-6 text-focus-in">Proyectos integrados</p>
 		<p class="text-center text-caption mb-4 mt-4">
 			Click en el ícono para mostrar el proyecto
@@ -168,7 +161,7 @@
 			id: 2,
 			name: 'Hotel del Ángel',
 			img: '../assets/hotel.png',
-			url: 'http://www.hoteldelangel.com.mx/',
+			url: 'https://hotel-test-blond.vercel.app/',
 			info: 'Página creada con HTMl CSS y JavaScript para una empresa hotelera.',
 		},
 
@@ -179,7 +172,6 @@
 			url: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
 			info:
 				'Proyecto de gestion de producción, control de inventarios y reportes con API Rest no tengo los derechos para mostrarlo.',
-			extra: 'Solo hay imagen, no hay proyecto desplegado',
 		},
 		{
 			id: 4,
@@ -188,7 +180,6 @@
 			url: 'https://i.ibb.co/nn691vZ/barcodes.png',
 			info:
 				'Aplicación móvil de control de códigos QR, lector y generador, no tengo derechos sobre el código',
-			extra: 'Solo hay imagen, no hay proyecto desplegado',
 		},
 		{
 			id: 5,
@@ -252,9 +243,11 @@
 	.info {
 		font-size: 0.7rem;
 	}
+	.imagen {
+		transition: transform 0.2s ease-in-out;
+	}
 	.imagen:hover {
-		-webkit-transform: scale(1.2);
-		transform: scale(1.2);
+		transform: scale(1.1);
 	}
 	.iconos:hover {
 		-webkit-transform: scale(1.2);

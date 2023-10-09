@@ -1,24 +1,29 @@
 <template>
 	<v-container id="skills">
 		<p class="text-center text-h3 mt-6 text-focus-in">Skills</p>
+		<p class="text-center py-6 text-h5">Conocimientos sólidos</p>
 		<v-row justify="center" class="mt-6 mb-10">
-			<v-col cols="4" md="3" sm="6" xs="6" lg="3" v-for="item in items" :key="item.name">
-				<p class="text-center">{{ item.name }}</p>
+			<v-col cols="4" md="3" sm="6" xs="6" lg="3" v-for="item in solid" :key="item.name">
+				<p class="text-center py-6">{{ item.name }}</p>
 				<div class="text-center">
 					<div class="text-center">
 						<a target="_blank" :href="item.link">
-							<v-icon size="large" :color="item.color">{{ item.icon }}</v-icon>
+							<img class="imagen w-50" :src="item.icon" />
 						</a>
 					</div>
-					<v-progress-linear
-						class="mt-4"
-						v-model="item.value"
-						:color="item.color"
-						height="18"
-						striped
-					>
-					</v-progress-linear>
-					<!-- <strong>{{ Math.ceil(item.value) }}%</strong> -->
+				</div>
+			</v-col>
+		</v-row>
+		<p class="text-center py-6 text-h5">Conocimientos básicos</p>
+		<v-row justify="center" class="mt-6 mb-10 mx-auto">
+			<v-col cols="4" md="3" sm="6" xs="6" lg="3" v-for="item in basics" :key="item.name">
+				<p class="text-center py-6">{{ item.name }}</p>
+				<div class="text-center">
+					<div class="text-center">
+						<a target="_blank" :href="item.link">
+							<img class="imagen w-50" :src="item.icon" />
+						</a>
+					</div>
 				</div>
 			</v-col>
 		</v-row>
@@ -26,90 +31,79 @@
 </template>
 
 <script setup>
-	const items = [
+	const solid = [
 		{
 			name: 'HTML',
-			icon: 'mdi-language-html5',
-			value: 70,
+			icon: '../assets/html.svg',
 			link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
-			color: 'deep-orange',
 		},
 		{
 			name: 'CSS',
-			icon: 'mdi-language-css3',
-			value: 58,
+			icon: '../assets/css.svg',
 			link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-			color: 'blue-darken-4',
 		},
 		{
 			name: 'JavaScript',
-			icon: 'mdi-language-javascript',
-			value: 70,
+			icon: '../assets/javascript.svg',
 			link: 'https://www.javascript.com/',
-			color: 'yellow-accent-4',
 		},
 		{
-			name: 'VueJs',
-			icon: 'mdi-vuejs',
-			value: 70,
+			name: 'Vue.js',
+			icon: '../assets/vue.svg',
 			link: 'https://vuejs.org/',
-			color: 'teal',
 		},
 		{
-			name: 'NuxtJs',
-			icon: 'mdi-nuxt',
-			value: 65,
+			name: 'Nuxt.js',
+			icon: '../assets/nuxt.svg',
 			link: 'https://nuxt.com/',
-			color: 'teal-lighten-2',
 		},
 		{
 			name: 'Vuetify',
-			icon: 'mdi-vuetify',
-			value: 70,
+			icon: '../assets/vuetify.svg',
 			link: 'https://vuetifyjs.com/en/',
-			color: 'light-blue',
 		},
+		{
+			name: 'Astro',
+			icon: '../assets/astro.svg',
+			link: 'https://astro.build/',
+		},
+		{
+			name: 'Tailwind',
+			icon: '../assets/tailwind.svg',
+			link: 'https://tailwindcss.com/',
+		},
+	]
+
+	const basics = [
 		{
 			name: 'Bootstrap',
-			icon: 'mdi-bootstrap',
-			value: 60,
+			icon: '../assets/bootstrap.svg',
 			link: 'https://getbootstrap.com/',
-			color: 'deep-purple-accent-2',
 		},
 		{
-			name: 'ReactJs',
-			icon: 'mdi-react',
-			value: 50,
+			name: 'React.js',
+			icon: '../assets/react.svg',
 			link: 'https://react.dev/',
-			color: 'light-blue-lighten-2',
 		},
 		{
-			name: 'NextJs',
-			icon: 'mdi-triangle',
-			value: 50,
+			name: 'Next.js',
+			icon: '../assets/next.svg',
 			link: 'https://nextjs.org/',
-			color: 'grey-darken-1',
-		},
-		{
-			name: 'Ant Desing',
-			icon: 'mdi-semantic-web',
-			value: 50,
-			link: 'https://ant.design/',
-			color: 'light-blue-darken-1',
 		},
 		{
 			name: 'PHP',
-			icon: 'mdi-language-php',
-			value: 50,
+			icon: '../assets/php.svg',
 			link: 'https://www.php.net/',
-			color: 'blue-darken-1',
 		},
 		{
 			name: 'Laravel',
-			icon: 'mdi-laravel',
-			value: 50,
+			icon: '../assets/laravel.svg',
 			link: 'https://laravel.com/',
-			color: 'red-lighten-1',
+		},
+		{
+			name: 'MySql',
+			icon: '../assets/mysql.svg',
+			link: 'https://www.mysql.com/',
 		},
 	]
 </script>
@@ -119,5 +113,11 @@
 	a:visited,
 	a:active {
 		text-decoration: none;
+	}
+	.imagen {
+		transition: transform 0.2s ease-in-out;
+	}
+	.imagen:hover {
+		transform: scale(1.1);
 	}
 </style>

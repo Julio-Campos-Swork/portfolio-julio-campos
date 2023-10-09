@@ -1,24 +1,44 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
 	<v-container id="inicio" class="mb-8 contenedor">
-		<v-row justify="center" class="mt-6">
-			<v-img
-				width="250"
-				class="profilePicture text-focus-in"
-				src="../assets/perfil.jpg"
-			></v-img>
+		<p class="text-h2 mb-6 mt-8 text-center text-focus-in d-none d-md-block">
+			¡Bienvenidos!
+		</p>
+		<p class="text-h6 mt-8 text-center text-focus-in d-md-none">¡Bienvenidos!</p>
+		<v-row class="py-6 mx-auto">
+			<v-col cols="6">
+				<!-- <p class="text-subtitle-2 mb-6 mt-8 text-center"></p> -->
+				<p class="text-subtitle-1 mb-6 mt-8 text-center d-none d-md-block">
+					Mi nombre es <span class="font-weight-bold text-h6">Julio Campos</span> y soy
+					Desarrollador Web, a lo largo de los años he podido desarrollar diferentes tipos
+					de proyectos relacionados con la Web. Me gusta crear interfaces sencillas,
+					intuitivas, bonitas con implementaciones UX
+				</p>
+				<p class="text-caption mb-6 mt-6 text-start d-md-none">
+					Mi nombre es <strong>Julio Campos</strong> y soy Desarrollador Web, a lo largo
+					de los años he podido desarrollar diferentes tipos de proyectos relacionados con
+					la Web <br />Me gusta crear interfaces sencillas, intuitivas, bonitas con
+					implementaciones UX
+				</p>
+				<!-- <v-row justify="center" class="mt-2 mb-4">
+					<p class="text-h6 typedChar text-center">Desarrollador Web</p>
+				</v-row> -->
+			</v-col>
+			<v-col cols="6">
+				<v-row justify="center" class="mt-6">
+					<v-img
+						class="profilePicture text-focus-in d-none d-md-block"
+						src="../assets/perfil.jpg"
+					></v-img>
+					<v-img
+						class="profilePictureSmall text-focus-in d-md-none"
+						src="../assets/perfil.jpg"
+					></v-img>
+				</v-row>
+			</v-col>
 		</v-row>
-
-		<p class="text-h4 mb-6 mt-8 text-center text-focus-in">Julio Campos</p>
-		<v-row justify="center" class="mt-2 mb-4">
-			<p class="text-h6 typedChar text-center">Desarrollador Web</p>
-		</v-row>
-		<v-row justify="center">
-			<v-btn @click="descargarCV()" rounded="lg" size="small" class="botonCV mb-4"
-				>Descargar CV</v-btn
-			>
-		</v-row>
-		<v-row justify="center" class="mb-6 mt-4">
+		<!-- iconos -->
+		<v-row justify="center" class="mb-6 pt-16">
 			<a target="_blank" href="https://github.com/Julio-Campos-Swork">
 				<box-icon
 					class="boxCursor ml-2"
@@ -52,6 +72,11 @@
 					color="#0e80f2"
 				></box-icon>
 			</a>
+		</v-row>
+		<v-row justify="center">
+			<v-btn @click="descargarCV()" rounded="lg" size="small" class="botonCV mb-4"
+				>Descargar CV</v-btn
+			>
 		</v-row>
 	</v-container>
 </template>
@@ -94,15 +119,24 @@
 
 	.profilePicture {
 		/* border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%; */
-		width: 200px;
-		height: 200px;
+		width: 20em;
+		height: 20em;
+	}
+	.profilePictureSmall {
+		/* border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%; */
+		width: 13em;
+		height: 13em;
 	}
 	.botonCV {
 		background-color: #56a3f0;
 		background-image: linear-gradient(62deg, #61a6eb 0%, #be8aee 100%);
 	}
+	.botonCV {
+		transition: transform 0.2s ease-in-out;
+	}
+
 	.botonCV:hover {
-		scale: 1.2;
+		transform: scale(1.1);
 	}
 	.boxCursor {
 		cursor: pointer;
