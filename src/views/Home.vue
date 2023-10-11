@@ -8,34 +8,36 @@
 		<v-row class="py-6 mx-auto">
 			<v-col cols="6">
 				<!-- <p class="text-subtitle-2 mb-6 mt-8 text-center"></p> -->
-				<p class="text-subtitle-1 mb-6 mt-8 text-center d-none d-md-block">
+				<p class="text-subtitle-1 mt-16 text-center d-none d-md-block">
 					Mi nombre es <span class="font-weight-bold text-h6">Julio Campos</span> y soy
 					Desarrollador Web, a lo largo de los años he podido desarrollar diferentes tipos
 					de proyectos relacionados con la Web. Me gusta crear interfaces sencillas,
-					intuitivas, bonitas con implementaciones UX
+					intuitivas con implementaciones UX
 				</p>
-				<p class="text-caption mb-6 mt-6 text-start d-md-none">
-					Mi nombre es <strong>Julio Campos</strong> y soy Desarrollador Web, a lo largo
-					de los años he podido desarrollar diferentes tipos de proyectos relacionados con
-					la Web <br />Me gusta crear interfaces sencillas, intuitivas, bonitas con
-					implementaciones UX
-				</p>
+
 				<!-- <v-row justify="center" class="mt-2 mb-4">
 					<p class="text-h6 typedChar text-center">Desarrollador Web</p>
 				</v-row> -->
 			</v-col>
 			<v-col cols="6">
-				<v-row justify="center" class="mt-6">
+				<v-row justify="center">
 					<v-img
 						class="profilePicture text-focus-in d-none d-md-block"
-						src="../assets/perfil.jpg"
-					></v-img>
-					<v-img
-						class="profilePictureSmall text-focus-in d-md-none"
-						src="../assets/perfil.jpg"
+						src="../assets/fotoPerfil.png"
 					></v-img>
 				</v-row>
 			</v-col>
+		</v-row>
+		<v-row justify="center" class="d-md-none">
+			<v-img
+				class="profilePictureSmall text-focus-in d-md-none"
+				src="../assets/fotoPerfil.png"
+			></v-img>
+			<p class="text-body-2 mb-6 mt-6 text-center mx-8">
+				Mi nombre es <strong>Julio Campos</strong> y soy Desarrollador Web, a lo largo de
+				los años he podido desarrollar diferentes tipos de proyectos relacionados con la
+				Web <br />Me gusta crear interfaces sencillas, intuitivas con implementaciones UX
+			</p>
 		</v-row>
 		<!-- iconos -->
 		<v-row justify="center" class="mb-6 pt-16">
@@ -74,7 +76,7 @@
 			</a>
 		</v-row>
 		<v-row justify="center">
-			<v-btn @click="descargarCV()" rounded="lg" size="small" class="botonCV mb-4"
+			<v-btn @click="descargarCV()" rounded="xl" size="large" class="botonCV mb-4"
 				>Descargar CV</v-btn
 			>
 		</v-row>
@@ -84,7 +86,7 @@
 <script setup>
 	import { ref } from 'vue'
 	import { saveAs } from 'file-saver'
-	import CVJulioPDF from '../assets/CV-JulioC.pdf'
+	import CVJulioPDF from '../assets/CV-JulioCampos.pdf'
 	const archivoPDF = ref(CVJulioPDF)
 	const descargarCV = () => {
 		saveAs(archivoPDF.value, 'CV-Julio-Campos.pdf')
