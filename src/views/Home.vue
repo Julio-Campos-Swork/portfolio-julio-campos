@@ -91,6 +91,7 @@
 	const descargarCV = () => {
 		saveAs(archivoPDF.value, 'CV-Julio-Campos.pdf')
 	}
+	AOS.init()
 </script>
 <style scoped>
 	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');

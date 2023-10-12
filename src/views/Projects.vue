@@ -24,61 +24,64 @@
 			</v-col>
 		</v-row>
 	</v-container>
-	<v-container class="mb-2">
-		<p class="text-center text-h5 mb-6 mt-6 text-focus-in">Proyectos integrados</p>
-		<p class="text-center text-caption mb-4 mt-4">
-			Click en el ícono para mostrar el proyecto
-		</p>
+	<hr />
+	<div data-aos="fade-up">
+		<v-container class="mb-2">
+			<p class="text-center text-h5 mb-6 mt-6 text-focus-in">Proyectos integrados</p>
+			<p class="text-center text-caption mb-4 mt-4">
+				Click en el ícono para mostrar el proyecto
+			</p>
 
-		<v-row>
-			<v-col
-				class="text-center"
-				cols="3"
-				v-for="components in componentList"
-				key="components.id"
-			>
-				<v-icon
-					class="iconos"
-					color="light-blue"
-					@click="showProject(components.name)"
-					:icon="components.icon"
-				></v-icon>
-				<p @click="showProject(components.name)" class="textClick text-subtitle-2 mt-2">
-					{{ components.name }}
-				</p>
-			</v-col>
-		</v-row>
-		<v-dialog v-model="dialogProjects" max-height="600" max-width="400">
-			<p class="text-center text-primary mt-6 mb-2">{{ titlevalue }}</p>
-			<v-row justify="end">
-				<v-icon @click="dialogProjects = !dialogProjects">mdi-close-box</v-icon>
+			<v-row>
+				<v-col
+					class="text-center"
+					cols="3"
+					v-for="components in componentList"
+					key="components.id"
+				>
+					<v-icon
+						class="iconos"
+						color="light-blue"
+						@click="showProject(components.name)"
+						:icon="components.icon"
+					></v-icon>
+					<p @click="showProject(components.name)" class="textClick text-subtitle-2 mt-2">
+						{{ components.name }}
+					</p>
+				</v-col>
 			</v-row>
-			<!-- <v-row justify="center" class="mt-2"> -->
-			<AgeCalculatorVue v-if="componentList[0].isActive" />
-			<Alarm v-if="componentList[1].isActive" />
-			<Calculator v-if="componentList[2].isActive" />
-			<Currency v-if="componentList[3].isActive" />
-			<IMGUploader v-if="componentList[4].isActive" />
-			<Metronomo v-if="componentList[5].isActive" />
-			<MovieSearchVue v-if="componentList[6].isActive" />
-			<NewYearCount v-if="componentList[7].isActive" />
-			<PasswordGenerator v-if="componentList[8].isActive" />
-			<PredictGenderVue v-if="componentList[9].isActive" />
-			<QRComponent v-if="componentList[10].isActive" />
-			<RandomUserVue v-if="componentList[11].isActive" />
-			<StopwatchVue v-if="componentList[12].isActive" />
-			<StringInteractionVue v-if="componentList[13].isActive" />
-			<TicTacToe v-if="componentList[14].isActive" />
-			<TodoListVue v-if="componentList[15].isActive" />
-			<WeatherVue v-if="componentList[16].isActive" />
-			<!-- <Slider v-if="componentList[17].isActive" /> -->
-			<!-- </v-row> -->
-		</v-dialog>
-		<p class="text-center text-caption mt-6">
-			Estos proyectos fueron creados con el proposito de practicar y reutilizar código,
-			algunos son adaptaciones de otros lenguajes.
-		</p>
-	</v-container>
+			<v-dialog v-model="dialogProjects" max-height="600" max-width="400">
+				<p class="text-center text-primary mt-6 mb-2">{{ titlevalue }}</p>
+				<v-row justify="end">
+					<v-icon @click="dialogProjects = !dialogProjects">mdi-close-box</v-icon>
+				</v-row>
+				<!-- <v-row justify="center" class="mt-2"> -->
+				<AgeCalculatorVue v-if="componentList[0].isActive" />
+				<Alarm v-if="componentList[1].isActive" />
+				<Calculator v-if="componentList[2].isActive" />
+				<Currency v-if="componentList[3].isActive" />
+				<IMGUploader v-if="componentList[4].isActive" />
+				<Metronomo v-if="componentList[5].isActive" />
+				<MovieSearchVue v-if="componentList[6].isActive" />
+				<NewYearCount v-if="componentList[7].isActive" />
+				<PasswordGenerator v-if="componentList[8].isActive" />
+				<PredictGenderVue v-if="componentList[9].isActive" />
+				<QRComponent v-if="componentList[10].isActive" />
+				<RandomUserVue v-if="componentList[11].isActive" />
+				<StopwatchVue v-if="componentList[12].isActive" />
+				<StringInteractionVue v-if="componentList[13].isActive" />
+				<TicTacToe v-if="componentList[14].isActive" />
+				<TodoListVue v-if="componentList[15].isActive" />
+				<WeatherVue v-if="componentList[16].isActive" />
+				<!-- <Slider v-if="componentList[17].isActive" /> -->
+				<!-- </v-row> -->
+			</v-dialog>
+			<p class="text-center text-caption mt-6">
+				Estos proyectos fueron creados con el proposito de practicar y reutilizar código,
+				algunos son adaptaciones de otros lenguajes.
+			</p>
+		</v-container>
+	</div>
 </template>
 
 <script setup>
