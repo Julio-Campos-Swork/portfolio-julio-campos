@@ -36,7 +36,6 @@
 						<a :href="proyectos?.source" class="d-flex justify-center" target="_blank"
 							><v-icon icon="mdi-github" size="large" class="py-2"></v-icon
 						></a>
-						<p class="text-center fuente py-2">Codigo fuente</p>
 					</v-card-text>
 				</v-card>
 			</v-col>
