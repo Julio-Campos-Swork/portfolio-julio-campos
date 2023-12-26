@@ -15,6 +15,11 @@
 </script>
 
 <style>
+	html {
+		max-width: 1920px;
+		margin: auto;
+		scroll-behavior: smooth;
+	}
 	.text-focus-in {
 		background: rgb(51, 45, 165);
 		background: -webkit-linear-gradient(
@@ -72,8 +77,5 @@
 	.fade-enter,
 	.fade-leave-to {
 		opacity: 0;
-	}
-	html {
-		scroll-behavior: smooth;
 	}
 </style>

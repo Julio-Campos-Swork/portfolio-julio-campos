@@ -1,10 +1,5 @@
 <template>
-	<v-app-bar
-		:theme="bText"
-		:absolute="isAbsolute"
-		:floating="isFloating"
-		class="contenedor"
-	>
+	<v-app-bar :theme="bText" height="70" class="contenedor">
 		<v-icon color="white" class="menuBtn ml-4" size="x-large" @click="toggleAppbar"
 			>mdi-menu</v-icon
 		>
@@ -31,14 +26,14 @@
 		v-model="drawer"
 		:theme="bText"
 	>
-		<p class="text-h5 text-center mt-2">Menu</p>
-		<v-list class="pl-4 pt-6">
+		<p class="text-h5 text-center py-4">Menu</p>
+		<v-list class="pl-2 pt-6">
 			<v-list-item nav prepend-icon="mdi-home"><a href="#">Inicio</a></v-list-item>
-			<v-list-item nav prepend-icon="mdi-network-pos"
-				><a href="#skills">Skills</a></v-list-item
-			>
 			<v-list-item nav prepend-icon="mdi-briefcase"
 				><a href="#proyectos">Proyectos</a></v-list-item
+			>
+			<v-list-item nav prepend-icon="mdi-network-pos"
+				><a href="#skills">Skills</a></v-list-item
 			>
 			<v-list-item nav prepend-icon="mdi-information-outline"
 				><a href="#about">About Me</a></v-list-item
@@ -96,11 +91,11 @@
 	nav a {
 		font-family: 'Oswald', sans-serif;
 		font-weight: 500;
-		text-transform: uppercase;
+		/* text-transform: uppercase; */
 		text-decoration: none;
 		/* color:#16151b; */
 		margin: 0 15px;
-		font-size: 16px;
+		font-size: 1;
 		letter-spacing: 1px;
 		position: relative;
 		display: inline-block;
@@ -111,11 +106,11 @@
 		width: 100%;
 		height: 3px;
 		background: #492fca;
-		top: 47%;
-		animation: out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+		top: 100%;
+		animation: out 0.3s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
 	}
 	nav a:hover:before {
-		animation: in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+		animation: in 0.3s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
 	}
 	@keyframes in {
 		0% {
@@ -157,8 +152,8 @@
 	}
 	.titleFont {
 		font-family: 'Pacifico', cursive;
-		font-size: 25px;
-		letter-spacing: 15px;
+		font-size: 2rem;
+		letter-spacing: 10px;
 		word-spacing: 0px;
 		color: #c1cce6;
 		font-weight: normal;
@@ -167,31 +162,5 @@
 		/* font-variant: small-caps; */
 		text-transform: none;
 		margin-left: 45px;
-	}
-
-	.headerHBO {
-		height: 309px;
-		left: 0px;
-		position: absolute;
-		top: 0px;
-		width: 100%;
-		background-image: linear-gradient(
-			rgba(0, 0, 0, 0) 5.79%,
-			rgba(0, 0, 0, 0.008) 11.42%,
-			rgba(0, 0, 0, 0.035) 17.04%,
-			rgba(0, 0, 0, 0.082) 22.67%,
-			rgba(0, 0, 0, 0.15) 28.3%,
-			rgba(0, 0, 0, 0.23) 33.93%,
-			rgba(0, 0, 0, 0.333) 39.56%,
-			rgba(0, 0, 0, 0.443) 45.18%,
-			rgba(0, 0, 0, 0.557) 50.81%,
-			rgba(0, 0, 0, 0.667) 56.44%,
-			rgba(0, 0, 0, 0.77) 62.07%,
-			rgba(0, 0, 0, 0.85) 67.7%,
-			rgba(0, 0, 0, 0.918) 73.33%,
-			rgba(0, 0, 0, 0.965) 78.95%,
-			rgba(0, 0, 0, 0.992) 84.58%,
-			rgb(0, 0, 0) 90.21%
-		);
 	}
 </style>

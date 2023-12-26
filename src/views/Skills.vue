@@ -2,27 +2,29 @@
 	<v-container id="skills">
 		<p class="text-center text-h3 mt-6 text-focus-in">Skills</p>
 		<p class="text-center py-6 text-h5">Conocimientos sólidos</p>
-		<v-row justify="center" class="mt-6 mb-10">
-			<v-col cols="4" md="3" sm="6" xs="6" lg="3" v-for="item in solid" :key="item.name">
-				<p class="text-center py-6">{{ item.name }}</p>
+		<v-divider></v-divider>
+
+		<v-row justify="space-evenly">
+			<v-col cols="3" v-for="item in solid" :key="item.name">
 				<div class="text-center">
 					<div class="text-center">
 						<a target="_blank" :href="item.link">
-							<img class="imagen w-50" :src="item.icon" />
+							<img class="imagen w-25 pt-4" :src="item.icon" />
 						</a>
+						<p class="text-center py-1">{{ item.name }}</p>
 					</div>
 				</div>
 			</v-col>
-		</v-row>
-		<p class="text-center py-6 text-h5">Conocimientos básicos</p>
-		<v-row justify="center" class="mt-6 mb-10 mx-auto">
-			<v-col cols="4" md="3" sm="6" xs="6" lg="3" v-for="item in basics" :key="item.name">
-				<p class="text-center py-6">{{ item.name }}</p>
+			<p class="text-center py-6 text-h5">Conocimientos básicos</p>
+			<v-divider></v-divider>
+
+			<v-col cols="3" v-for="item in basics" :key="item.name">
 				<div class="text-center">
 					<div class="text-center">
 						<a target="_blank" :href="item.link">
-							<img class="imagen w-50" :src="item.icon" />
+							<img class="imagen w-25 pt-4" :src="item.icon" />
 						</a>
+						<p class="text-center py-6">{{ item.name }}</p>
 					</div>
 				</div>
 			</v-col>

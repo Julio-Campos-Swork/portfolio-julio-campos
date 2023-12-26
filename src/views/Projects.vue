@@ -4,21 +4,39 @@
 		<v-row justify="center">
 			<v-col
 				cols="12"
-				md="6"
-				lg="4"
-				xl="4"
+				sm="6"
+				md="4"
+				lg="3"
 				v-for="proyectos in proyectosExternos"
 				:key="proyectos.id"
 			>
-				<v-card color="transparent" elevation="0">
-					<v-card-title class="text-center text-subtitle-1 pb-2">{{
+				<v-card color="accent" elevation="10" rounded="xl" border="true">
+					<v-card-title class="text-center text-h6 py-4">{{
 						proyectos.name
 					}}</v-card-title>
 					<v-card-text>
 						<a :href="proyectos.url" target="_blank"
-							><v-img class="h-0 w-100 imagen" cover :src="proyectos.img"></v-img
+							><v-img
+								class="h-0 w-100 imagen rounded-xl"
+								cover
+								:src="proyectos.img"
+							></v-img
 						></a>
-						<p class="text-center info mt-4">{{ proyectos.info }}</p>
+						<p class="text-center text-body-1 pt-4 d-none d-md-block">
+							{{ proyectos.info }}
+						</p>
+						<p class="text-center text-body-2 pt-4 d-block d-md-none">
+							{{ proyectos.info }}
+						</p>
+						<br />
+						<div class="d-flex justify-center">
+							<img :src="icon" v-for="icon in proyectos.tecnologias" class="px-2 tech" />
+						</div>
+						<br />
+						<a :href="proyectos?.source" class="d-flex justify-center" target="_blank"
+							><v-icon icon="mdi-github" size="large" class="py-2"></v-icon
+						></a>
+						<p class="text-center fuente py-2">Codigo fuente</p>
 					</v-card-text>
 				</v-card>
 			</v-col>
@@ -28,7 +46,7 @@
 	<div data-aos="fade-up">
 		<v-container class="mb-2">
 			<p class="text-center text-h5 mb-6 mt-6 text-focus-in">Proyectos integrados</p>
-			<p class="text-center text-caption mb-4 mt-4">
+			<p class="text-center text-subtitle-1 mb-4 mt-4">
 				Click en el ícono para mostrar el proyecto
 			</p>
 
@@ -45,7 +63,16 @@
 						@click="showProject(components.name)"
 						:icon="components.icon"
 					></v-icon>
-					<p @click="showProject(components.name)" class="textClick text-subtitle-2 mt-2">
+					<p
+						@click="showProject(components.name)"
+						class="textClick text-subtitle-1 mt-2 d-none d-md-block"
+					>
+						{{ components.name }}
+					</p>
+					<p
+						@click="showProject(components.name)"
+						class="textClick text-caption mt-2 d-block d-md-none"
+					>
 						{{ components.name }}
 					</p>
 				</v-col>
@@ -76,7 +103,7 @@
 				<!-- <Slider v-if="componentList[17].isActive" /> -->
 				<!-- </v-row> -->
 			</v-dialog>
-			<p class="text-center text-caption mt-6">
+			<p class="text-center text-caption pt-8 pb-4">
 				Estos proyectos fueron creados con el proposito de practicar y reutilizar código,
 				algunos son adaptaciones de otros lenguajes.
 			</p>
@@ -104,6 +131,21 @@
 	import TodoListVue from '@/components/TodoList.vue'
 	import Slider from '@/components/Slider.vue'
 	import { ref } from 'vue'
+
+	//iconos
+	import html from '@/assets/html.svg'
+	import css from '@/assets/css.svg'
+	import vue from '@/assets/vue.svg'
+	import nuxt from '@/assets/nuxt.svg'
+	import vuetify from '@/assets/vuetify.svg'
+	import astro from '@/assets/astro.svg'
+	import tailwind from '@/assets/tailwind.svg'
+	import Bootstrap from '@/assets/bootstrap.svg'
+	import react from '@/assets/react.svg'
+	import next from '@/assets/next.svg'
+	import php from '@/assets/php.svg'
+	import laravel from '@/assets/laravel.svg'
+	import mysql from '@/assets/mysql.svg'
 	const titlevalue = ref('Age Calculator')
 	const dialogProjects = ref(false)
 	const componentList = ref([
@@ -150,22 +192,29 @@
 			img: 'https://i.ibb.co/5225djK/whatsappcaptura.jpg',
 			url:
 				'https://drive.google.com/file/d/1uKl2h6TW3mxeDYpfjH79Fn5op7v35QKY/view?usp=sharing',
-			info: 'Clone de whatsapp creado con Nextjs y Nodejs',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+			source: 'https://github.com/Julio-Campos-Swork/nuxt-whatsapp-clone',
 		},
 		{
 			id: 12,
-			name: 'Car Hub Aplication With Next js',
+			name: 'Car landing Page',
 			img: 'https://i.ibb.co/Rc0QpXT/carhub.png',
 			url: 'https://nextjs-carhub-aplication.vercel.app/',
-			info:
-				'Simple pero poderosa aplicación creada a partir de un tutorial para practicar con Nextjs 13',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+
+			source: 'https://github.com/Julio-Campos-Swork/nextjs-carhub-aplication',
 		},
 		{
 			id: 2,
 			name: 'Hotel del Ángel',
 			img: '../assets/hotel.png',
-			url: 'https://hotel-test-blond.vercel.app/',
-			info: 'Página creada con HTMl CSS y JavaScript para una empresa hotelera.',
+			url: 'https://hoteldelangel.com.mx/public/misitio/',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+
+			source: 'https://hoteldelangel.com.mx/public/misitio/',
 		},
 
 		{
@@ -173,39 +222,50 @@
 			name: 'Gestion de Producción',
 			img: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
 			url: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
-			info:
-				'Proyecto de gestion de producción, control de inventarios y reportes con API Rest no tengo los derechos para mostrarlo.',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+
+			source: 'https://github.com/Julio-Campos-Swork',
 		},
 		{
 			id: 4,
 			name: 'Lector y Generador de QR',
 			img: 'https://i.ibb.co/nn691vZ/barcodes.png',
 			url: 'https://i.ibb.co/nn691vZ/barcodes.png',
-			info:
-				'Aplicación móvil de control de códigos QR, lector y generador, no tengo derechos sobre el código',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+
+			source: 'https://github.com/Julio-Campos-Swork',
 		},
 		{
 			id: 5,
 			name: 'Pokemon API',
 			img: '../assets/PokeApi.png',
 			url: 'https://pokemon-api-by-julio-campos.netlify.app/',
-			info: 'Aplicación que consume la PokeAPI, guarda información en localstorage',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+
+			source: 'https://github.com/Julio-Campos-Swork/poke-api-Julio-Campos',
 		},
 		{
 			id: 6,
 			name: 'Rick and Morty API',
 			img: '../assets/Rick.png',
 			url: 'https://rick-and-morty-api-by-julio-campos.netlify.app/',
-			info:
-				'Mi primer aplicación creada, muestra información de personajes, contiene paginación',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+
+			source: 'https://github.com/Julio-Campos-Swork/rick-morty',
 		},
 		{
 			id: 7,
 			name: 'WikiCat',
 			img: 'https://i.ibb.co/WVGYXMX/wikicat.png',
 			url: 'https://wikicat.vercel.app/',
-			info:
-				'Aplicacion sencilla que consume una API de razas de gatos y hace busquedas interna',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+
+			source: 'https://github.com/Julio-Campos-Swork/wikicat',
 		},
 
 		{
@@ -213,24 +273,30 @@
 			name: 'MyUnsplash',
 			img: 'https://i.ibb.co/nLP4Vmt/unsplash.png',
 			url: 'https://my-unsplash-murex.vercel.app/',
-			info:
-				'Aplicacion que utiliza una API propia creada con Laravel que esta almacenado en un host gratuito',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+
+			source: 'https://github.com/Julio-Campos-Swork/mySplash-front',
 		},
 		{
 			id: 9,
 			name: 'IMG Uploader + API',
 			img: 'https://i.ibb.co/Q92tDsC/uploader.png',
 			url: 'https://img-uploader-front.vercel.app/',
-			info:
-				'Aplicacion que utiliza una API propia creada con Laravel, almacena las imagenes y te proporciona un link para compartirlas',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+
+			source: 'https://github.com/Julio-Campos-Swork/img-uploader-front',
 		},
 		{
 			id: 10,
 			name: 'Catálogo de películas',
 			img: '../assets/netflix.png',
 			url: 'https://netflix-clone-vuetify.vercel.app/',
-			info:
-				'Aplicación creada utilizando API de peliculas y API de Google para mostrar los trailers.',
+			info: 'Tecnologías utilizadas:',
+			tecnologias: [next, tailwind],
+
+			source: 'https://github.com/Julio-Campos-Swork/netflix-clone-vuetify',
 		},
 	])
 </script>
@@ -242,9 +308,6 @@
 	.descripcion {
 		font-size: 0.7rem;
 		color: cornflowerblue;
-	}
-	.info {
-		font-size: 0.7rem;
 	}
 	.imagen {
 		transition: transform 0.2s ease-in-out;
@@ -276,5 +339,17 @@
 		animation-name: show;
 		animation-range: entry 25% cover 30%;
 		animation-fill-mode: both;
+	}
+	a:link,
+	a:visited,
+	a:active {
+		text-decoration: none;
+		/* color: azure; */
+	}
+	.tech {
+		width: 20%;
+	}
+	.fuente {
+		font-size: 0.6rem;
 	}
 </style>

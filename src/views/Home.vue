@@ -1,46 +1,44 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
 	<v-container id="inicio" class="mb-8 contenedor">
-		<p class="text-h2 mb-6 mt-8 text-center text-focus-in d-none d-md-block">
-			¡Bienvenidos!
-		</p>
-		<p class="text-h6 mt-8 text-center text-focus-in d-md-none">¡Bienvenidos!</p>
-		<v-row class="py-6 mx-auto">
+		<v-row class="py-6 mx-auto d-none d-sm-flex">
 			<v-col cols="6">
 				<!-- <p class="text-subtitle-2 mb-6 mt-8 text-center"></p> -->
-				<p class="text-subtitle-1 mt-16 text-center d-none d-md-block">
-					Mi nombre es <span class="font-weight-bold text-h6">Julio Campos</span> y soy
-					Desarrollador Web, a lo largo de los años he podido desarrollar diferentes tipos
-					de proyectos relacionados con la Web. Me gusta crear interfaces sencillas,
-					intuitivas con implementaciones UX
-				</p>
+				<p class="text-subtitle-1 mt-16 text-center">Julio Campos</p>
 
-				<!-- <v-row justify="center" class="mt-2 mb-4">
-					<p class="text-h6 typedChar text-center">Desarrollador Web</p>
-				</v-row> -->
+				<v-row justify="center" class="mt-2 mb-4">
+					<p class="text-h6 typedChar text-center">¡Desarrollador Web!</p>
+				</v-row>
 			</v-col>
 			<v-col cols="6">
 				<v-row justify="center">
 					<v-img
-						class="profilePicture text-focus-in d-none d-md-block"
+						class="profilePicture text-focus-in"
 						src="../assets/fotoPerfil.png"
 					></v-img>
 				</v-row>
 			</v-col>
 		</v-row>
-		<v-row justify="center" class="d-md-none">
-			<v-img
-				class="profilePictureSmall text-focus-in d-md-none"
-				src="../assets/fotoPerfil.png"
-			></v-img>
-			<p class="text-body-2 mb-6 mt-6 text-center mx-8">
-				Mi nombre es <strong>Julio Campos</strong> y soy Desarrollador Web, a lo largo de
-				los años he podido desarrollar diferentes tipos de proyectos relacionados con la
-				Web <br />Me gusta crear interfaces sencillas, intuitivas con implementaciones UX
-			</p>
+
+		<!-- movil -->
+		<v-row justify="center" class="d-sm-none">
+			<v-col cols="12" class="">
+				<div class="rounded-pill mx-auto d-flex justify-center">
+					<v-img
+						class="profilePictureSmall text-focus-in"
+						src="../assets/fotoPerfil.png"
+					></v-img>
+				</div>
+				<p class="text-body-2 mb-6 mt-6 text-center mx-8">
+					Mi nombre es Julio Campos y soy...
+				</p>
+				<div class="d-flex justify-center">
+					<p class="text-h6 typedChar text-center">¡Desarrollador Web!</p>
+				</div>
+			</v-col>
 		</v-row>
 		<!-- iconos -->
-		<v-row justify="center" class="mb-6 pt-16">
+		<v-row justify="center" class="py-8">
 			<a target="_blank" href="https://github.com/Julio-Campos-Swork">
 				<box-icon
 					class="boxCursor ml-2"
@@ -106,7 +104,7 @@
 		white-space: nowrap;
 		border-right: 5px solid;
 		width: 16ch;
-		animation: typing 4s steps(16), blink 1s infinite;
+		animation: typing 3s steps(16), blink 1s infinite;
 		overflow: hidden;
 	}
 	@keyframes typing {
@@ -124,11 +122,17 @@
 		/* border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%; */
 		width: 20em;
 		height: 20em;
+		border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+		transition: all 3s;
+	}
+	.profilePicture:hover {
+		transform: scale(1.1);
 	}
 	.profilePictureSmall {
 		/* border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%; */
 		width: 13em;
 		height: 13em;
+		border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
 	}
 	.botonCV {
 		background-color: #56a3f0;

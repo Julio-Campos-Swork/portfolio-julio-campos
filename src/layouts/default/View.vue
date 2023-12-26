@@ -3,19 +3,19 @@
 		<div data-aos="fade-up">
 			<Home />
 		</div>
-		<hr />
-		<div data-aos="fade-up">
-			<Skills />
-		</div>
-		<hr />
+		<v-divider></v-divider>
 		<div data-aos="fade-up">
 			<ProjectsVue />
 		</div>
-		<hr />
+		<v-divider></v-divider>
+		<div data-aos="fade-up">
+			<Skills />
+		</div>
+		<v-divider></v-divider>
 		<div data-aos="fade-up">
 			<About />
 		</div>
-		<hr />
+		<v-divider></v-divider>
 		<div data-aos="fade-up">
 			<Contact />
 		</div>
