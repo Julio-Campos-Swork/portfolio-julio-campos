@@ -19,6 +19,8 @@
 		max-width: 1920px;
 		margin: auto;
 		scroll-behavior: smooth;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+			'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	}
 	.text-focus-in {
 		background: rgb(51, 45, 165);

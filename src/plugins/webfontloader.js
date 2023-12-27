@@ -11,7 +11,7 @@ export async function loadFonts() {
 
   webFontLoader.load({
     google: {
-      families: ['Montserrat:100,200,300,400,500,600,700,800,900&display=swap'],
+      families: ['Roboto:100,200,300,400,500,600,700,800,900&display=swap'],
     },
   })
 }

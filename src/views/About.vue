@@ -74,7 +74,7 @@
 	}
 	.profilePicture {
 		border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-		width: 200px;
-		height: 200px;
+		width: 300px;
+		height: 300px;
 	}
 </style>
