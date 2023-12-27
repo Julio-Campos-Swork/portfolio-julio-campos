@@ -1,6 +1,6 @@
 <template>
-	<v-container id="proyectos" class="mt-6">
-		<p class="text-center text-h3 mb-4 text-focus-in">Proyectos</p>
+	<v-container id="proyectos" class="pt-1">
+		<p class="text-center text-h3 py-10 text-focus-in">Proyectos</p>
 		<v-row justify="center">
 			<v-col
 				cols="12"
@@ -22,7 +22,7 @@
 								:src="proyectos.img"
 							></v-img
 						></a>
-						<p class="text-center text-body-1 pt-4 d-none d-md-block">
+						<p class="text-center text-body-2 pt-4 d-none d-md-block">
 							{{ proyectos.info }}
 						</p>
 						<p class="text-center text-body-2 pt-4 d-block d-md-none">
@@ -30,7 +30,11 @@
 						</p>
 						<br />
 						<div class="d-flex justify-center">
-							<img :src="icon" v-for="icon in proyectos.tecnologias" class="px-2 tech" />
+							<img
+								:src="icon"
+								v-for="icon in proyectos.tecnologias"
+								class="px-2 iconFrameworks"
+							/>
 						</div>
 						<br />
 						<a :href="proyectos?.source" class="d-flex justify-center" target="_blank"
@@ -40,8 +44,13 @@
 				</v-card>
 			</v-col>
 		</v-row>
+		<p class="pt-8 text-center">
+			<span class="text-h6 text-red">Importante:</span><br />
+			Los proyectos empresariales no los muestro por terminos de confidencialidad con la
+			empresa
+		</p>
 	</v-container>
-	<hr />
+	<v-divider></v-divider>
 	<div data-aos="fade-up">
 		<v-container class="mb-2">
 			<p class="text-center text-h5 mb-6 mt-6 text-focus-in">Proyectos integrados</p>
@@ -145,6 +154,9 @@
 	import php from '@/assets/php.svg'
 	import laravel from '@/assets/laravel.svg'
 	import mysql from '@/assets/mysql.svg'
+	import node from '@/assets/node.svg'
+	import prisma from '@/assets/prisma.svg'
+	import ionic from '@/assets/ionic.svg'
 	const titlevalue = ref('Age Calculator')
 	const dialogProjects = ref(false)
 	const componentList = ref([
@@ -186,73 +198,84 @@
 
 	const proyectosExternos = ref([
 		{
-			id: 1,
-			name: 'WhatsApp Clone',
-			img: 'https://i.ibb.co/5225djK/whatsappcaptura.jpg',
-			url:
-				'https://drive.google.com/file/d/1uKl2h6TW3mxeDYpfjH79Fn5op7v35QKY/view?usp=sharing',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
-			source: 'https://github.com/Julio-Campos-Swork/nuxt-whatsapp-clone',
+			id: 2,
+			name: 'Hotel del Ángel',
+			img: '../assets/hotel.png',
+			url: 'https://hoteldelangel.com.mx/public/misitio/',
+			info: 'Desarrollado con:',
+			tecnologias: [astro, tailwind, vue, css],
+
+			source: 'https://hoteldelangel.com.mx/public/misitio/',
 		},
 		{
 			id: 12,
 			name: 'Car landing Page',
 			img: 'https://i.ibb.co/Rc0QpXT/carhub.png',
 			url: 'https://nextjs-carhub-aplication.vercel.app/',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
+			info: 'Desarrollado con:',
+			tecnologias: [next, react, tailwind],
 
 			source: 'https://github.com/Julio-Campos-Swork/nextjs-carhub-aplication',
 		},
-		{
-			id: 2,
-			name: 'Hotel del Ángel',
-			img: '../assets/hotel.png',
-			url: 'https://hoteldelangel.com.mx/public/misitio/',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
-
-			source: 'https://hoteldelangel.com.mx/public/misitio/',
-		},
 
 		{
-			id: 3,
-			name: 'Gestion de Producción',
-			img: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
-			url: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
+			id: 13,
+			name: 'TikTok Clone',
+			img: '../assets/tiktok.png',
+			url: 'https://github.com/Julio-Campos-Swork/tik-tok-clone-front/',
+			info: 'Desarrollado con: (No desplegado)',
+			tecnologias: [nuxt, tailwind, vue, laravel],
 
-			source: 'https://github.com/Julio-Campos-Swork',
+			source: 'https://github.com/Julio-Campos-Swork/tiktok-clone-api',
 		},
 		{
-			id: 4,
-			name: 'Lector y Generador de QR',
-			img: 'https://i.ibb.co/nn691vZ/barcodes.png',
-			url: 'https://i.ibb.co/nn691vZ/barcodes.png',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
-
-			source: 'https://github.com/Julio-Campos-Swork',
+			id: 1,
+			name: 'WhatsApp Clone',
+			img: 'https://i.ibb.co/5225djK/whatsappcaptura.jpg',
+			url:
+				'https://drive.google.com/file/d/1uKl2h6TW3mxeDYpfjH79Fn5op7v35QKY/view?usp=sharing',
+			info: 'Desarrollado con: (No desplegado)',
+			tecnologias: [next, react, tailwind, prisma, node],
+			source: 'https://github.com/Julio-Campos-Swork/nuxt-whatsapp-clone',
 		},
+
 		{
 			id: 5,
 			name: 'Pokemon API',
 			img: '../assets/PokeApi.png',
 			url: 'https://pokemon-api-by-julio-campos.netlify.app/',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
+			info: 'Desarrollado con:',
+			tecnologias: [vue, vuetify],
 
 			source: 'https://github.com/Julio-Campos-Swork/poke-api-Julio-Campos',
+		},
+		{
+			id: 14,
+			name: 'Calculadora',
+			img: '../assets/calculadora.png',
+			url: 'https://calculator-react-two-sand.vercel.app/',
+			info: 'Desarrollado con:',
+			tecnologias: [react, css],
+
+			source: 'https://github.com/Julio-Campos-Swork/calculator-react',
+		},
+		{
+			id: 15,
+			name: 'Todo-list',
+			img: '../assets/todo.png',
+			url: 'https://todo-list-react-psi-nine.vercel.app/',
+			info: 'Desarrollado con:',
+			tecnologias: [react, tailwind, css],
+
+			source: 'https://github.com/Julio-Campos-Swork/todo-list-react',
 		},
 		{
 			id: 6,
 			name: 'Rick and Morty API',
 			img: '../assets/Rick.png',
 			url: 'https://rick-and-morty-api-by-julio-campos.netlify.app/',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
+			info: 'Desarrollado con:',
+			tecnologias: [vue, vuetify],
 
 			source: 'https://github.com/Julio-Campos-Swork/rick-morty',
 		},
@@ -261,8 +284,8 @@
 			name: 'WikiCat',
 			img: 'https://i.ibb.co/WVGYXMX/wikicat.png',
 			url: 'https://wikicat.vercel.app/',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
+			info: 'Desarrollado con:',
+			tecnologias: [vue, vuetify],
 
 			source: 'https://github.com/Julio-Campos-Swork/wikicat',
 		},
@@ -272,8 +295,8 @@
 			name: 'MyUnsplash',
 			img: 'https://i.ibb.co/nLP4Vmt/unsplash.png',
 			url: 'https://my-unsplash-murex.vercel.app/',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
+			info: 'Desarrollado con:',
+			tecnologias: [vue, vuetify],
 
 			source: 'https://github.com/Julio-Campos-Swork/mySplash-front',
 		},
@@ -282,8 +305,8 @@
 			name: 'IMG Uploader + API',
 			img: 'https://i.ibb.co/Q92tDsC/uploader.png',
 			url: 'https://img-uploader-front.vercel.app/',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
+			info: 'Desarrollado con:',
+			tecnologias: [vue, vuetify, laravel],
 
 			source: 'https://github.com/Julio-Campos-Swork/img-uploader-front',
 		},
@@ -292,10 +315,30 @@
 			name: 'Catálogo de películas',
 			img: '../assets/netflix.png',
 			url: 'https://netflix-clone-vuetify.vercel.app/',
-			info: 'Tecnologías utilizadas:',
-			tecnologias: [next, tailwind],
+			info: 'Desarrollado con:',
+			tecnologias: [vue, vuetify],
 
 			source: 'https://github.com/Julio-Campos-Swork/netflix-clone-vuetify',
+		},
+		{
+			id: 3,
+			name: 'Gestion de Producción',
+			img: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
+			url: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
+			info: 'Desarrollado con:',
+			tecnologias: [vue, vuetify, laravel],
+
+			source: 'https://github.com/Julio-Campos-Swork',
+		},
+		{
+			id: 4,
+			name: 'Lector y Generador de QR',
+			img: 'https://i.ibb.co/nn691vZ/barcodes.png',
+			url: 'https://i.ibb.co/nn691vZ/barcodes.png',
+			info: 'Desarrollado con:',
+			tecnologias: [ionic, vue, vuetify, laravel],
+
+			source: 'https://github.com/Julio-Campos-Swork',
 		},
 	])
 </script>
@@ -345,8 +388,8 @@
 		text-decoration: none;
 		/* color: azure; */
 	}
-	.tech {
-		width: 20%;
+	.iconFrameworks {
+		width: 15%;
 	}
 	.fuente {
 		font-size: 0.6rem;

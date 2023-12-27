@@ -1,5 +1,5 @@
 <template>
-	<v-app-bar :theme="bText" height="70" class="contenedor">
+	<v-app-bar :theme="bText" height="50" class="contenedor">
 		<v-icon color="white" class="menuBtn ml-4" size="x-large" @click="toggleAppbar"
 			>mdi-menu</v-icon
 		>
@@ -16,30 +16,40 @@
 			icon="mdi-theme-light-dark"
 		></v-btn>
 	</v-app-bar>
-	<v-icon v-if="!drawer" class="menu mt-4 ml-4" size="x-large" @click="toggleAppbar"
+	<!-- <v-icon v-if="!drawer" class="menu mt-4 ml-4" size="x-large" @click="toggleAppbar"
 		>mdi-menu</v-icon
-	>
+	> -->
 	<v-navigation-drawer
+		disable-resize-watcher="true"
+		expand-on-hover="true"
 		@update:model-value="toggleAppbar"
-		border="0"
+		border="true"
 		width="200"
 		v-model="drawer"
-		:theme="bText"
+		:color="bText === 'Dark' ? '#ECEFF1' : '#08080d'"
 	>
 		<p class="text-h5 text-center py-4">Menu</p>
 		<v-list class="pl-2 pt-6">
-			<v-list-item nav prepend-icon="mdi-home"><a href="#">Inicio</a></v-list-item>
-			<v-list-item nav prepend-icon="mdi-briefcase"
-				><a href="#proyectos">Proyectos</a></v-list-item
+			<v-list-item nav><v-icon>mdi-home</v-icon><a href="#">Inicio</a></v-list-item>
+			<v-list-item nav>
+				<v-icon>mdi-briefcase</v-icon>
+				<a href="#experience">Experiencia</a></v-list-item
 			>
-			<v-list-item nav prepend-icon="mdi-network-pos"
-				><a href="#skills">Skills</a></v-list-item
+			<v-list-item nav>
+				<v-icon>mdi-folder</v-icon>
+				<a href="#proyectos">Proyectos</a></v-list-item
 			>
-			<v-list-item nav prepend-icon="mdi-information-outline"
-				><a href="#about">About Me</a></v-list-item
+			<v-list-item nav>
+				<v-icon>mdi-network-pos</v-icon>
+				<a href="#skills">Habilidades</a></v-list-item
 			>
-			<v-list-item nav prepend-icon="mdi-account-box-outline"
-				><a href="#contacto">Contacto</a></v-list-item
+			<v-list-item nav>
+				<v-icon>mdi-information-outline</v-icon>
+				<a href="#about">About Me</a></v-list-item
+			>
+			<v-list-item nav>
+				<v-icon>mdi-account-box-outline</v-icon>
+				<a href="#contacto">Contacto</a></v-list-item
 			>
 		</v-list>
 	</v-navigation-drawer>
@@ -151,7 +161,8 @@
 		background-image: url('../../assets/banner2.png') !important;
 	}
 	.titleFont {
-		font-family: 'Pacifico', cursive;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+			'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 		font-size: 2rem;
 		letter-spacing: 10px;
 		word-spacing: 0px;

@@ -1,6 +1,6 @@
 <template>
 	<v-container id="skills">
-		<p class="text-center text-h3 mt-6 text-focus-in">Skills</p>
+		<p class="text-center text-h3 mt-6 text-focus-in">Habilidades</p>
 		<p class="text-center py-6 text-h5">Conocimientos sólidos</p>
 		<v-divider></v-divider>
 
@@ -8,9 +8,8 @@
 			<v-col cols="3" v-for="item in solid" :key="item.name">
 				<div class="text-center">
 					<div class="text-center">
-						<a target="_blank" :href="item.link">
-							<img class="imagen w-25 pt-4" :src="item.icon" />
-						</a>
+						<img class="imagen pt-4" :src="item.icon" />
+
 						<p class="text-center py-1">{{ item.name }}</p>
 					</div>
 				</div>
@@ -21,10 +20,9 @@
 			<v-col cols="3" v-for="item in basics" :key="item.name">
 				<div class="text-center">
 					<div class="text-center">
-						<a target="_blank" :href="item.link">
-							<img class="imagen w-25 pt-4" :src="item.icon" />
-						</a>
-						<p class="text-center py-6">{{ item.name }}</p>
+						<img class="imagen pt-4" :src="item.icon" />
+
+						<p class="text-center py-1">{{ item.name }}</p>
 					</div>
 				</div>
 			</v-col>
@@ -117,6 +115,7 @@
 		text-decoration: none;
 	}
 	.imagen {
+		width: 18%;
 		transition: transform 0.2s ease-in-out;
 	}
 	.imagen:hover {

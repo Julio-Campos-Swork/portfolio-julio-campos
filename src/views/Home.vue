@@ -1,17 +1,18 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-	<v-container id="inicio" class="mb-8 contenedor">
+	<v-container id="inicio" class="mb-8">
 		<v-row class="py-6 mx-auto d-none d-sm-flex">
 			<v-col cols="6">
 				<!-- <p class="text-subtitle-2 mb-6 mt-8 text-center"></p> -->
-				<p class="text-h3 py-9 text-center">Julio Campos</p>
+				<h1 class="text-h4 text-center"><strong>Hey,</strong> soy</h1>
+				<h2 class="text-h3 py-9 text-center text-focus-in font-weight-bold">
+					Julio Campos
+				</h2>
 
 				<v-row justify="center" class="mt-2 mb-4">
-					<p class="text-h6 typedChar text-center">¡Desarrollador Web!</p>
+					<p class="text-h6 typedChar text-center">Desarrollador Web!</p>
 				</v-row>
-				<p class="text-center py-6">
-					Diseño y codifico cosas simples y hermosas, por que amo lo que hago.
-				</p>
+				<p class="text-center py-6">Transformando ideas en experiencias digitales.</p>
 			</v-col>
 			<v-col cols="6">
 				<v-row justify="center">
@@ -26,20 +27,18 @@
 		<!-- movil -->
 		<v-row justify="center" class="d-sm-none">
 			<v-col cols="12" class="">
-				<h1 class="text-center pb-3">¡HOLA!</h1>
+				<h1 class="text-center pb-3">Hey, soy</h1>
 				<div class="rounded-pill mx-auto d-flex justify-center">
 					<v-img
 						class="profilePictureSmall text-focus-in"
 						src="../assets/fotoPerfil.png"
 					></v-img>
 				</div>
-				<p class="text-h6 py-6 text-center mx-8">Julio Campos</p>
+				<p class="text-h3 py-6 text-center mx-8">Julio Campos</p>
 				<div class="d-flex justify-center">
-					<p class="text-h6 typedChar text-center">¡Desarrollador Web!</p>
+					<p class="text-h6 typedChar text-center">Desarrollador Web!</p>
 				</div>
-				<p class="text-center py-6">
-					Diseño y codifico cosas simples y hermosas, por que amo lo que hago.
-				</p>
+				<p class="text-center py-6">Transformando ideas en experiencias digitales.</p>
 			</v-col>
 		</v-row>
 		<!-- iconos -->

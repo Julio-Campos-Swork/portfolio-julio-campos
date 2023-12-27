@@ -24,6 +24,11 @@ export default createVuetify({
           background: '#ECEFF1',
         },
       },
+      dark: {
+        colors: {
+          background: '#08080d',
+        },
+      },
     },
   },
 })

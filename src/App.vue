@@ -80,4 +80,10 @@
 	.fade-leave-to {
 		opacity: 0;
 	}
+
+	@media (prefers-reduce-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
 </style>
