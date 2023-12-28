@@ -85,26 +85,25 @@
 					</p>
 				</v-col>
 			</v-row>
-			<v-dialog v-model="dialogProjects" max-width="400" contained>
+			<v-dialog v-model="dialogProjects" max-width="500" contained>
 				<v-card
 					color="accent"
 					elevation="10"
 					rounded="lg"
 					border="true"
 					class="overflow-y-auto"
-				>
-					<v-row justify="end">
+					><div class="d-flex justify-end pr-4 pt-4">
 						<v-icon
 							size="x-large"
-							class="pr-12 pt-8"
+							class="closeButon rounded-lg"
 							@click="dialogProjects = !dialogProjects"
-							>mdi-close-box</v-icon
+							>mdi-close</v-icon
 						>
-					</v-row>
+					</div>
 					<v-card-title class="text-center text-primary py-1"
 						>{{ titlevalue }}
 					</v-card-title>
-					<v-card-text>
+					<v-card-text class="d-flex justify-center">
 						<AgeCalculatorVue v-if="componentList[0].isActive" />
 						<Alarm v-if="componentList[1].isActive" />
 						<Calculator v-if="componentList[2].isActive" />
@@ -373,6 +372,14 @@
 	.iconos:hover {
 		-webkit-transform: scale(1.2);
 		transform: scale(1.2);
+	}
+	.closeButon {
+		transition: all 0.2s ease-out;
+	}
+	.closeButon:hover {
+		/* -webkit-transform: scale(1.2); */
+		transform: scale(1.1);
+		background-color: rgba(62, 57, 57, 0.126);
 	}
 
 	@keyframes show {
