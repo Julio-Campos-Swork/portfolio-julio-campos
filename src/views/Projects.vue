@@ -47,7 +47,7 @@
 		<p class="pt-8 text-center">
 			<span class="text-h6 text-red">Importante:</span><br />
 			Los proyectos empresariales no los muestro por terminos de confidencialidad con la
-			empresa
+			empresa.
 		</p>
 	</v-container>
 	<v-divider></v-divider>
@@ -85,31 +85,45 @@
 					</p>
 				</v-col>
 			</v-row>
-			<v-dialog v-model="dialogProjects" max-height="600" max-width="400">
-				<p class="text-center text-primary mt-6 mb-2">{{ titlevalue }}</p>
-				<v-row justify="end">
-					<v-icon @click="dialogProjects = !dialogProjects">mdi-close-box</v-icon>
-				</v-row>
-				<!-- <v-row justify="center" class="mt-2"> -->
-				<AgeCalculatorVue v-if="componentList[0].isActive" />
-				<Alarm v-if="componentList[1].isActive" />
-				<Calculator v-if="componentList[2].isActive" />
-				<Currency v-if="componentList[3].isActive" />
-				<IMGUploader v-if="componentList[4].isActive" />
-				<Metronomo v-if="componentList[5].isActive" />
-				<MovieSearchVue v-if="componentList[6].isActive" />
-				<NewYearCount v-if="componentList[7].isActive" />
-				<PasswordGenerator v-if="componentList[8].isActive" />
-				<PredictGenderVue v-if="componentList[9].isActive" />
-				<QRComponent v-if="componentList[10].isActive" />
-				<RandomUserVue v-if="componentList[11].isActive" />
-				<StopwatchVue v-if="componentList[12].isActive" />
-				<StringInteractionVue v-if="componentList[13].isActive" />
-				<TicTacToe v-if="componentList[14].isActive" />
-				<TodoListVue v-if="componentList[15].isActive" />
-				<WeatherVue v-if="componentList[16].isActive" />
-				<!-- <Slider v-if="componentList[17].isActive" /> -->
-				<!-- </v-row> -->
+			<v-dialog v-model="dialogProjects" max-width="400" contained>
+				<v-card
+					color="accent"
+					elevation="10"
+					rounded="lg"
+					border="true"
+					class="overflow-y-auto"
+				>
+					<v-row justify="end">
+						<v-icon
+							size="x-large"
+							class="pr-12 pt-8"
+							@click="dialogProjects = !dialogProjects"
+							>mdi-close-box</v-icon
+						>
+					</v-row>
+					<v-card-title class="text-center text-primary py-1"
+						>{{ titlevalue }}
+					</v-card-title>
+					<v-card-text>
+						<AgeCalculatorVue v-if="componentList[0].isActive" />
+						<Alarm v-if="componentList[1].isActive" />
+						<Calculator v-if="componentList[2].isActive" />
+						<Currency v-if="componentList[3].isActive" />
+						<IMGUploader v-if="componentList[4].isActive" />
+						<Metronomo v-if="componentList[5].isActive" />
+						<MovieSearchVue v-if="componentList[6].isActive" />
+						<NewYearCount v-if="componentList[7].isActive" />
+						<PasswordGenerator v-if="componentList[8].isActive" />
+						<PredictGenderVue v-if="componentList[9].isActive" />
+						<QRComponent v-if="componentList[10].isActive" />
+						<RandomUserVue v-if="componentList[11].isActive" />
+						<StopwatchVue v-if="componentList[12].isActive" />
+						<StringInteractionVue v-if="componentList[13].isActive" />
+						<TicTacToe v-if="componentList[14].isActive" />
+						<TodoListVue v-if="componentList[15].isActive" />
+						<WeatherVue v-if="componentList[16].isActive" />
+					</v-card-text>
+				</v-card>
 			</v-dialog>
 			<p class="text-center text-caption pt-8 pb-4">
 				Estos proyectos fueron creados con el proposito de practicar y reutilizar código,
@@ -137,7 +151,6 @@
 	import AgeCalculatorVue from '@/components/AgeCalculator.vue'
 	import MovieSearchVue from '@/components/MovieSearch.vue'
 	import TodoListVue from '@/components/TodoList.vue'
-	import Slider from '@/components/Slider.vue'
 	import { ref } from 'vue'
 
 	//iconos
