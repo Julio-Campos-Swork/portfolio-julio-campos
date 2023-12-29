@@ -6,7 +6,7 @@
 		<!-- pantallas grandes -->
 		<v-row justify="space-evenly" class="mt-2 d-none d-md-flex">
 			<v-col cols="6" class="">
-				<p class="descripcion mt-4 text-start mx-2">
+				<p class="descripcionText mt-4 text-start mx-2">
 					Más de 5 años de experiencia en programación en general y +2 años
 					profesionalmente. Me gusta estar a la vanguardia de las tecnologías del
 					desarrollo web, disfruto creando soluciones a problemas que se me presentan,
@@ -25,7 +25,7 @@
 			</v-col>
 			<v-col cols="6" class="d-flex child-flex">
 				<div class="rounded-pill mx-auto">
-					<v-img class="profilePicture text-focus-in" src="../assets/perfil.jpg"></v-img>
+					<v-img class="profilePicture" src="../assets/fotoPerfil.png"></v-img>
 				</div>
 			</v-col>
 		</v-row>
@@ -34,7 +34,7 @@
 		<v-row justify="space-evenly" class="mt-2 d-md-none">
 			<v-col cols="12" class="d-flex child-flex">
 				<div class="rounded-pill mx-auto">
-					<v-img class="profilePicture text-focus-in" src="../assets/perfil.jpg"></v-img>
+					<v-img class="profilePicture" src="../assets/fotoPerfil.png"></v-img>
 				</div>
 			</v-col>
 			<v-col cols="12" class="">
@@ -72,18 +72,13 @@
 	.cita {
 		font-size: 0.7rem;
 	}
-	.descripcion {
+	.descripcionText {
 		font-size: 1rem;
 		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 			Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		max-width: 95%;
 	}
-	.detalle {
-		font-size: 1em;
-	}
-	ul {
-		list-style: none;
-	}
+
 	.profilePicture {
 		border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
 		width: 300px;

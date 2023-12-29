@@ -15,12 +15,12 @@
 				<p class="text-center py-6">Transformando ideas en experiencias digitales.</p>
 			</v-col>
 			<v-col cols="6">
-				<v-row justify="center">
+				<div class="mx-auto">
 					<v-img
-						class="profilePicture text-focus-in"
-						src="../assets/fotoPerfil.png"
+						class="text-focus-in rounded-shaped profilePicture"
+						src="../assets/Diseño.png"
 					></v-img>
-				</v-row>
+				</div>
 			</v-col>
 		</v-row>
 
@@ -28,10 +28,10 @@
 		<v-row justify="center" class="d-sm-none">
 			<v-col cols="12" class="">
 				<h1 class="text-center pb-3">Hey, soy</h1>
-				<div class="rounded-pill mx-auto d-flex justify-center">
+				<div class="mx-auto d-flex justify-center">
 					<v-img
-						class="profilePictureSmall text-focus-in"
-						src="../assets/fotoPerfil.png"
+						class="text-focus-in rounded-shaped profilePicture"
+						src="../assets/Diseño.png"
 					></v-img>
 				</div>
 				<p class="text-h3 py-6 text-center mx-8">Julio Campos</p>
@@ -122,21 +122,11 @@
 		}
 	}
 
-	.profilePicture {
-		/* border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%; */
-		width: 20em;
-		height: 20em;
-		border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-		transition: all 3s;
-	}
-	.profilePicture:hover {
-		transform: scale(1.1);
-	}
 	.profilePictureSmall {
 		/* border-radius: 30% 70% 70% 30% / 30% 50% 50% 70%; */
 		width: 13em;
 		height: 13em;
-		border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+		border-radius: 100%;
 	}
 	.botonCV {
 		background-color: #56a3f0;
@@ -151,5 +141,12 @@
 	}
 	.boxCursor {
 		cursor: pointer;
+	}
+	.profilePicture {
+		opacity: 0.7 !important;
+		transition: all 3s;
+	}
+	.profilePicture:hover {
+		transform: scale(1.1);
 	}
 </style>

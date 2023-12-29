@@ -20,8 +20,7 @@
 		>mdi-menu</v-icon
 	> -->
 	<v-navigation-drawer
-		disable-resize-watcher="true"
-		expand-on-hover="true"
+		disable-resize-watcher
 		@update:model-value="toggleAppbar"
 		border="true"
 		width="200"

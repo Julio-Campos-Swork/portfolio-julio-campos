@@ -4,14 +4,14 @@
 			<v-col cols="10" lg="8" xl="8" md="8">
 				<form @submit.prevent="submit">
 					<h6 class="text-focus-in text-h3 text-center mb-4 text-focus-in">Contáctame</h6>
-					<v-tefo-field
+					<v-text-field
 						variant="outlined"
 						class="textField"
 						v-model="name.value.value"
 						:counter="10"
 						:error-messages="name.errorMessage.value"
 						label="Nombre"
-					></v-tefo-field>
+					></v-text-field>
 
 					<v-text-field
 						variant="outlined"
