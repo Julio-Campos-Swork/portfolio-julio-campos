@@ -17,12 +17,12 @@
 										:src="item.raw.img"
 									></v-img
 								></a>
-								<p class="text-center text-body-2 pt-4 d-none d-md-block">
+								<!-- 	<p class="text-center text-body-2 pt-4 d-none d-md-block">
 									{{ item.raw.info }}
 								</p>
 								<p class="text-center text-body-2 pt-4 d-block d-md-none">
 									{{ item.raw.info }}
-								</p>
+								</p> -->
 								<br />
 								<div class="d-flex justify-center">
 									<img
@@ -33,7 +33,7 @@
 								</div>
 								<br />
 								<a :href="item.raw?.source" class="d-flex justify-center" target="_blank"
-									><v-icon icon="mdi-github" size="large" class="py-2"></v-icon
+									><v-icon icon="mdi-github" size="x-large" class="py-2"></v-icon
 								></a>
 							</v-card-text>
 						</v-card>
@@ -271,7 +271,9 @@
 		animation-name: show;
 		animation-range: entry 25% cover 30%;
 		animation-fill-mode: both;
+		border: 1px solid rgba(128, 128, 128, 0.109);
 	}
+
 	a:link,
 	a:visited,
 	a:active {
@@ -279,6 +281,11 @@
 		/* color: azure; */
 	}
 	.iconFrameworks {
-		width: 15%;
+		width: 16%;
+	}
+	@media (max-width: 426px) {
+		.iconFrameworks {
+			width: 12%;
+		}
 	}
 </style>
