@@ -4,15 +4,17 @@
 		<v-row class="py-6 mx-auto d-none d-sm-flex">
 			<v-col cols="6">
 				<!-- <p class="text-subtitle-2 mb-6 mt-8 text-center"></p> -->
-				<h1 class="text-h4 text-center"><strong>Hey,</strong> soy</h1>
+				<h1 class="text-h4 text-xl-h2 text-center pt-2"><strong>Hey,</strong> soy</h1>
 				<h2 class="text-h3 py-9 text-center text-focus-in font-weight-bold">
 					Julio Campos
 				</h2>
 
 				<v-row justify="center" class="mt-2 mb-4">
-					<p class="text-h6 typedChar text-center">Desarrollador Web!</p>
+					<p class="text-h6 text-xl-h3 typedChar text-center">Desarrollador Web!</p>
 				</v-row>
-				<p class="text-center py-6">Transformando ideas en experiencias digitales.</p>
+				<p class="text-center text-xl-h5 text-md py-6">
+					Transformando ideas en experiencias digitales.
+				</p>
 			</v-col>
 			<v-col cols="6">
 				<div class="mx-auto">

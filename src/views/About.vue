@@ -23,18 +23,24 @@
 					Google"
 				</p>
 			</v-col>
-			<v-col cols="6" class="d-flex child-flex">
-				<div class="rounded-pill mx-auto">
-					<v-img class="profilePicture" src="../assets/fotoPerfil.png"></v-img>
+			<v-col cols="6" class="">
+				<div class="mx-auto d-flex justify-center">
+					<v-img
+						class="profilePicture text-focus-in rounded-pill"
+						src="../assets/fotoPerfil.png"
+					></v-img>
 				</div>
 			</v-col>
 		</v-row>
 
 		<!-- movil -->
 		<v-row justify="space-evenly" class="mt-2 d-md-none">
-			<v-col cols="12" class="d-flex child-flex">
-				<div class="rounded-pill mx-auto">
-					<v-img class="profilePicture" src="../assets/fotoPerfil.png"></v-img>
+			<v-col cols="12" class="">
+				<div class="mx-auto d-flex justify-center">
+					<v-img
+						class="text-focus-in rounded-shaped profilePicture"
+						src="../assets/fotoPerfil.png"
+					></v-img>
 				</div>
 			</v-col>
 			<v-col cols="12" class="">
@@ -80,10 +86,10 @@
 	}
 
 	.profilePicture {
-		border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-		width: 300px;
-		height: 300px;
+		opacity: 0.7 !important;
 		transition: all 3s;
+		width: 250px;
+		max-width: 350px;
 	}
 	.profilePicture:hover {
 		transform: scale(1.1);
