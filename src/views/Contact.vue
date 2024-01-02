@@ -45,10 +45,10 @@
 					></v-select>
 
 					<v-row justify="space-around" class="mt-4">
-						<v-btn size="small" color="indigo" rounded="lg" @click="submit">
+						<v-btn size="large" color="indigo" rounded="lg" @click="submit">
 							Enviar
 						</v-btn>
-						<v-btn size="small" color="red" rounded="lg" @click="handleReset">
+						<v-btn size="large" color="red" rounded="lg" @click="handleReset">
 							limpiar
 						</v-btn>
 					</v-row>

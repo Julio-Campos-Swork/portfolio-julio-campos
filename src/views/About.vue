@@ -48,9 +48,9 @@
 					Más de 4 años de experiencia en programación en general y más de 2 años
 					profesionalmente. Me gusta estar a la vanguardia de las tecnologías del
 					desarrollo web, disfruto creando soluciones a problemas que se me presentan,
-					cada día incremento mis conocimientos conforme a las necesidades de mis
-					clientes. No me considero el mejor en lo que hago, pero todo lo hago de la mejor
-					manera posible, siguiendo las buenas practicas.
+					cada día forjo mis conocimientos conforme a las necesidades de los proyectos. No
+					me considero el mejor en lo que hago, pero todo lo hago de la mejor manera
+					posible, siguiendo las buenas prácticas.
 				</p>
 				<p class="text-subtitle-2 pt-6 text-center mx-2">
 					4 años de estudio en Ing. Tecnologías de la información y Comunicaciones (No
