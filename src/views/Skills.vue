@@ -1,7 +1,7 @@
 <template>
 	<v-container id="skills">
 		<p class="text-center text-h3 mt-6 text-focus-in">Habilidades</p>
-		<p class="text-center py-6 text-h5">Conocimientos sólidos</p>
+		<p class="text-center py-6 text-h6">Conocimientos sólidos</p>
 		<v-divider></v-divider>
 
 		<v-row justify="space-evenly">
@@ -14,7 +14,7 @@
 					</div>
 				</div>
 			</v-col>
-			<p class="text-center py-6 text-h5">Conocimientos básicos</p>
+			<p class="text-center py-6 text-h6">Conocimientos básicos</p>
 			<v-divider></v-divider>
 
 			<v-col cols="3" v-for="item in basics" :key="item.name">

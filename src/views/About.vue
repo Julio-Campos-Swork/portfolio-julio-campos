@@ -1,5 +1,5 @@
 <template>
-	<v-container id="about" class="mt-6 mb-6">
+	<v-container id="about" class="mt-6 mb-6 mx-16">
 		<h1 class="text-h3 text-focus-in text-center">Acerca de mi</h1>
 		<p class="text-center text-h5 mt-8">Julio Campos</p>
 
@@ -70,7 +70,7 @@
 
 <style scoped>
 	.cita {
-		font-size: 0.7rem;
+		font-size: 0.8rem;
 	}
 	.descripcionText {
 		font-size: 1rem;

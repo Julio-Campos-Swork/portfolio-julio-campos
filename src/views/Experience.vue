@@ -1,5 +1,5 @@
 <template>
-	<v-container id="experience" class="pt-4 w-sm-75">
+	<v-container id="experience" class="pt-4 contenedor">
 		<p class="text-center text-h3 py-8 text-focus-in">Experiencia</p>
 
 		<v-expansion-panels variant="inset" class="my-4">
@@ -65,3 +65,9 @@
 		},
 	]
 </script>
+
+<style scoped>
+	.contenedor {
+		max-width: 1440px;
+	}
+</style>

@@ -1,13 +1,82 @@
 <template>
-	<ProjectExternal />
+	<v-container id="proyectos" class="pt-1">
+		<p class="text-center text-h3 py-10 text-focus-in">Proyectos</p>
+		<v-data-iterator :items="items" :items-per-page="3">
+			<template v-slot:default="{ items }">
+				<v-row justify="space-evenly">
+					<v-col cols="12" sm="6" md="4" lg="3" v-for="item in items" :key="item.raw.id">
+						<v-card color="accent" elevation="10" rounded="xl" border="true">
+							<v-card-title class="text-center text-h6 py-4">{{
+								item.raw.name
+							}}</v-card-title>
+							<v-card-text>
+								<a :href="item.raw.url" target="_blank"
+									><v-img
+										class="h-0 w-100 imagen rounded-xl"
+										cover
+										:src="item.raw.img"
+									></v-img
+								></a>
+								<p class="text-center text-body-2 pt-4 d-none d-md-block">
+									{{ item.raw.info }}
+								</p>
+								<p class="text-center text-body-2 pt-4 d-block d-md-none">
+									{{ item.raw.info }}
+								</p>
+								<br />
+								<div class="d-flex justify-center">
+									<img
+										:src="icon"
+										v-for="icon in item.raw.tecnologias"
+										class="px-2 iconFrameworks"
+									/>
+								</div>
+								<br />
+								<a :href="item.raw?.source" class="d-flex justify-center" target="_blank"
+									><v-icon icon="mdi-github" size="large" class="py-2"></v-icon
+								></a>
+							</v-card-text>
+						</v-card>
+					</v-col>
+				</v-row>
+			</template>
+			<template v-slot:footer="{ page, pageCount, prevPage, nextPage }">
+				<div
+					class="text-h4 font-weight-bold d-flex justify-center my-4 pt-3 align-center"
+				>
+					<div class="d-inline-flex">
+						<v-btn
+							:disabled="page === 1"
+							icon="mdi-arrow-left"
+							size="small"
+							variant="tonal"
+							class="me-2"
+							@click="prevPage"
+						></v-btn>
+						<div class="mx-2 pt-3 text-subtitle-2">{{ page }} de {{ pageCount }}</div>
+						<v-btn
+							:disabled="page === pageCount"
+							icon="mdi-arrow-right"
+							size="small"
+							variant="tonal"
+							@click="nextPage"
+						></v-btn>
+					</div>
+				</div>
+			</template>
+		</v-data-iterator>
+
+		<p class="pt-8 text-center">
+			<span class="text-h6 text-red">Importante:</span><br />
+			Los proyectos empresariales no los muestro por terminos de confidencialidad con la
+			empresa.
+		</p>
+	</v-container>
 	<v-divider></v-divider>
-	<ProjectsContainer />
 </template>
 
 <script setup>
 	import { ref } from 'vue'
-	import ProjectsContainer from '@/components/general/ProjectsContainer'
-	import ProjectExternal from '@/components/general/ProjectsExternal'
 	//iconos
 	import html from '@/assets/html.svg'
 	import css from '@/assets/css.svg'
@@ -30,7 +99,7 @@
 		{
 			id: 2,
 			name: 'Hotel del Ángel',
-			img: '../assets/hotel.png',
+			img: '../../assets/hotel.png',
 			url: 'https://hoteldelangel.com.mx/public/misitio/',
 			info: 'Desarrollado con:',
 			tecnologias: [astro, tailwind, vue, css],
@@ -51,7 +120,7 @@
 		{
 			id: 13,
 			name: 'TikTok Clone',
-			img: '../assets/tiktok.png',
+			img: '../../assets/tiktok.png',
 			url: 'https://github.com/Julio-Campos-Swork/tik-tok-clone-front/',
 			info: 'Desarrollado con: (No desplegado)',
 			tecnologias: [nuxt, tailwind, vue, laravel],
@@ -72,7 +141,7 @@
 		{
 			id: 5,
 			name: 'Pokemon API',
-			img: '../assets/PokeApi.png',
+			img: '../../assets/PokeApi.png',
 			url: 'https://pokemon-api-by-julio-campos.netlify.app/',
 			info: 'Desarrollado con:',
 			tecnologias: [vue, vuetify],
@@ -82,7 +151,7 @@
 		{
 			id: 14,
 			name: 'Calculadora',
-			img: '../assets/calculadora.png',
+			img: '../../assets/calculadora.png',
 			url: 'https://calculator-react-two-sand.vercel.app/',
 			info: 'Desarrollado con:',
 			tecnologias: [react, css],
@@ -92,7 +161,7 @@
 		{
 			id: 15,
 			name: 'Todo-list',
-			img: '../assets/todo.png',
+			img: '../../assets/todo.png',
 			url: 'https://todo-list-react-psi-nine.vercel.app/',
 			info: 'Desarrollado con:',
 			tecnologias: [react, tailwind, css],
@@ -102,7 +171,7 @@
 		{
 			id: 6,
 			name: 'Rick and Morty API',
-			img: '../assets/Rick.png',
+			img: '../../assets/Rick.png',
 			url: 'https://rick-and-morty-api-by-julio-campos.netlify.app/',
 			info: 'Desarrollado con:',
 			tecnologias: [vue, vuetify],
@@ -143,7 +212,7 @@
 		{
 			id: 10,
 			name: 'Catálogo de películas',
-			img: '../assets/netflix.png',
+			img: '../../assets/netflix.png',
 			url: 'https://netflix-clone-vuetify.vercel.app/',
 			info: 'Desarrollado con:',
 			tecnologias: [vue, vuetify],
