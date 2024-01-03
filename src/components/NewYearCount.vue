@@ -1,28 +1,30 @@
 <template>
-	<v-card
-		elevation="24"
-		class="mb-8 mt-4 bg-blue-grey-lighten-5"
-		rounded="xl"
-		theme="light"
-	>
+	<v-card elevation="24" class="mb-8 mt-4 contenedor w-100 h-100" rounded="xl">
 		<v-card-text>
-			<v-container class="contenedor">
-				<h1 class="text-center text-indigo">Time Until New Year</h1>
+			<v-container fluid>
+				<h1 class="text-center text-white">Time Until New Year</h1>
 				<v-row justify="space-between" class="mt-4 mb-4">
-					<p class="text-h6 text-black">Days</p>
-					<p class="text-h6 text-black">Hours</p>
-					<p class="text-h6 text-black">Minutes</p>
-					<p class="text-h6 text-black">Seconds</p>
+					<p class="text-h6 text-white">Days</p>
+					<p class="text-h6 text-white">Hours</p>
+					<p class="text-h6 text-white">Minutes</p>
+					<p class="text-h6 text-white">Seconds</p>
 				</v-row>
 				<v-row justify="space-between" class="mt-4">
-					<v-label class="text-blue">{{ dayV }}</v-label>
-					<v-label class="text-blue">{{ hourV }}</v-label>
-					<v-label class="text-blue">{{ minutesV }}</v-label>
-					<v-label class="text-blue">{{ secondsV }}</v-label>
+					<v-label class="text-white font-weight-bold">{{ dayV }}</v-label>
+					<v-label class="text-white font-weight-bold">{{ hourV }}</v-label>
+					<v-label class="text-white font-weight-bold">{{ minutesV }}</v-label>
+					<v-label class="text-white font-weight-bold">{{ secondsV }}</v-label>
 				</v-row>
 			</v-container>
 		</v-card-text>
 	</v-card>
+	<v-snackbar v-model="snackbar" multi-line>
+		HAPPY NEW YEAR - FELIZ AÑO NUEVO
+
+		<template v-slot:actions>
+			<v-btn color="red" variant="text" @click="snackbar = false"> Close </v-btn>
+		</template>
+	</v-snackbar>
 </template>
 
 <script setup>
@@ -33,6 +35,7 @@
 	const minutesV = ref(0)
 	const secondsV = ref(0)
 
+	const snackbar = ref(false)
 	let endDate = new Date(2025, 0, 1, 0, 0)
 	let endTime = endDate.getTime()
 	const countdown = () => {
@@ -51,7 +54,7 @@
 		let secsLeft = Math.floor((remainingTime % oneMin) / 1000)
 		if (endTime < todayTime) {
 			clearInterval(i)
-			console.log('Happy new year')
+			snackbar.value = true
 		} else {
 			dayV.value = addZeroes(daysLeft)
 			hourV.value = addZeroes(hrsLeft)
@@ -64,19 +67,9 @@
 </script>
 
 <style scoped>
-	.textZone {
-		background: transparent;
-		color: rgb(6, 6, 6);
-	}
-	.titulo {
-		color: rgb(6, 6, 6);
-	}
-	/* .contenedor{
-  background-image: url('https://es.chemicalsafetyfacts.org/wp-content/uploads/2018/06/fireworks-1024x683.jpg') ;
-  background-size: cover;
-  width: 400px;
-} */
-	.etiquetas {
-		color: rgb(6, 6, 6);
+	.contenedor {
+		background-image: url('https://cdn.pixabay.com/photo/2014/12/21/07/49/fireworks-574739_1280.jpg');
+		background-size: cover;
+		width: 400px;
 	}
 </style>
