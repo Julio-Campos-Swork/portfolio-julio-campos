@@ -50,7 +50,7 @@
 
 		{
 			id: 15,
-			name: 'TikTok Clone',
+			name: 'Garen landing Page',
 			img: '../assets/Garen.png',
 			url: 'https://garen-site.vercel.app/',
 			info: 'En construcción',

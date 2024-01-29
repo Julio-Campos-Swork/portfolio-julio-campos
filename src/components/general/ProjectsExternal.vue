@@ -116,6 +116,16 @@
 
 			source: 'https://github.com/Julio-Campos-Swork/nextjs-carhub-aplication',
 		},
+		{
+			id: 15,
+			name: 'Garen landing Page',
+			img: '../../assets/Garen.png',
+			url: 'https://garen-site.vercel.app/',
+			info: 'En construcción',
+			tecnologias: [astro, tailwind, vue],
+
+			source: 'https://github.com/Julio-Campos-Swork/tiktok-clone-api',
+		},
 
 		{
 			id: 13,
