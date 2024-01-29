@@ -14,13 +14,12 @@
 					mejor en lo que hago, pero todo lo hago de la mejor manera posible, siguiendo
 					las buenas practicas.
 				</p>
-				<p class="text-subtitle-2 pt-6 text-start mx-2">
+				<!-- <p class="text-subtitle-2 pt-6 text-start mx-2">
 					4 años de estudio en Ing. Tecnologías de la información y Comunicaciones (No
 					titulado)
-				</p>
+				</p> -->
 				<p class="text-subtitle-2 pt-6 text-start mx-2">
-					Actualmente estoy tomando un curso de "Diseño de Experiencia del Usuario (UX) de
-					Google"
+					Certificación en proceso "Diseño de Experiencia del Usuario (UX) de Google"
 				</p>
 			</v-col>
 			<v-col cols="6" class="">
