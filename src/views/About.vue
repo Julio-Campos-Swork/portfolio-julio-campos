@@ -7,12 +7,12 @@
 		<v-row justify="space-evenly" class="mt-2 d-none d-md-flex">
 			<v-col cols="6" class="">
 				<p class="descripcionText mt-4 text-start mx-2">
-					Más de 5 años de experiencia en programación en general y +2 años
-					profesionalmente. Me gusta estar a la vanguardia de las tecnologías del
-					desarrollo web, disfruto creando soluciones a problemas que se me presentan,
-					cada día incremento mis conocimientos conforme a las necesidades de mis
-					clientes. No me considero el mejor en lo que hago, pero todo lo hago de la mejor
-					manera posible, siguiendo las buenas practicas.
+					Más de 4 años de experiencia en programación en general y +2 años
+					profesionalmente. Estoy a la vanguardia de las tecnologías del desarrollo web,
+					disfruto creando soluciones a problemas que se me presentan, cada día incremento
+					mis conocimientos conforme a las necesidades de mis clientes. No me considero el
+					mejor en lo que hago, pero todo lo hago de la mejor manera posible, siguiendo
+					las buenas practicas.
 				</p>
 				<p class="text-subtitle-2 pt-6 text-start mx-2">
 					4 años de estudio en Ing. Tecnologías de la información y Comunicaciones (No
@@ -46,19 +46,18 @@
 			<v-col cols="12" class="">
 				<p class="text-subtitle-2 mt-4 text-center mx-2">
 					Más de 4 años de experiencia en programación en general y más de 2 años
-					profesionalmente. Me gusta estar a la vanguardia de las tecnologías del
-					desarrollo web, disfruto creando soluciones a problemas que se me presentan,
-					cada día forjo mis conocimientos conforme a las necesidades de los proyectos. No
-					me considero el mejor en lo que hago, pero todo lo hago de la mejor manera
-					posible, siguiendo las buenas prácticas.
+					profesionalmente. Estoy a la vanguardia de las tecnologías del desarrollo web,
+					disfruto creando soluciones a problemas que se me presentan, cada día forjo mis
+					conocimientos conforme a las necesidades de los proyectos. No me considero el
+					mejor en lo que hago, pero todo lo hago de la mejor manera posible, siguiendo
+					las buenas prácticas.
 				</p>
-				<p class="text-subtitle-2 pt-6 text-center mx-2">
+				<!-- <p class="text-subtitle-2 pt-6 text-center mx-2">
 					4 años de estudio en Ing. Tecnologías de la información y Comunicaciones (No
 					titulado)
-				</p>
+				</p> -->
 				<p class="text-subtitle-2 pt-6 text-center mx-2">
-					Actualmente estoy tomando un curso de "Diseño de Experiencia del Usuario (UX) de
-					Google"
+					Certificación en proceso "Diseño de Experiencia del Usuario (UX) de Google"
 				</p>
 			</v-col>
 		</v-row>
