@@ -1,5 +1,5 @@
 <template>
-	<v-container id="about" class="mt-6 mb-6 mx-16">
+	<v-container id="about" class="mt-6 mb-6 mx-lg-16">
 		<h1 class="text-h3 text-focus-in text-center">Acerca de mi</h1>
 		<p class="text-center text-h5 mt-8">Julio Campos</p>
 
@@ -33,7 +33,7 @@
 		</v-row>
 
 		<!-- movil -->
-		<v-row justify="space-evenly" class="mt-2 d-md-none">
+		<v-row justify="center" class="mt-2 d-md-none">
 			<v-col cols="12" class="">
 				<div class="mx-auto d-flex justify-center">
 					<v-img

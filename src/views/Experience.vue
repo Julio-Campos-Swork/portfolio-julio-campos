@@ -43,9 +43,9 @@
 			title: 'Grupo IPAG',
 			date: 'Marzo 2020 - Enero 2022',
 			text:
-				'Encargado del control y gestión de inventarios, así como el diseño y mantenimiento de un sistema ERP. Enfoque en optimizar la gestión de recursos y la eficiencia operativa a través de soluciones tecnológicas.',
+				'Monitoreo de sitio web, recopilación de datos, actualizaciones de sistema y de inventarios.',
 			achievements:
-				'Dirigí la organización de inventarios y desarrollé un sistema capaz de monitorear y mejorar el rendimiento de ventas, además de integrar APIs de terceros para maximizar la funcionalidad del sistema.',
+				'Dirigí la organización de inventarios y contribuí en el desarrollo un sistema capaz de monitorear y mejorar el rendimiento de ventas, además de integrar APIs de terceros para maximizar la funcionalidad del sistema.',
 		},
 		{
 			title: 'Presidencia Municipal',
@@ -56,12 +56,12 @@
 				'Organicé y estructuré de manera eficiente toda la información de la presidencia, incluyendo documentos públicos y privados para garantizar transparencia y accesibilidad.',
 		},
 		{
-			title: 'Freelancer',
+			title: 'Nimesis Constructora',
 			date: '2017 - 2019',
 			text:
-				'Consultor en diversos proyectos, proporcionando soluciones tecnológicas a medida para negocios locales. Especializado en el desarrollo de sistemas de punto de venta adaptados a las necesidades específicas del cliente.',
+				'Consultor de sistemas en general, instalación de software, actualización de equipos y apoyo a desarrollo de sistemas de control.',
 			achievements:
-				'Desarrollé dos sistemas clave: un punto de venta para un restaurante y otro para una lavandería, ofreciendo soluciones personalizadas que mejoraron la eficiencia y la experiencia del cliente.',
+				'Implementación de nuevas tecnologías en los sistemas internos de la empresa',
 		},
 	]
 </script>

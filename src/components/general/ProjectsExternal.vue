@@ -1,7 +1,7 @@
 <template>
 	<v-container id="proyectos" class="pt-1">
 		<p class="text-center text-h3 py-10 text-focus-in">Proyectos</p>
-		<v-data-iterator :items="items" :items-per-page="3">
+		<v-data-iterator :items="items" :items-per-page="itemsByDisplaySize">
 			<template v-slot:default="{ items }">
 				<v-row justify="space-evenly">
 					<v-col cols="12" sm="6" md="4" lg="3" v-for="item in items" :key="item.raw.id">
@@ -76,7 +76,8 @@
 </template>
 
 <script setup>
-	import { ref } from 'vue'
+	import { ref, computed } from 'vue'
+	import { useDisplay } from 'vuetify'
 	//iconos
 	import html from '@/assets/html.svg'
 	import css from '@/assets/css.svg'
@@ -95,6 +96,27 @@
 	import prisma from '@/assets/prisma.svg'
 	import ionic from '@/assets/ionic.svg'
 
+	const { name } = useDisplay()
+	const itemsByDisplaySize = computed(() => {
+		// name is reactive and
+		// must use .value
+		switch (name.value) {
+			case 'xs':
+				return 1
+			case 'sm':
+				return 1
+			case 'md':
+				return 3
+			case 'lg':
+				return 3
+			case 'xl':
+				return 4
+			case 'xxl':
+				return 4
+		}
+
+		return undefined
+	})
 	const items = ref([
 		{
 			id: 2,
@@ -133,7 +155,7 @@
 			img: '../../assets/tiktok.png',
 			url: 'https://github.com/Julio-Campos-Swork/tik-tok-clone-front/',
 			info: 'Desarrollado con: (No desplegado)',
-			tecnologias: [nuxt, tailwind, vue, laravel],
+			tecnologias: [nuxt, tailwind, vue, laravel, php],
 
 			source: 'https://github.com/Julio-Campos-Swork/tiktok-clone-api',
 		},
@@ -235,7 +257,7 @@
 			img: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
 			url: 'https://i.ibb.co/N9wxf55/Acrilicos.png',
 			info: 'Desarrollado con:',
-			tecnologias: [vue, vuetify, laravel],
+			tecnologias: [vue, vuetify, laravel, mysql],
 
 			source: 'https://github.com/Julio-Campos-Swork',
 		},
@@ -245,7 +267,7 @@
 			img: 'https://i.ibb.co/nn691vZ/barcodes.png',
 			url: 'https://i.ibb.co/nn691vZ/barcodes.png',
 			info: 'Desarrollado con:',
-			tecnologias: [ionic, vue, vuetify, laravel],
+			tecnologias: [ionic, vue, vuetify, laravel, mysql],
 
 			source: 'https://github.com/Julio-Campos-Swork',
 		},
