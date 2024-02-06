@@ -6,20 +6,13 @@
 		<!-- pantallas grandes -->
 		<v-row justify="space-evenly" class="mt-2 d-none d-md-flex">
 			<v-col cols="6" class="">
-				<p class="descripcionText mt-4 text-start mx-2">
+				<p class="descripcionText mt-10 text-start mx-2">
 					Más de 4 años de experiencia en programación en general y +2 años
 					profesionalmente. Estoy a la vanguardia de las tecnologías del desarrollo web,
 					disfruto creando soluciones a problemas que se me presentan, cada día incremento
 					mis conocimientos conforme a las necesidades de mis clientes. No me considero el
 					mejor en lo que hago, pero todo lo hago de la mejor manera posible, siguiendo
 					las buenas practicas.
-				</p>
-				<!-- <p class="text-subtitle-2 pt-6 text-start mx-2">
-					4 años de estudio en Ing. Tecnologías de la información y Comunicaciones (No
-					titulado)
-				</p> -->
-				<p class="text-subtitle-2 pt-6 text-start mx-2">
-					Certificación en proceso "Diseño de Experiencia del Usuario (UX) de Google"
 				</p>
 			</v-col>
 			<v-col cols="6" class="">
@@ -55,10 +48,18 @@
 					4 años de estudio en Ing. Tecnologías de la información y Comunicaciones (No
 					titulado)
 				</p> -->
-				<p class="text-subtitle-2 pt-6 text-center mx-2">
-					Certificación en proceso "Diseño de Experiencia del Usuario (UX) de Google"
-				</p>
 			</v-col>
+		</v-row>
+		<v-row>
+			<v-col lg="6" sm="12" class="d-flex justify-center">
+				<div>
+					<p class="text-subtitle-2 pt-6 text-center mx-2 pb-6">
+						Certificado "Diseño de Experiencia del Usuario (UX) de Google"
+					</p>
+					<v-img src="../assets/CertificadoUX.jpg"></v-img>
+				</div>
+			</v-col>
+			<v-col lg="6" sm="12"> </v-col>
 		</v-row>
 
 		<v-row justify="center" class="mt-8">
