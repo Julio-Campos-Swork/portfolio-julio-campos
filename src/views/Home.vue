@@ -110,7 +110,7 @@
 		white-space: nowrap;
 		border-right: 5px solid;
 		width: 16ch;
-		animation: typing 3s steps(16), blink 1s infinite;
+		animation: typing 2s steps(16), blink 1s infinite;
 		overflow: hidden;
 	}
 	@keyframes typing {
@@ -146,7 +146,7 @@
 	}
 	.profilePicture {
 		opacity: 0.7 !important;
-		transition: all 3s;
+		transition: all 1s;
 	}
 	.profilePicture:hover {
 		transform: scale(1.1);
