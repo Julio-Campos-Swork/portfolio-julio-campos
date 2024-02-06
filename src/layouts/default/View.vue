@@ -13,6 +13,10 @@
 		</div>
 		<v-divider></v-divider>
 		<div data-aos="fade-up">
+			<UX />
+		</div>
+		<v-divider></v-divider>
+		<div data-aos="fade-up">
 			<Skills />
 		</div>
 		<v-divider></v-divider>
@@ -33,6 +37,7 @@
 	import ProjectsVue from '@/views/Projects.vue'
 	import Skills from '@/views/Skills.vue'
 	import Experience from '@/views/Experience.vue'
+	import UX from '@/views/UX.vue'
 </script>
 
 <style>

@@ -39,6 +39,10 @@
 				<a href="#proyectos">Proyectos</a></v-list-item
 			>
 			<v-list-item nav>
+				<v-icon>mdi-folder</v-icon>
+				<a href="#ux">Casos UX</a></v-list-item
+			>
+			<v-list-item nav>
 				<v-icon>mdi-network-pos</v-icon>
 				<a href="#skills">Habilidades</a></v-list-item
 			>
