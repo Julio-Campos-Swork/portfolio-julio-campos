@@ -37,7 +37,7 @@
 			text:
 				'Responsable del mantenimiento y actualización de sistemas de producción y de administración, así como la creación de soluciones adaptadas a las necesidades específicas. Enfoque en la resolución de problemas complejos mediante la implementación de sistemas innovadores.',
 			achievements:
-				'Participé en la actualización de tres proyectos y la creación de cinco nuevos sistemas. Tres de estos proyectos han sido implementados con éxito, mientras que dos se encuentran en desarrollo activo.',
+				'Participé activamente en la creación de cinco proyectos y actualmente tenemos tres más en curso. Utilicé herramientas modernas para actualizar 2 sistemas más que tenían varios años de haberse creado',
 		},
 		{
 			title: 'Grupo IPAG',
