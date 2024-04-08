@@ -90,10 +90,10 @@
 <script setup>
 	import { ref } from 'vue'
 	import { saveAs } from 'file-saver'
-	import CVJulioPDF from '../assets/CV_JC.pdf'
+	import CVJulioPDF from '../assets/CV-JulioCampos.pdf'
 	const archivoPDF = ref(CVJulioPDF)
 	const descargarCV = () => {
-		saveAs(archivoPDF.value, 'CV-Julio-Campos.pdf')
+		saveAs(archivoPDF.value, 'CV-JulioCampos.pdf')
 	}
 	AOS.init()
 </script>
