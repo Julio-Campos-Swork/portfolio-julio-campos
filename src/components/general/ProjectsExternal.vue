@@ -122,11 +122,11 @@
 			id: 2,
 			name: 'Hotel del Ángel',
 			img: '../../assets/hotel.png',
-			url: 'https://hoteldelangel.com.mx/public/misitio/',
+			url: 'https://hoteldelangel.com.mx/',
 			info: 'Desarrollado con:',
 			tecnologias: [astro, tailwind, vue, css],
 
-			source: 'https://hoteldelangel.com.mx/public/misitio/',
+			source: 'https://hoteldelangel.com.mx/',
 		},
 		{
 			id: 12,
