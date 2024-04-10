@@ -171,7 +171,7 @@
 		},
 		{
 			id: 111,
-			name: 'WhatsApp Clone',
+			name: 'Catolo anime (Infinite Scroll)',
 			img: '../../assets/scroll.png',
 			url: 'https://infinite-scroll-nextjs.vercel.app/',
 			info: 'Desarrollado con:',
