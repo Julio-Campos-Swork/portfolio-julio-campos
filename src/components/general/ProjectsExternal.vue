@@ -169,6 +169,15 @@
 			tecnologias: [next, react, tailwind, prisma, node],
 			source: 'https://github.com/Julio-Campos-Swork/nuxt-whatsapp-clone',
 		},
+		{
+			id: 111,
+			name: 'WhatsApp Clone',
+			img: '../../assets/scroll.png',
+			url: 'https://infinite-scroll-nextjs.vercel.app/',
+			info: 'Desarrollado con:',
+			tecnologias: [next, react, tailwind],
+			source: 'https://github.com/Julio-Campos-Swork/infinite-scroll-nextjs',
+		},
 
 		{
 			id: 5,
